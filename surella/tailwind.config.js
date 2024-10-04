@@ -1,10 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+export default {
+  content: ["./src/**/*.{ts,tsx,js,jsx}"],
+  mode: "jit",
   theme: {
     extend: {
       colors: {
-        primary: "#050816",//todo
+        primary: "#050816",
         "black-100": "#100d25",
       },
       boxShadow: {

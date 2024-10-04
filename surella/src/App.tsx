@@ -1,9 +1,9 @@
-import './App.css'
+import Hero from './components/hero'
 
-function App() {
+const App = () => {
   return (
     <>
-      <div className='bg-slate-700 w-20 h-20'>aa</div>
+      <Hero/>
     </>
   )
 }
