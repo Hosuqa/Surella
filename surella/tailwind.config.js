@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        "black-100": "#100d25",
+        "surella-500": "#00AAA7",
+        "surella-600": "#208481",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
