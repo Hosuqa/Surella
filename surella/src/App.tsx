@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
+import Navbar from './components/global/Navbar'
+import Hero from './components/sections/Hero'
+import About from './components/sections/About'
 
 const App = () => {
   return (
@@ -14,5 +14,6 @@ const App = () => {
     </BrowserRouter>
   )
 }
+
 
 export default App

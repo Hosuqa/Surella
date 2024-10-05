@@ -1,5 +1,5 @@
-import { styles } from "../styles";
-import { fadeIn } from "../untils/motion";
+import { styles } from "../../styles";
+import { fadeIn } from "../../untils/motion";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -12,6 +12,12 @@ const Hero = () => {
           <h2 className={styles.sectionHeadText}>
             Surella Hero
           </h2>
+          <p className={styles.heroSubText}>
+            Opis naszego projektu
+          </p>
+          pisze cos
+          halo
+          aaaaa
         </motion.div>
       </div>
     </>
