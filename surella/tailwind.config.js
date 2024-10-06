@@ -5,6 +5,9 @@ export default {
     extend: {
       fontFamily: {
         inter: ["inter", "sans-serif"],
+        interMedium: ["interMedium", "sans-serif"],
+        interBold: ["interBold", "sans-serif"],
+        interExtraBold: ["interExtraBold", "sans-serif"],
       },
       colors: {
         "surella-500": "#00AAA7",

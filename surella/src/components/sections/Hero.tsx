@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <>
-      <div className="bg-surella-500 flex justify-center h-screen items-center font-inter py-20">
+      <div className="bg-surella-500 flex justify-center h-screen items-center font-interExtraBold py-20">
         <motion.div variants={fadeIn()}
         initial="hidden"
         animate="show">
