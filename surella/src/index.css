@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 * {
+  /* font-family: inter; */
   scroll-behavior: smooth; 
 } 
+@font-face {
+  font-family: 'inter';
+  src: url('./fonts/Inter28pt-Regular.woff2') format('woff2'),
+  url('./fonts/Inter28pt-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
