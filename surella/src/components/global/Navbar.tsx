@@ -20,12 +20,10 @@ const Navbar = () => {
 
     return (
         <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white uppercase`}>
-            <div className="w-full flex items-center max-w-7xl justify-around mx-auto">
-                    <Title title="O nas" />
-                    <Title title="Realizacje" />
-                <Link
+            <div className="w-full flex justify-between  items-center ">
+            <Link
                     to="/"
-                    className="flex xl:justify-center gap-2 w-full cursor-default"
+                    className="flex xl:justify-sart gap-2 w-full  cursor-default"
                     onClick={() => {
                         setActive("");
                         window.scrollTo(0, 0);
@@ -33,8 +31,13 @@ const Navbar = () => {
                     <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
                     <p className="text-[25px] text-surella-600 font-interExtraBold font-bold cursor-pointer ">Surella</p>
                 </Link>
+                <div className="justify-end flex gap-10 w-full">
+                    <Title title="O nas" />
+                    <Title title="Realizacje" />
+                
                     <Title title="Współpraca" />
                     <Title title="Kontakt" />
+                    </div>
                     <div className="xl:hidden flex flex-col gap-2 bg cursor-pointer">
                         <div className="h-1.5 w-12 bg-surella-600"></div>
                         <div className="h-1.5 w-12 bg-surella-600"></div>
