@@ -21,10 +21,13 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Paths and Base URL */
-    "baseUrl": "./src", 
+    "baseUrl": ".", 
     "paths": {
-      "@assets/*": ["assets/*"]
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
