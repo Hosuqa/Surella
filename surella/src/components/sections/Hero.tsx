@@ -1,7 +1,9 @@
 import { styles } from "../../styles";
-import { fadeIn } from "../../untils/motion";
-import { motion } from "framer-motion";
 import { hero1 } from '../../assets';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Hero = () => {
   return (
@@ -19,7 +21,19 @@ const Hero = () => {
           </div>
         </div>
         <div className="w-1/2 border-l-[12px] border-white">
-           <img src={hero1} className="object-cover h-full w-full" alt="hero" />
+        <Swiper pagination={{ dynamicBullets: true, }} modules={[Pagination, Autoplay]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full ">
+          <SwiperSlide>
+              <img src={hero1} className="object-cover h-full w-full" alt="hero" />
+          </SwiperSlide>
+          <SwiperSlide>
+              {/* <img src={hero1} className="object-cover h-full w-full" alt="hero" /> */}
+              <div className="bg-black w-full h-full"></div>
+          </SwiperSlide>
+          <SwiperSlide>  
+              {/* <img src={hero1} className="object-cover h-full w-full" alt="hero" /> */}
+              <div className="bg-red-700 w-full h-full"></div>
+          </SwiperSlide>
+        </Swiper>
         </div>
       </div>
     </>
