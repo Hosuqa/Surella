@@ -9,7 +9,7 @@ type Props = {
 
 const Title = ({ title }: Props) => {
     return (
-        <div className={`${styles.NavbarText} text-surella-600 font-interExtraBold font-bold cursor-pointer uppercase`}>
+        <div className={`${styles.NavbarText} w-full flex justify-center text-surella-600 font-interExtraBold font-bold cursor-pointer uppercase`}>
             {title}
         </div>
     );
@@ -25,7 +25,7 @@ const Navbar = () => {
                     <Title title="Realizacje" />
                 <Link
                     to="/"
-                    className="flex items-center gap-2"
+                    className="flex justify-center gap-2 w-full"
                     onClick={() => {
                         setActive("");
                         window.scrollTo(0, 0);
