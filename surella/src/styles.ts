@@ -7,11 +7,11 @@ const styles = {
     NavbarText:
     "text-[13px] sm:text-[15px] md:text-[19px]",
     heroHeadText:
-      "lg:text-[90px] sm:text-[60px] xs:text-[50px] text-[40px]",
+      "xl:text-[70px] lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     heroSubText:
-      "lg:text-[26px] sm:text-[22px] xs:text-[18px] text-[14px]",
+      "lg:text-[22px] sm:text-[20px] xs:text-[18px] text-[14px]",
     heroButton:
-      "lg:text-[26px] sm:text-[22px] xs:text-[16px] text-[12px]",
+      "lg:text-[24px] sm:text-[22px] xs:text-[16px] text-[12px]",
     sectionHeadText:
       "md:text-[80px] sm:text-[70px] xs:text-[60px] text-[50px]",
     sectionSubText:

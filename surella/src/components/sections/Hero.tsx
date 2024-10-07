@@ -14,8 +14,8 @@ const Hero = () => {
           <p className={`${styles.heroSubText} text-white -translate-y-3 `}>
             Tworzymy przestrzeń dla Twojego komfortu.
           </p>
-          <div className="w-fit h-fit bg-white mt-6">
-              <p className={`${styles.heroButton} text-surella-500 font-interExtraBold font-bold px-16 py-3 uppercase`}>Sprawdź wycenę</p>
+          <div className="w-fit h-fit  bg-white mt-6">
+              <p className={`${styles.heroButton} text-center text-surella-500 font-interExtraBold font-bold px-16 py-3 uppercase`}>Sprawdź wycenę</p>
           </div>
         </div>
         <div className="w-1/2 border-l-[12px] border-white">
