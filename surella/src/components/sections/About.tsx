@@ -1,12 +1,16 @@
 import Title from '../global/Title'
+import { XlWrapper } from '@components/global/Wrappers'
  
 const About = () => {
   return (
-    <>
-      <div className="bg-white flex h-screen">
+    <XlWrapper vertical>
+      <div className="bg-white flex h-screen flex-col gap-10">
+        <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
         <Title title='Poznaj naszą firmę' subtitle='O nas'></Title>
+        <Title title='AW JNAFDBJA AKWNE A KAND' subtitle='ADDADDA AF A FAF A'></Title>
+
       </div>
-    </>
+    </XlWrapper>
   )
 }
 
