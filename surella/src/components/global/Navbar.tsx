@@ -50,20 +50,18 @@ const Navbar = () => {
             </div>
         </nav>
         <motion.div
-            initial={{ y: "-100%" }}
-            animate={{ y: menuOpen ? 0 : "-100%" }}
-            transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-            className="fixed top-20 right-40 bg-surella-800 flex flex-col z-50 gap-5 p-10"
-        >
-            {menuOpen && (
-                <>
-                    <Link to="/" className="text-white font-bold">O nas</Link>
-                    <Link to="/realizacje" className="text-white font-bold">Realizacje</Link>
-                    <Link to="/wspolpraca" className="text-white font-bold">Współpraca</Link>
-                    <Link to="/kontakt" className="text-white font-bold">Kontakt</Link>
-                </>
-            )}
-        </motion.div>
+    initial={{ y: 0 }}
+    animate={{ y: menuOpen ? 0 : "-100%" }}
+    transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+    className="fixed top-[70px] right-0 bg-surella-800 flex flex-col z-10 gap-5 p-10"
+>
+    <Link to="/" className={`text-white font-bold ${'visible'}`}>O nas</Link>
+    <Link to="/realizacje" className={`text-white font-bold ${'visible'}`}>Realizacje</Link>
+    <Link to="/wspolpraca" className={`text-white font-bold ${'visible'}}`}>Współpraca</Link>
+    <Link to="/kontakt" className={`text-white font-bold ${'visible'}`}>Kontakt</Link>
+</motion.div>
+
+
         </>
     );
 };
