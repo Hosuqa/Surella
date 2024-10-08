@@ -5,7 +5,7 @@ const styles = {
     padding: "sm:px-16 px-6 sm:py-16 py-10",
   
     NavbarText:
-    "text-[13px] sm:text-[15px] md:text-[19px]",
+    "text-[13px] sm:text-[15px] md:text-[17px]",
     heroHeadText:
       "xl:text-[70px] lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     heroSubText:
