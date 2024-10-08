@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { styles } from "../../styles";
 import { Link } from "react-router-dom";
 import { surella } from '../../assets';
@@ -16,7 +15,6 @@ const Title = ({ title }: Props) => {
 };
 
 const Navbar = () => {
-    const [active, setActive] = useState('');
 
     return (
         <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white uppercase`}>
@@ -25,7 +23,6 @@ const Navbar = () => {
                     to="/"
                     className="flex xl:justify-sart gap-2 w-full  cursor-default"
                     onClick={() => {
-                        setActive("");
                         window.scrollTo(0, 0);
                     }}>
                     <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
