@@ -35,7 +35,7 @@ const Navbar = () => {
                         <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
                         <p className="text-[25px] text-surella-600 font-interExtraBold font-bold cursor-pointer">Surella</p>
                     </Link>
-                    <div className="justify-end hidden xl:flex gap-10 w-full">
+                    <div className="justify-end hidden xl:flex gap-2 w-full">
                         <Title title="O nas" />
                         <Title title="Realizacje" />
                         <Title title="Współpraca" />
