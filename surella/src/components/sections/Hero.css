@@ -1,8 +1,8 @@
 .animated-background {
     background-size: 300%;
-    -webkit-animation: animation 10s ease infinite;
-    -moz-animation: animation 10s ease infinite;
-    animation: animation 10s ease infinite;
+    -webkit-animation: animation 20s ease infinite;
+    -moz-animation: animation 20s ease infinite;
+    animation: animation 20s ease infinite;
 }
 
 @keyframes animation {
