@@ -29,9 +29,9 @@ const About = () => {
 
   return (
     <LgWrapper vertical>
-      <div className="bg-white flex h-[35vh] w-full flex-col">
+      <div className="bg-white flex  w-full flex-col">
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
-        <div className='flex w-full h-full gap-3'>
+        <div className='flex w-full h-[350px] gap-3'>
           <div className='w-3/5 h-full flex justify-center items-center bg-slate-50'>
             <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-8 text-left text-3xl`}>{description}</p>
           </div>
