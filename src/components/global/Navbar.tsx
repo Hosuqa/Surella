@@ -10,9 +10,9 @@ type Props = {
 
 const Title = ({ title }: Props) => {
     return (
-        <div className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-surella-600 -tracking-tight font-interExtraBold font-bold cursor-pointer`}>
+        <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 -tracking-tighter font-interExtraBold font-bold cursor-pointer`}>
             {title}
-        </div>
+        </p>
     );
 };
 
@@ -39,7 +39,11 @@ const Navbar = () => {
                         <Title title="O nas" />
                         <Title title="Realizacje" />
                         <Title title="Współpraca" />
-                        <Title title="Kontakt" />
+                        <div className="w-full h-full bg-surella-600 text-white py-1">
+                        <p className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white -tracking-tighter font-interExtraBold font-bold cursor-pointer`}>
+                        Kontakt
+                        </p>
+                        </div>
                     </div>
                     <motion.div
                     className="xl:hidden flex flex-col gap-[7.5px] cursor-pointer"
