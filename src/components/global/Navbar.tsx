@@ -56,7 +56,7 @@ const Navbar = () => {
             animate={{ y: menuOpen ? 0 : "-100%" }}
             //animate={{ scale: menuOpen ? 0 : 1 , opacity: menuOpen ? 0 : 1}}
             transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-            className="xl:hidden fixed top-[70px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
+            className="xl:hidden fixed top-[60px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
                 <Link to="/"  className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</Link>
                 <Link to="/realizacje" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</Link>
                 <Link to="/wspolpraca" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</Link>
