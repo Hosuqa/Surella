@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Component, useEffect } from "react";
+import { XlWrapper } from '@components/global/Wrappers'
 
 const Counter = () => {
     const count = useMotionValue(0);
@@ -11,11 +12,11 @@ const Counter = () => {
       return animation.stop;
     }, []);
   return (
-    <>
-     <div>
-        {rounded}
+    <XlWrapper>
+     <div className="h-screen bg-slate-400">
+        
      </div>
-    </>
+    </XlWrapper>
   );
 };
 

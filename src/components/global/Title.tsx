@@ -6,7 +6,7 @@ type Props = {
 const Title = ({ title, subtitle }: Props) => {
   return (
     <>
-        <div className="g-slate-400 flex w-full h-fit justify-center mb-6">
+        <div className="g-slate-400 flex w-full h-fit justify-center mb-10">
             <div className="g-slate-500 flex flex-col w-1/3 items-center ">
                 <div className="g-slate-600 flex items-center justify-center h-full w-full  ">
                     <div className="basis-1/4 h-1 w-full bg-surella-500 opacity-45 px-6"></div>

@@ -1,5 +1,5 @@
 import Title from '../global/Title'
-import { XlWrapper } from '@components/global/Wrappers'
+import { LgWrapper } from '@components/global/Wrappers'
 import { styles } from "../../styles";
 //icons
 import { FaToolbox } from "react-icons/fa6"; 
@@ -16,9 +16,9 @@ import texts from '../../texts.json'
  };
 const IconBox = ({title, icon}: Props) => {
   return (
-    <div className=' bg-slate-400 aspect-square'>
-      {React.cloneElement(icon, { className: 'w-10 h-10' })}
-      <p>{title}</p>
+    <div className=' bg-surella-500 text-white w-32 h-32 aspect-square flex flex-col justify-center items-center'>
+      {React.cloneElement(icon, { className: 'w-14 h-14' })}
+      <p className='pt-4 uppercase font-bold'>{title}</p>
     </div>
   );
 }
@@ -28,23 +28,27 @@ const About = () => {
 
 
   return (
-    <XlWrapper vertical>
-      <div className="bg-white flex h-[40vh] w-full flex-col">
+    <LgWrapper vertical>
+      <div className="bg-white flex h-[35vh] w-full flex-col">
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
         <div className='flex w-full h-full'>
-          <div className='w-1/2 h-full bg-slate-100'>
-          <p className={`${styles.sectionSubText} text-surella-600 text-left p-8`}>{description}</p>
+          <div className='w-1/2 h-full flex justify-center items-center '>
+            <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-4 text-left text-3xl`}>{description}</p>
           </div>
-          <div className='w-1/2 h-full bg-slate-300 grid grid-cols-2 aspect-square place-items-center gap-6 px-8 py-8'>
+          <div className='w-1/2 flex flex-col gap-[60px] aspect-square items-center justify-center '>
+          <div className='flex gap-[60px]'>
             <IconBox title='Doradztwo' icon={<FaToolbox/>}/>
             <IconBox title='Wycena' icon={<FaHandshake />}/>
+          </div>
+          <div className='flex gap-[60px]'>
             <IconBox title='Doractwo' icon={<FaTools />}/>
             <IconBox title='Montaż' icon={<FaShoppingCart />}/>
+          </div>
           </div>
         </div>
       </div>
 
-    </XlWrapper>
+    </LgWrapper>
   )
 }
 
