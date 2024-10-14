@@ -33,7 +33,7 @@ const About = () => {
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
         <div className='flex w-full h-full gap-3'>
           <div className='w-3/5 h-full flex justify-center items-center bg-slate-50'>
-            <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-4 text-left text-3xl`}>{description}</p>
+            <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-8 text-left text-3xl`}>{description}</p>
           </div>
           <div className='w-2/5 gap-3 flex flex-col  aspect-square items-center justify-center '>
             <div className='flex h-full w-full gap-3'>

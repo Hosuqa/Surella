@@ -12,7 +12,7 @@ const Title = ({ title, subtitle }: Props) => {
                     <p className="basis-30 text-nowrap text-center h-full uppercase text-surella-500 text-2xl font-interExtraBold font- ">
                         {subtitle}
                     </p>
-                    <div className="h-[5px] w-full ml-4  bg-surella-500 opacity- px-6"></div>
+                    <div className="h-[5px] w-full ml-4  bg-surella-500 opacity-90 px-6"></div>
                 </div>
                 <p className="uppercase text-surella-600 text-nowrap text-4xl font-interExtraBold font-bold">
                     {title}
