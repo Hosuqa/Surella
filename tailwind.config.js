@@ -16,15 +16,13 @@ export default {
         "surella-600": "#208481",
         "surella-700": "#165A58",
         "surella-800": "#0D3837",
-
-      },
-      boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
       },
       screens: {
         xs: "450px",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'), // dodaj wtyczkę
+  ],
 };
