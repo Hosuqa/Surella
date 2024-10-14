@@ -42,12 +42,12 @@ const Navbar = () => {
                         <Title title="Kontakt" />
                     </div>
                     <motion.div
-                    className="xl:hidden flex flex-col gap-[10px] cursor-pointer"
+                    className="xl:hidden flex flex-col gap-[7.5px] cursor-pointer"
                     onClick={toggleMenu}
                     whileTap={{ scale: 0.9 }}>
-                        <div className="h-[5px] w-12 bg-surella-600"></div>
-                        <div className="h-[5px] w-12 bg-surella-600"></div>
-                        <div className="h-[5px] w-12 bg-surella-600"></div>
+                        <div className="h-[5px] w-10 bg-surella-600"></div>
+                        <div className="h-[5px] w-10 bg-surella-600"></div>
+                        <div className="h-[5px] w-10 bg-surella-600"></div>
                     </motion.div>
                 </div>
             </nav>
