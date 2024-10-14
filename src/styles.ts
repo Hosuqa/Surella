@@ -9,7 +9,7 @@ const styles = {
     heroHeadText:
       "xl:text-[70px] lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     heroSubText:
-      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
+      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
     heroButton:
       "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[12px]",
     sectionHeadText:

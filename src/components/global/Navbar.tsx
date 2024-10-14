@@ -10,7 +10,7 @@ type Props = {
 
 const Title = ({ title }: Props) => {
     return (
-        <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 -tracking-tighter font-interExtraBold font-bold cursor-pointer`}>
+        <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
             {title}
         </p>
     );

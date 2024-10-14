@@ -13,7 +13,7 @@ const Counter = () => {
     }, []);
   return (
     <XlWrapper>
-     <div className="h-screen bg-slate-400">
+     <div className=" mt-44 h-screen bg-slate-400">
         
      </div>
     </XlWrapper>

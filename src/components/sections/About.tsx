@@ -5,7 +5,7 @@ import { styles } from "../../styles";
 import { FaToolbox } from "react-icons/fa6"; 
 import { FaHandshake } from "react-icons/fa6";
 import { FaTools } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 import React, { ReactElement } from 'react';
 import texts from '../../texts.json'
 
@@ -16,9 +16,9 @@ import texts from '../../texts.json'
  };
 const IconBox = ({title, icon}: Props) => {
   return (
-    <div className=' bg-surella-500 text-white w-32 h-32 aspect-square flex flex-col justify-center items-center'>
-      {React.cloneElement(icon, { className: 'w-14 h-14' })}
-      <p className='pt-4 uppercase font-bold'>{title}</p>
+    <div className=' bg-surella-500 text-white w-full h-full flex flex-col justify-center items-center'>
+      {React.cloneElement(icon, { className: 'w-16 h-16' })}
+      <p className='pt-4 uppercase font-bold text-[18px] tracking-wider'>{title}</p>
     </div>
   );
 }
@@ -31,19 +31,19 @@ const About = () => {
     <LgWrapper vertical>
       <div className="bg-white flex h-[35vh] w-full flex-col">
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
-        <div className='flex w-full h-full'>
-          <div className='w-1/2 h-full flex justify-center items-center '>
+        <div className='flex w-full h-full gap-3'>
+          <div className='w-3/5 h-full flex justify-center items-center bg-slate-50'>
             <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-4 text-left text-3xl`}>{description}</p>
           </div>
-          <div className='w-1/2 flex flex-col gap-[60px] aspect-square items-center justify-center '>
-          <div className='flex gap-[60px]'>
-            <IconBox title='Doradztwo' icon={<FaToolbox/>}/>
-            <IconBox title='Wycena' icon={<FaHandshake />}/>
-          </div>
-          <div className='flex gap-[60px]'>
-            <IconBox title='Doractwo' icon={<FaTools />}/>
-            <IconBox title='Montaż' icon={<FaShoppingCart />}/>
-          </div>
+          <div className='w-2/5 gap-3 flex flex-col  aspect-square items-center justify-center '>
+            <div className='flex h-full w-full gap-3'>
+              <IconBox title='Wycena' icon={<FaToolbox/>}/>
+              <IconBox title='Montaż' icon={<FaTools />}/>
+            </div>
+            <div className='flex h-full w-full gap-3'>
+              <IconBox title='Doradztwo' icon={<FaHandshake />}/>
+              <IconBox title='Sprzedaż' icon={<FaMoneyCheckDollar />}/>
+            </div>
           </div>
         </div>
       </div>
