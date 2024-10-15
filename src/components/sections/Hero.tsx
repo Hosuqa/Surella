@@ -12,8 +12,8 @@ import 'swiper/css/pagination';
 const Hero = () => {
   return (
     <>
-      <div className="flex xl:flex-row flex-col font-interExtraBold h-[90vh] xl:h-[95vh] bg-gradient-to-tr from-teal-900 via-surella-500 to-teal-600 animated-background">
-        <div className={`${styles.paddingX} flex flex-col w-full h-1/2 xl:w-2/5 xl:h-full justify-center mt-[15%] lg:mt-[10%]`}>
+      <div className="flex lg:flex-row flex-col font-interExtraBold h-[90vh] lg:h-[95vh] bg-gradient-to-tr from-teal-900 via-surella-500 to-teal-600 animated-background">
+        <div className={`${styles.paddingX} flex flex-col w-full h-1/2 lg:w-2/5 lg:h-full justify-center mt-[15%] lg:mt-[10%]`}>
           <h2 className={`${styles.heroHeadText} text-white tracking-wide font-semibold uppercase`}>
             Surella.pl
           </h2>
@@ -30,7 +30,7 @@ const Hero = () => {
               </motion.p>
           </motion.div>
         </div>
-        <div className="w-full h-1/2 xl:w-3/5 xl:h-full border-t-[8px] xl:border-l-[12px] border-white">
+        <div className="w-full h-1/2 lg:w-3/5 lg:h-full border-t-[8px] lg:border-l-[12px] border-white">
         <Swiper pagination={{ dynamicBullets: true, }} modules={[Pagination, Autoplay]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full ">
           <SwiperSlide>
             <img src={hero1} className="object-cover h-full w-full" alt="hero" />
