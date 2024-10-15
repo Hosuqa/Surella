@@ -16,7 +16,7 @@ import texts from '../../texts.json'
  };
 const IconBox = ({title, icon}: Props) => {
   return (
-    <div className=' bg-surella-500 text-white w-full h-full flex flex-col justify-center items-center'>
+    <div className=' bg-surella-500 text-white w-40 h-40 lg:w-full lg:h-full flex flex-col justify-center items-center'>
       {React.cloneElement(icon, { className: 'w-16 h-16' })}
       <p className='pt-4 uppercase font-bold text-[18px] tracking-wider'>{title}</p>
     </div>
@@ -31,16 +31,16 @@ const About = () => {
     <LgWrapper vertical>
       <div className="bg-white w-full flex-col">
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
-        <div className='flex w-full h-[350px] gap-3'>
-          <div className='w-3/5 h-full flex justify-center items-center bg-slate-50'>
-            <p className={`${styles.heroSubText} h-full flex items-center text-surella-600 px-8 text-left text-4xl`}>{description}</p>
+        <div className='flex lg:flex-row flex-col w-full lg:h-[350px] gap-3'>
+          <div className='lg:w-3/5 w-full h-full flex justify-center items-center bg-slate-50'>
+            <p className={`${styles.aboutText} h-full flex items-center text-surella-600 px-8 leading-8 lg:leading-10 text-left `}>{description}</p>
           </div>
-          <div className='w-2/5 gap-3 flex flex-col  aspect-square items-center justify-center '>
-            <div className='flex h-full w-full gap-3'>
+          <div className='lg:w-2/5 w-full h-96 lg:h-full gap-3 flex lex-wrap lg:flex-nowrap lg:flex-col aspect-square lg:items-center justify-center '>
+            <div className='flex flex-wrap justify-end lg:justify-start mr-1 md:mr-0 lg:flex-nowrap lg:flex lg:h-full lg:w-full gap-3'>
               <IconBox title='Wycena' icon={<FaToolbox/>}/>
               <IconBox title='Montaż' icon={<FaTools />}/>
             </div>
-            <div className='flex h-full w-full gap-3'>
+            <div className='flex flex-wrap justify-start ml-1 md:ml-0 lg:flex-nowrap lg:flex lg:h-full lg:w-full gap-3'>
               <IconBox title='Doradztwo' icon={<FaHandshake />}/>
               <IconBox title='Sprzedaż' icon={<FaMoneyCheckDollar />}/>
             </div>
