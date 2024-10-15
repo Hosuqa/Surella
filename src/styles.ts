@@ -12,10 +12,9 @@ const styles = {
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
     heroButton:
       "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[12px]",
-    sectionHeadText:
-      "md:text-[80px] sm:text-[70px] xs:text-[60px] text-[50px]",
-    sectionSubText:
-      "sm:text-[18px] text-[14px]",
+    aboutText:
+      "xl:text-[22px] xs:text-[18px] text-[10px]",
+
   };
   
   export { styles };
