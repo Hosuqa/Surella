@@ -25,15 +25,15 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`${styles.paddingX} w-full h-16 flex items-center py-5 fixed top-0 z-20 bg-white uppercase shadow-lg`}>
+            <nav className={`${styles.paddingX} w-full h-20 flex items-center py-5 fixed top-0 z-20 bg-white uppercase shadow-lg`}>
                 <div className="w-full flex justify-between items-center">
                     <Link
                         to="/"
-                        className="flex xl:justify-start gap-2 w-full cursor-default"
+                        className="flex xl:justify-start gap-2 w-full cursor-pointer items-center"
                         onClick={() => window.scrollTo(0, 0)}
                     >
                         <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
-                        <p className="text-[25px] text-surella-600 font-interExtraBold font-bold cursor-pointer">Surella</p>
+                        <p className="text-[25px] text-surella-600 font-interExtraBold font-bold ">Surella</p>
                     </Link>
                     <div className="justify-end hidden xl:flex gap-2 w-full">
                         <Title title="O nas" />
@@ -60,7 +60,7 @@ const Navbar = () => {
             animate={{ y: menuOpen ? 0 : "-100%" }}
             //animate={{ scale: menuOpen ? 0 : 1 , opacity: menuOpen ? 0 : 1}}
             transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-            className="xl:hidden fixed top-[60px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
+            className="xl:hidden fixed top-[70px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
                 <Link to="/"  className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</Link>
                 <Link to="/realizacje" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</Link>
                 <Link to="/wspolpraca" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</Link>
@@ -69,5 +69,4 @@ const Navbar = () => {
         </>
     );
 };
-
 export default Navbar;
