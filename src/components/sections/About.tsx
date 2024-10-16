@@ -39,7 +39,7 @@ const About = () => {
           </div>
           <div className='w-full xl:w-2/5 gap-4 flex flex-col items-center justify-center xl:order-2 order-1'>
             <div className='flex h-full w-full gap-4'>
-            <IconBox title='Wycena' icon={<FaToolbox/>}/>
+            <IconBox title='Ekspertyza' icon={<FaToolbox/>}/>
             <IconBox title='Montaż' icon={<FaTools />}/>
             </div>
             <div className='flex h-full w-full gap-4'>
