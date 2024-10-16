@@ -19,6 +19,7 @@ export default {
       },
       screens: {
         xs: "450px",
+        lg: "1026px",// ipad pro max fix
       },
     },
   },

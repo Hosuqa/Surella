@@ -1,5 +1,5 @@
 const styles = {
-    paddingX: "px-6 sm:px-16 md:px-20 lg:px-24 lg:px-26 xl:px-28",
+    paddingX: "px-6 sm:px-16 md:px-20 lg:px-24 lg:px-26 xl:px-27",
     paddingHeroX: " px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-56",
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-16 py-10",
@@ -13,7 +13,7 @@ const styles = {
     heroButton:
       "xl:text-[24px]  md:text-[18px] text-[16px]",
     aboutText:
-      "xl:text-[22px] xs:text-[18px] text-[10px]",
+      "xl:text-[22px] xs:text-[18px] text-[16px]",
 
   };
   
