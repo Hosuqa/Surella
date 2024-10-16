@@ -30,7 +30,7 @@ export const LgWrapper = ({ className, children, vertical=false, horizontal=true
 
 export const XlWrapper = ({ className, children, vertical=false, horizontal=true }: Props) => {
     return (
-        <div className={`${ vertical ? "my-12 md:my-16 lg:my-20 xl:my-24 2xl:my-28" : "" } ${ horizontal ? "mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-96" : "" } ${ className }`}>
+        <div className={`${ vertical ? "my-12 md:my-16 lg:my-20 xl:my-24 2xl:my-28" : "" } ${ horizontal ? "mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-72" : "" } ${ className }`}>
             { children }
         </div>
     );

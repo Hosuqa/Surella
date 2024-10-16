@@ -1,5 +1,5 @@
 import Title from '../global/Title'
-import { LgWrapper } from '@components/global/Wrappers'
+import { XlWrapper } from '@components/global/Wrappers'
 import { styles } from "../../styles";
 //icons
 import { FaToolbox } from "react-icons/fa6"; 
@@ -28,7 +28,7 @@ const About = () => {
 
 
   return (
-    <LgWrapper vertical>
+    <XlWrapper vertical>
       <div className="bg-white w-full flex-col">
         <Title title='Poznaj Surelle' subtitle='Trochę o nas'></Title>
         <div className='flex xl:flex-row flex-col w-full gap-4'>
@@ -70,7 +70,7 @@ const About = () => {
             </div>
         </div>
       </div> */}
-    </LgWrapper>
+    </XlWrapper>
   )
 }
 
