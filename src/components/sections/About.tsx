@@ -1,23 +1,23 @@
 import Title from '../global/Title'
-import { LgWrapper, XlWrapper} from '@components/global/Wrappers'
+import { LgWrapper } from '@components/global/Wrappers'
 import { styles } from "../../styles";
 //icons
 import { FaToolbox } from "react-icons/fa6"; 
 import { FaHandshake } from "react-icons/fa6";
 import { FaTools } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
-import React from 'react';
+import React, { ReactElement } from 'react';
 import texts from '../../texts.json'
 
 
  type Props = {
    title: string;
-   Icon: React.ElementType;
+   icon: ReactElement;
  };
-const IconBox = ({title, Icon}: Props) => {
+const IconBox = ({title, icon}: Props) => {
   return (
-    <div className='bg-surella-500 text-white w-full h-full flex flex-col justify-center items-center p-6'>
-      <Icon className="w-16 aspect-square" />
+    <div className='bg-surella-500 text-white w-full h-full min-w-[160px] flex flex-col justify-center items-center p-6'>
+      {React.cloneElement(icon, { className: 'md:w-16 md:h-16 w-10 h-10' })}
       <p className='pt-4 uppercase font-bold text-[18px] tracking-wider'>{title}</p>
     </div>
   );
@@ -39,12 +39,12 @@ const About = () => {
           </div>
           <div className='w-full xl:w-2/5 gap-4 flex flex-col items-center justify-center xl:order-2 order-1'>
             <div className='flex h-full w-full gap-4'>
-              <IconBox title='Wycena' Icon={FaToolbox}/>
-              <IconBox title='Montaż' Icon={FaTools}/>
+            <IconBox title='Wycena' icon={<FaToolbox/>}/>
+            <IconBox title='Montaż' icon={<FaTools />}/>
             </div>
             <div className='flex h-full w-full gap-4'>
-              <IconBox title='Doradztwo' Icon={FaHandshake}/>
-              <IconBox title='Sprzedaż' Icon={FaMoneyCheckDollar}/>
+            <IconBox title='Doradztwo' icon={<FaHandshake />}/>
+            <IconBox title='Sprzedaż' icon={<FaMoneyCheckDollar />}/>
             </div>
           </div>
         </div>
