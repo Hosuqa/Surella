@@ -10,7 +10,7 @@ type Props = {
 const Title = ({ title, subtitle, className, titleColor="text-surella-600", subtitleColor='text-surella-500', lineColor='bg-surella-500' }: Props) => {
   return (
     <>
-        <div className={`g-slate-400 flex w-full h-fit justify- mb-12 ${className}`}>
+        <div className={`g-slate-400 flex w-full h-fit justify- mb-24 ${className}`}>
             <div className="g-slate-500 flex flex-col">
                 <div className="g-slate-600 flex items-center h-full w-full  ">
                     <p className={`basis-30 text-nowrap text-center h-full uppercase ${subtitleColor} text-2xl font-interExtraBold font- `}>
