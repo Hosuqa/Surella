@@ -1,0 +1,6 @@
+.paralax_out {
+    transform-style: preserve-3d;
+  }
+  .paralax_in {
+    transform: translateZ(70px);
+  }
