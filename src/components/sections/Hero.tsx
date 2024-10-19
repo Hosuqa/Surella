@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
           <motion.div className="w-fit h-fit bg-white mt-2"
             whileHover={{ scale: 1.05 }}>
-              <motion.p className={`${styles.heroButton} text-center text-surella-500 font-interExtraBold font-bold px-16 py-3 cursor-pointer uppercase text-nowrap`}
+              <motion.p className={`${styles.heroButton} text-center text-surella-500 font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-3 cursor-pointer uppercase text-nowrap`}
                > 
                 Sprawdź wycenę
               </motion.p>

@@ -7,13 +7,13 @@ const styles = {
     NavbarText:
     " md:text-[17px] sm:text-[15px] text-[13px]",
     heroHeadText:
-      "xl:text-[70px] lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
+      "xl:text-[70px] lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[35px]",
     heroSubText:
-      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
+      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
     heroButton:
-      "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[12px]",
+      "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[14px]",
     aboutText:
-      "xl:text-[22px] xs:text-[18px] text-[10px]",
+      "2xl:text-[22px] sm:text-[18px] text-[15px]",
     galleryText:
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
 
