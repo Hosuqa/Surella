@@ -6,6 +6,7 @@ import { styles } from "../../styles";
 import { hero1, hero2, hero3} from '../../assets';
 import images from '../../images.json'
 import { useEffect, useState } from 'react';
+import { FaXmark } from "react-icons/fa6";
 
 type Props = {
     image: string;
@@ -24,14 +25,14 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
     
     useEffect(() => {
 
-        if (currentSet != null) setCurrentPhoto(currentSet[0])
+        if (currentSet != null) setCurrentPhoto(currentSet[0]);
 
     }, [currentSet]);
 
     return (
-        <div className={`${currentSet ? "fixed" : "hidden"} flex z-[9999] top-0 right-0 w-[100vw] h-[100vh] bg-black/80`}>
+        <div className={`${currentSet ? "fixed" : "hidden"} flex z-[9999] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}>
             <div className='relative w-full h-full flex'>
-                <div className='absolute top-2 right-2 w-[5vw] h-[5vh] bg-red-500 cursor-pointer' onClick={onClick}/>
+                <FaXmark className='absolute top-4 right-4 xl:right-2 w-[5vw] h-[5vh] cursor-pointer text-white' onClick={onClick}/>
                 <div className='w-full h-[90vh] xl:py-20 xl:px-72 lg:py-16 lg:px-48 md:py-12 md:px-24 py-10 px-8'>
                     <div className=" w-full h-full relative">
                         <img src={currentPhoto} className="object-contain w-full h-full" alt="zdjecie" />
@@ -41,7 +42,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
                 <div className='absolute flex bottom-0 w-full h-[10vh] bg-black/70'>
                     <div className='w-full h-full p-2 gap-2 flex px-4'>
                         { currentSet && currentSet.map((image) => (
-                            <div className='h-full aspect-square overflow-hidden group cursor-pointer'>
+                            <div className='h-full aspect-square overflow-hidden group cursor-pointer' onClick={ () =>  setCurrentPhoto(image) }>
                                 <div className='w-full h-full relative'>
                                     <img src={image} className='object-cover w-full h-full group-hover:scale-[1.2] duration-300'/>
                                     <div className="bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-70 opacity-0 duration-300"></div>
