@@ -1,21 +1,34 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Component, useEffect } from "react";
-import { LgWrapper } from '@components/global/Wrappers'
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const Counter = () => {
-    const count = useMotionValue(0);
-    const rounded = useTransform(count, Math.round);
+  const counts = [
+    useMotionValue(0),
+    useMotionValue(0),
+    useMotionValue(0),
+  ];
   
-    useEffect(() => {
-      const animation = animate(count, 523650, { duration: 2 });
-  
-      return animation.stop;
-    }, []);
+  const roundedCounts = counts.map(count => useTransform(count, Math.round));
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (inView) {
+      const targetValues = [132, 2009, 740]; // Ustaw swoje docelowe wartości
+      counts.forEach((count, index) => {
+        animate(count, targetValues[index], { duration: 6 });
+      });
+    }
+  }, [inView, counts]);
+
   return (
-    
-     <div className=" mt-44 w-full h-screen bg-slate-100">
-        
-     </div>
+    <div className="mt-44 w-full h-[600px] bg-slate-200 flex items-center justify-center">
+      <motion.div ref={ref} className="flex gap-10">
+        {roundedCounts.map((rounded, index) => (
+          <motion.h1 key={index} className="text-4xl font-bold">{rounded}</motion.h1>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 

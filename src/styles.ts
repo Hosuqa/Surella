@@ -17,7 +17,7 @@ const styles = {
     titleHead:
     "md:text-[36px] xs:text-[30px] text-[28px]",
     aboutText:
-      "2xl:text-[22px] sm:text-[16px] text-[14px]",
+      "2xl:text-[22px] text-[16px]",
     galleryText:
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
 
