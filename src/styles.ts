@@ -12,8 +12,12 @@ const styles = {
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
     heroButton:
       "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[14px]",
+    titleSubTitle:
+    "md:text-[24px] xs:text-[20px] text-[18px]",
+    titleHead:
+    "md:text-[36px] xs:text-[30px] text-[28px]",
     aboutText:
-      "2xl:text-[22px] sm:text-[18px] text-[15px]",
+      "2xl:text-[22px] sm:text-[16px] text-[14px]",
     galleryText:
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
 
