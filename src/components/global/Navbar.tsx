@@ -46,12 +46,19 @@ const Navbar = () => {
                         </div>
                     </div>
                     <motion.div
-                    className="xl:hidden flex flex-col gap-[7.5px] cursor-pointer"
+                    className="xl:hidden flex flex-col cursor-pointer "
                     onClick={toggleMenu}
-                    whileTap={{ scale: 0.9 }}>
-                        <div className="h-[5px] w-10 bg-surella-600"></div>
-                        <div className="h-[5px] w-10 bg-surella-600"></div>
-                        <div className="h-[5px] w-10 bg-surella-600"></div>
+                    whileTap={{ scale: 0.9 }}
+                    >
+                        <motion.div
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
+                        ></motion.div>
+                        <motion.div
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+                        ></motion.div>
+                        <motion.div
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-300 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
+                        ></motion.div>
                     </motion.div>
                 </div>
             </nav>
