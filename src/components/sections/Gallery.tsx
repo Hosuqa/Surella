@@ -78,13 +78,12 @@ const Gallery = () => {
                 <XlWrapper >
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
                 </XlWrapper>
-                <div className={`${styles.paddingX} w-full h-full grid grid-cols-2 xs:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-8 xl:gap-5 justify-center  text-surella-700 font-[500] tracking-wider cursor-pointer pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
+                <div className={`${styles.paddingX} w-full h-full grid grid-cols-2 xs:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 xl:gap-5 justify-center text-surella-700 font-[500] tracking-wider cursor-pointer pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
                     <GalleryComp image={hero3} title='Rolety' onClick={ () => setCurrentSet(images.rolety)}/>
                     <GalleryComp image={hero1} title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
                     <GalleryComp image={hero2} title='Moskitiery' onClick={ () => setCurrentSet(images.rolety)}/>
-                    <GalleryComp image={hero1} title='Zasłony' onClick={ () => setCurrentSet(images.rolety)}/>
                     <GalleryComp image={hero3} title='Firany' onClick={ () => setCurrentSet(images.rolety)}/>
-                    <GalleryComp image={hero2} title='Markizy' onClick={ () => setCurrentSet(images.rolety)}/>
+                    <GalleryComp image={hero2} title='Osłony' onClick={ () => setCurrentSet(images.rolety)}/>
                 </div>
             </div>
         </>
