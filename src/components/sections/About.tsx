@@ -1,7 +1,6 @@
 import Title from '../global/Title'
 import { XlWrapper } from '@components/global/Wrappers'
 import { styles } from "../../styles";
-import Tilt from 'react-parallax-tilt';
 import './About.css';
 
 //icons
