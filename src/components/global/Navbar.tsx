@@ -27,14 +27,16 @@ const Navbar = () => {
         <>
             <nav className={`${styles.paddingX} w-full h-20 flex items-center py-5 fixed top-0 z-20 bg-white uppercase shadow-lg text-nowrap`}>
                 <div className="w-full flex justify-between items-center">
-                    <Link
-                        to="/"
-                        className="flex xl:justify-start gap-2 w-full cursor-pointer items-center"
-                        onClick={() => window.scrollTo(0, 0)}
-                    >
-                        <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
-                        <p className="text-[25px] text-surella-600 font-interExtraBold font-bold ">Surella</p>
-                    </Link>
+                    <div className="h-full w-full">
+                        <Link
+                            to="/"
+                            className="flex xl:justify-start gap-2 w-fit cursor-pointer items-center"
+                            onClick={() => window.scrollTo(0, 0)}
+                        >
+                            <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
+                            <p className="text-[25px] text-surella-600 font-interExtraBold font-bold ">Surella</p>
+                        </Link>
+                    </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
                         <Title title="O nas" />
                         <Title title="Realizacje" />
