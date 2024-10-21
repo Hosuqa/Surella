@@ -18,8 +18,8 @@ const Counter = () => {
       const targetValues = [536, 2009, 7245]; 
       counts.forEach((count, index) => {
         animate(count, targetValues[index], { 
-          duration: 5,
-          ease: [0, 0, 0, 1]
+          duration: 3.5,
+          ease: [0, 0.5, 0.7, 1]
         });
       });
     }
