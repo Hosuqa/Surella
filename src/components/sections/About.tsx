@@ -20,18 +20,11 @@ import texts from '../../texts.json'
  //react-parallax-tilt = > zmiana div na Titlr + zmienne + plik About.css z paralax_out paralax_in
 const IconBox = ({title, icon}: Props) => {
   return (
-    <Tilt
-    perspective={10000}
-    glareEnable={true}
-    glareMaxOpacity={0.1}
-    glarePosition="all"
-    glareBorderRadius="16px"
-    glareColor="#8569a7"
-    transitionSpeed={1500}
+    <div
     className='paralax_out bg-surella-500 text-white w-full h-full min-w-[160px] flex flex-col justify-center items-center p-6'>
       {React.cloneElement(icon, { className: 'paralax_in md:w-16 md:h-16 w-10 h-10' })}
       <p className='paralax_in pt-4 uppercase font-bold text-[18px] tracking-wider'>{title}</p>
-    </Tilt>
+    </div>
   );
 }
 
