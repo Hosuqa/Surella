@@ -28,7 +28,7 @@ const Counter = () => {
     <div className="mt-44 w-full h-[600px] bg-slate-200 flex items-center justify-center">
       <motion.div ref={ref} className="flex gap-10 ">
         {roundedCounts.map((rounded, index) => (
-          <motion.h1 key={index} className="text-4xl font-bold w-44 flex justify-center">{rounded}</motion.h1>
+          <motion.h1 key={index} className="text-4xl font-bold flex justify-center">{rounded}</motion.h1>
         ))}
       </motion.div>
     </div>
