@@ -1,10 +1,67 @@
 {
     "rolety": [
-        "/images/kot1.jpg",
-        "/images/kot2.jpg",
-        "/images/kot3.jpg"
+        "/images/rolety1.jpg",
+        "/images/rolety2.jpg",
+        "/images/rolety3.jpg",
+        "/images/rolety4.jpg",
+        "/images/rolety5.jpg",
+        "/images/rolety6.jpg",
+        "/images/rolety7.jpg",
+        "/images/rolety8.jpg",
+        "/images/rolety9.jpg",
+        "/images/rolety10.jpg",
+        "/images/rolety11.jpg",
+        "/images/rolety12.jpg",
+        "/images/rolety13.jpg",
+        "/images/rolety14.jpg",
+        "/images/rolety15.jpg" 
+
     ],
     "zaluzje": [
-        "/images/kot1.jpg"
+        "/images/zaluzje1.jpg",
+        "/images/zaluzje2.jpg",
+        "/images/zaluzje3.jpg",
+        "/images/zaluzje4.jpg",
+        "/images/zaluzje5.jpg",
+        "/images/zaluzje6.jpg",
+        "/images/zaluzje7.jpg",
+        "/images/zaluzje8.jpg",
+        "/images/zaluzje9.jpg",
+        "/images/zaluzje10.jpg",
+        "/images/zaluzje11.jpg",
+        "/images/zaluzje12.jpg",
+        "/images/zaluzje13.jpg",
+        "/images/zaluzje14.jpg",
+        "/images/zaluzje15.jpg",
+        "/images/zaluzje16.jpg"
+    ],
+    "moskitiery": [
+        "/images/moskitiera1.jpg",
+        "/images/moskitiera2.jpg",
+        "/images/moskitiera3.jpg",
+        "/images/moskitiera4.jpg",
+        "/images/moskitiera5.jpg"      
+    ],
+    "firany": [
+        "/images/firany1.jpg",
+        "/images/firany2.jpg",
+        "/images/firany3.jpg",
+        "/images/firany4.jpg",
+        "/images/firany5.jpg",
+        "/images/firany6.jpg",
+        "/images/firany7.jpg",
+        "/images/firany8.jpg",
+        "/images/firany9.jpg",
+        "/images/firany10.jpg"       
+    ],
+    "oslony": [
+        "/images/oslony1.jpg",
+        "/images/oslony2.jpg",
+        "/images/oslony3.jpg",
+        "/images/oslony4.jpg",
+        "/images/oslony5.jpg",
+        "/images/oslony6.jpg",
+        "/images/oslony7.jpg",
+        "/images/oslony8.jpg"        
     ]
 }
