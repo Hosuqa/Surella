@@ -58,7 +58,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
 
 const GalleryComp = ({image, title, onClick }: Props) => {
     return (
-<div className="cursor-pointer bg-transparent w-[200px] h-auto sm:w-[245px] sm:h-[350px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl" onClick={onClick}>
+<div className="cursor-pointer bg-transparent w-[200px] h-auto sm:w-[240px] sm:h-[350px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl" onClick={onClick}>
     <img
         src={image}
         className="object-cover w-full h-full aspect-[4/3] max-h-[350px] md:aspect-[9/10]"
