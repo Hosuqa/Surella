@@ -11,9 +11,9 @@ type Props = {
 
 const Title = ({ title }: Props) => {
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-full justify-center items-center">
             {/* usunąć div i w-fot => w-full */}
-            <div className="flex flex-col w-fit box mt-[1px] overflow-hidden">
+            <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
                 <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
                     {title}
                 </p>
