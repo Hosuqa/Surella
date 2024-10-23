@@ -61,7 +61,7 @@ const GalleryComp = ({image, title, onClick }: Props) => {
 <div className="cursor-pointer bg-transparent w-[200px] h-auto sm:w-[240px] sm:h-[350px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl" onClick={onClick}>
     <img
         src={image}
-        className="object-cover w-full h-full aspect-[4/3] max-h-[350px] md:aspect-[9/10]"
+        className="object-cover w-full h-full aspect-[4/3] max-h-[350px] 2xl:max-h-[450px] md:aspect-[9/10] 2xl:aspect-[9/16]"
         alt="hero"
     />
     <p className={`${styles.galleryText} w-full text-center font-[700] uppercase tracking-wider bg-white py-3`}>

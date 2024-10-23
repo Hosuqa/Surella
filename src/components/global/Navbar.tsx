@@ -3,6 +3,7 @@ import { styles } from "../../styles";
 import { Link } from "react-router-dom";
 import { surella } from '../../assets';
 import { motion } from "framer-motion";
+import './Navbar.css'
 
 type Props = {
     title: string;
@@ -10,9 +11,15 @@ type Props = {
 
 const Title = ({ title }: Props) => {
     return (
-        <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
-            {title}
-        </p>
+        <div className="w-full h-full">
+            {/* usunąć div i w-fot => w-full */}
+            <div className="flex flex-col w-fit box mt-[1px] overflow-hidden">
+                <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
+                    {title}
+                </p>
+                <div className="animation"></div>
+            </div>
+        </div>
     );
 };
 
