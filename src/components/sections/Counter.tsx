@@ -1,6 +1,11 @@
 import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { XlWrapper } from '@components/global/Wrappers'
+import { FaBuilding } from "react-icons/fa6";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { LuBlinds } from "react-icons/lu";
+
+
 
 const Counter = () => {
   const counts = [
@@ -27,7 +32,7 @@ const Counter = () => {
 
   return (
     <XlWrapper vertical>
-      <div className="w-full h-[600px] bg-slate-200 flex items-center justify-center">
+      <div className="w-full h-full bg-slate-200 flex items-center justify-center">
         <motion.div ref={ref} className="flex gap-10 ">
           {roundedCounts.map((rounded, index) => (
             <motion.h1 key={index} className="text-4xl font-bold flex justify-center">{rounded}</motion.h1>
@@ -39,3 +44,7 @@ const Counter = () => {
 };
 
 export default Counter;
+
+//<FaBuilding />
+//<FaPeopleGroup />
+//<LuBlinds />

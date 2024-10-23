@@ -3,7 +3,6 @@
 import { XlWrapper } from '@components/global/Wrappers'
 import Title from '../global/Title'
 import { styles } from "../../styles";
-import { hero1, hero2, hero3} from '../../assets';
 import images from '../../images.json'
 import { useEffect, useState } from 'react';
 import { FaXmark } from "react-icons/fa6";
@@ -59,10 +58,17 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
 
 const GalleryComp = ({image, title, onClick }: Props) => {
     return (
-        <div className="bg-transparent w-[200px] h-fit sm:w-[260px] sm:h-[400px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl" onClick={onClick}>
-            <img src={image} className="object-cover h-full w-full" alt="hero" />
-            <p className={`${styles.galleryText} w-full text-center font-[700] uppercase tracking-wider bg-white py-3`}>{title}</p>
-        </div>
+<div className="cursor-pointer bg-transparent w-[200px] h-auto sm:w-[245px] sm:h-[350px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl" onClick={onClick}>
+    <img
+        src={image}
+        className="object-cover w-full h-full aspect-[4/3] max-h-[350px] md:aspect-[9/10]"
+        alt="hero"
+    />
+    <p className={`${styles.galleryText} w-full text-center font-[700] uppercase tracking-wider bg-white py-3`}>
+        {title}
+    </p>
+</div>
+
     );
 }
 
@@ -78,7 +84,7 @@ const Gallery = () => {
                 <XlWrapper >
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
                 </XlWrapper>
-                <div className={`${styles.paddingX} w-full h-full flex flex-wrap xl:grid xl:grid-cols-5 gap-4 md:gap-8 xl:gap-5 justify-center text-surella-700 font-[500] tracking-wider cursor-pointer pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
+                <div className={`${styles.paddingX} w-full h-full flex flex-wrap xl:grid xl:grid-cols-5 gap-4 md:gap-8 xl:gap-5 justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
                     <GalleryComp image="../public/images/rolety7.jpg" title='Rolety' onClick={ () => setCurrentSet(images.rolety)}/>
                     <GalleryComp image="../public/images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
                     <GalleryComp image="../public/images/moskitiera1.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
