@@ -9,9 +9,9 @@ const Counter = () => {
   return (
     <LgWrapper vertical>
       <div className="w-full h-full flex justify-around">
-          <div className="flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45">
-              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl">
+          <div className="flex flex-col items-center group" >
+            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45 group-hover:scale-105 duration-300">
+              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl group-hover:scale-105 duration-300">
                 <FaPeopleGroup />
               </div>
             </div>
@@ -25,9 +25,9 @@ const Counter = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45">
-              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl">
+          <div className="flex flex-col items-center group" >
+            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45 group-hover:scale-105 duration-300">
+              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl group-hover:scale-105 duration-300">
                 <FaBuilding />
               </div>
             </div>
@@ -41,9 +41,9 @@ const Counter = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45">
-              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl">
+          <div className="flex flex-col items-center group" >
+            <div className="w-[70px] sm:w-28 lg:w-40 bg-surella-600 aspect-square flex items-center justify-center rotate-45 group-hover:scale-105 duration-300">
+              <div className="-rotate-45 text-white w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl group-hover:scale-105 duration-300">
                 <LuBlinds />
               </div>
             </div>

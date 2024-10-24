@@ -8,7 +8,7 @@ import Footer from '@components/global/Footer'
 const ContentBox = () => {
     return (
         <>
-            <Navbar/><Hero/><About/><Counter/><Footer/>
+            <Navbar/><Hero/><About/><Gallery/><Counter/><Footer/>
         </>
     );
 }
