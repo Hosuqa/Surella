@@ -49,9 +49,9 @@ const Navbar = () => {
                         <Title title="Realizacje" />
                         <Title title="Współpraca" />
                         <div className="w-full h-full bg-surella-600 text-white px-8 py-1">
-                        <p className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
-                        Kontakt
-                        </p>
+                            <p className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
+                                Kontakt
+                            </p>
                         </div>
                     </div>
                     <motion.div
