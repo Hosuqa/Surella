@@ -1,11 +1,12 @@
 import { styles } from "../../styles";
 import { hero1, hero2, hero3 } from '../../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { motion } from "framer-motion";
 import './hero.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 // bg-surella-500 ===> HERO main div
 //bg-gradient-to-tr from-teal-900 via-surella-500 to-teal-600 animated-background
@@ -29,7 +30,7 @@ const Hero = () => {
           </motion.div>
         </div>
         <div className="overflow-hidden flex-1 w-full h-1/2 lg:w-3/5 lg:h-full border-t-[8px] lg:border-t-[0px] lg:border-l-[12px] border-white">
-        <Swiper pagination={{ dynamicBullets: true, }} modules={[Pagination, Autoplay]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full ">
+        <Swiper pagination={{ dynamicBullets: true, }} speed={2000} effect={'fade'} modules={[Pagination, Autoplay, EffectFade]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full ">
           <SwiperSlide>
             <img src={hero1} className="object-cover h-full w-full" alt="hero" />
           </SwiperSlide>
