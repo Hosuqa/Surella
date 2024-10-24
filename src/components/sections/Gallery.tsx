@@ -85,11 +85,11 @@ const Gallery = () => {
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
                 </XlWrapper>
                 <div className={`${styles.paddingX} w-full h-full flex flex-wrap xl:grid xl:grid-cols-5 gap-4 md:gap-8 xl:gap-5 justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
-                    <GalleryComp image="../public/images/rolety7.jpg" title='Rolety' onClick={ () => setCurrentSet(images.rolety)}/>
-                    <GalleryComp image="../public/images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
-                    <GalleryComp image="../public/images/moskitiera1.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
-                    <GalleryComp image="../public/images/firany8.jpg" title='Firany' onClick={ () => setCurrentSet(images.firany)}/>
-                    <GalleryComp image="../public/images/oslony2.jpg" title='Osłony' onClick={ () => setCurrentSet(images.oslony)}/>
+                    <GalleryComp image="../images/rolety7.jpg" title='Rolety' onClick={ () => setCurrentSet(images.rolety)}/>
+                    <GalleryComp image="../images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
+                    <GalleryComp image="../images/moskitiera1.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
+                    <GalleryComp image="../images/firany8.jpg" title='Firany' onClick={ () => setCurrentSet(images.firany)}/>
+                    <GalleryComp image="../images/oslony2.jpg" title='Osłony' onClick={ () => setCurrentSet(images.oslony)}/>
                 </div>
             </div>
         </>
