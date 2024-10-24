@@ -58,17 +58,16 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
 
 const GalleryComp = ({image, title, onClick }: Props) => {
     return (
-        <div className="cursor-pointer bg-black w-[200px] h-auto sm:w-[240px] sm:h-[350px] xl:h-full xl:w-full flex flex-col justify-center shadow-xl group" onClick={onClick}>
+        <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group" onClick={onClick}>
             <img
                 src={image}
-                className="object-cover w-full h-full aspect-[4/3] max-h-[350px] 2xl:max-h-[450px] md:aspect-[9/10] 2xl:aspect-[9/16] group-hover:opacity-30 duration-300"
+                className=" object-cover w-full h-full group-hover:opacity-100 opacity-50 duration-300"
                 alt="hero"
             />
-            <p className={`${styles.galleryText} w-full text-center font-[700] uppercase tracking-wider bg-white py-3 `}>
+            <p className={`${styles.galleryText} absolute bottom-0 w-full font-[700] uppercase tracking-wider text-white p-3 `}>
                 {title}
             </p>
         </div>
-
     );
 }
 
@@ -83,14 +82,23 @@ const Gallery = () => {
             <div className='bg-surella-700 w-full h-fit'>
                 <XlWrapper >
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
+                    <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group mb-6" onClick={ () => setCurrentSet(images.rolety)} >
+                        <img
+                            src="../images/rolety1.jpg"
+                            className=" object-cover w-full h-full group-hover:opacity-100 opacity-50 duration-300"
+                            alt="hero"
+                        />
+                        <p className={`${styles.galleryText} absolute bottom-0 w-full font-[700] uppercase tracking-wider text-white p-3 `}>
+                            Rolety
+                        </p>
+                    </div>
+                    <div className={` grid grid-cols-2 w-full h-full gap-5 items-center justify-self-center justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
+                        <GalleryComp image="../images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
+                        <GalleryComp image="../images/moskitiera2.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
+                        <GalleryComp image="../images/firany8.jpg" title='Firany' onClick={ () => setCurrentSet(images.firany)}/>
+                        <GalleryComp image="../images/oslony2.jpg" title='Osłony zewnętrzne' onClick={ () => setCurrentSet(images.oslony)}/>
+                    </div>
                 </XlWrapper>
-                <div className={`${styles.paddingX} w-full h-full flex flex-wrap xl:grid xl:grid-cols-5 gap-4 md:gap-8 xl:gap-5 justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
-                    <GalleryComp image="../images/rolety7.jpg" title='Rolety' onClick={ () => setCurrentSet(images.rolety)}/>
-                    <GalleryComp image="../images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
-                    <GalleryComp image="../images/moskitiera1.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
-                    <GalleryComp image="../images/firany8.jpg" title='Firany' onClick={ () => setCurrentSet(images.firany)}/>
-                    <GalleryComp image="../images/oslony2.jpg" title='Osłony' onClick={ () => setCurrentSet(images.oslony)}/>
-                </div>
             </div>
         </>
     );
