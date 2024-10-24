@@ -1,0 +1,14 @@
+import { surella } from '../../assets';
+
+
+const Footer = () => {
+    return (
+        <>
+            <footer className='bg-surella-500 h-full w-full flex flex-col items-center' >
+                <img src={surella} alt="logo" className="w-14 h-14 m-10 object-contain" />
+                <p className='text-white mb-10'>&copy; {new Date().getFullYear()} Surella. Wszystkie prawa zastrzeżone.</p>
+            </footer>
+        </>
+    );
+};
+export default Footer;
