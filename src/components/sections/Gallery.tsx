@@ -66,13 +66,13 @@ const GalleryComp = ({image, title, onClick }: Props) => {
             />
             <div className='w-full h-full absolute flex flex-col justify-between group'>
                 <div className='flex w-full h-[50px] items-center'>
-                    <div className='w-full h-[3px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                    <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
                 </div>
                 <div className='flex w-full items-center'>
                     <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white p-3 `}>
                         {title}
                     </p>
-                    <div className='w-full h-[3px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                    <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
                 </div>
             </div>
             {/* <p className={`${styles.galleryText} absolute bottom-0 w-full font-[700] uppercase tracking-wider text-white p-3 `}>
@@ -100,9 +100,17 @@ const Gallery = () => {
                             className=" object-cover w-full h-full group-hover:opacity-100 opacity-50 duration-300"
                             alt="hero"
                         />
-                        <p className={`${styles.galleryText} absolute bottom-0 w-full font-[700] uppercase tracking-wider text-white p-3 `}>
-                            Rolety
-                        </p>
+                        <div className='w-full h-full absolute flex flex-col justify-between group'>
+                            <div className='flex w-full h-[50px] items-center'>
+                                <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                            </div>
+                            <div className='flex w-full items-center'>
+                                <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white p-3 `}>
+                                    Roelty
+                                </p>
+                                <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                            </div>
+                        </div>
                     </div>
                     <div className={` grid grid-cols-2 w-full h-full gap-5 items-center justify-self-center justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
                         <GalleryComp image="../images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
