@@ -61,24 +61,20 @@ const GalleryComp = ({image, title, onClick }: Props) => {
         <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group" onClick={onClick}>
             <img
                 src={image}
-                className=" object-cover w-full h-full group-hover:opacity-100 opacity-50 duration-300"
+                className=" object-cover w-full h-full group-hover:opacity-80 opacity-50 duration-300"
                 alt="hero"
             />
             <div className='w-full h-full absolute flex flex-col justify-between group'>
                 <div className='flex w-full h-[50px] items-center'>
-                    <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                    <div className='w-full h-[2px] bg-white/30 mx-8 group-hover:opacity-0 duration-300'></div>
                 </div>
                 <div className='flex w-full items-center'>
-                    <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white p-3 `}>
+                    <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white pl-8 pr-4 my-3 group-hover:tracking-widest duration-300 `}>
                         {title}
                     </p>
-                    <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                    <div className='w-full h-[2px] bg-white/30 mr-8 group-hover:opacity-0 duration-300'></div>
                 </div>
             </div>
-            {/* <p className={`${styles.galleryText} absolute bottom-0 w-full font-[700] uppercase tracking-wider text-white p-3 `}>
-                {title}
-            </p>
-            <div className='absolute h-[3px] max-w-full w-full mx-auto top-5 bg-white/30'> </div> */}
         </div>
     );
 }
@@ -97,18 +93,18 @@ const Gallery = () => {
                     <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group mb-6" onClick={ () => setCurrentSet(images.rolety)} >
                         <img
                             src="../images/rolety1.jpg"
-                            className=" object-cover w-full h-full group-hover:opacity-100 opacity-50 duration-300"
+                            className=" object-cover w-full h-full group-hover:opacity-80 opacity-50 duration-300"
                             alt="hero"
                         />
                         <div className='w-full h-full absolute flex flex-col justify-between group'>
                             <div className='flex w-full h-[50px] items-center'>
-                                <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                                <div className='w-full h-[2px] bg-white/30 mx-8 group-hover:opacity-0 duration-300'></div>
                             </div>
                             <div className='flex w-full items-center'>
-                                <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white p-3 `}>
+                                <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white pl-8 pr-4 my-3 group-hover:tracking-widest duration-300`}>
                                     Roelty
                                 </p>
-                                <div className='w-full h-[2px] bg-white/30 mx-6 group-hover:opacity-0 duration-300'></div>
+                                <div className='w-full h-[2px] bg-white/30 mr-8 group-hover:opacity-0 duration-300'></div>
                             </div>
                         </div>
                     </div>
