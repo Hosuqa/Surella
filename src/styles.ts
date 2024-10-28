@@ -19,7 +19,7 @@ const styles = {
     aboutText:
       "2xl:text-[22px] text-[16px]",
     galleryText:
-      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[10px]",
+      "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
   };
   
   export { styles };

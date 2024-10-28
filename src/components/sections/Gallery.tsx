@@ -68,11 +68,11 @@ const GalleryComp = ({image, title, onClick }: Props) => {
                 <div className='flex w-full h-[50px] items-center'>
                     <div className='w-full h-[2px] bg-white/30 mx-8 group-hover:opacity-0 duration-300'></div>
                 </div>
-                <div className='flex w-full items-center'>
+                <div className='flex w-full items-end'>
                     <p className={`${styles.galleryText} w-fit font-[700] uppercase tracking-wider text-white pl-8 pr-4 my-3 group-hover:tracking-widest duration-300 `}>
                         {title}
                     </p>
-                    <div className='w-full h-[2px] bg-white/30 mr-8 group-hover:opacity-0 duration-300'></div>
+                    <div className='w-full h-[2px] mb-[25px] bg-white/30 mr-8 group-hover:opacity-0 duration-300'></div>
                 </div>
             </div>
         </div>
