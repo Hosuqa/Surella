@@ -50,12 +50,13 @@ const Navbar = () => {
                         <Title title="O nas" href="#About" />
                         <Title title="Realizacje" href="#Gallery"/>
                         <Title title="Współpraca" href="#Work"/>
-                        <div className="w-full h-full bg-surella-600 text-white px-8 py-1">
+                        <motion.div className="w-full h-full bg-surella-600 text-white px-8 py-1"
+                            whileTap={{ y:4 }}>
                             <a href="#Contact"
                             className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
                                 Kontakt
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
                     <motion.div
                     className="xl:hidden flex flex-col cursor-pointer "
