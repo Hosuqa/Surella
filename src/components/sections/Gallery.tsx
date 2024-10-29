@@ -87,7 +87,7 @@ const Gallery = () => {
     return (
         <>
             <GalleryModal currentSet={currentSet} onClick={() => setCurrentSet(null)}/>
-            <div className='bg-surella-700 w-full h-fit'>
+            <div id="Gallery" className='bg-surella-700 w-full h-fit '>
                 <XlWrapper >
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
                     <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group mb-6" onClick={ () => setCurrentSet(images.rolety)} >

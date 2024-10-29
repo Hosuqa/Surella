@@ -9,7 +9,7 @@ import Contact from '@components/sections/Contact';
 const ContentBox = () => {
     return (
         <>
-            <Navbar/><Hero/><About/><Counter/><Contact/><Footer/>
+            <Navbar/><Hero/><About/><Gallery/><Counter/><Contact/><Footer/>
         </>
     );
 }

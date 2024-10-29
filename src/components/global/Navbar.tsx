@@ -7,16 +7,18 @@ import './Navbar.css'
 
 type Props = {
     title: string;
+    href: string;
 };
 
-const Title = ({ title }: Props) => {
+const Title = ({ title, href }: Props) => {
     return (
         <div className="w-full h-full justify-center items-center">
             {/* usunąć div i w-fot => w-full */}
             <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
-                <p className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
-                    {title}
-                </p>
+                <a href={href}
+                   className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
+                   {title}
+                </a>
                 <div className="animation"></div>
             </div>
         </div>
@@ -45,13 +47,14 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
-                        <Title title="O nas" />
-                        <Title title="Realizacje" />
-                        <Title title="Współpraca" />
+                        <Title title="O nas" href="#About" />
+                        <Title title="Realizacje" href="#Gallery"/>
+                        <Title title="Współpraca" href="#Work"/>
                         <div className="w-full h-full bg-surella-600 text-white px-8 py-1">
-                            <p className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
+                            <a href="#Contact"
+                            className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
                                 Kontakt
-                            </p>
+                            </a>
                         </div>
                     </div>
                     <motion.div
