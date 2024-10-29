@@ -1,5 +1,5 @@
 import { styles } from "../../styles";
-import { hero1, hero2, hero3 } from '../../assets';
+import { hero1, hero2 } from '../../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { motion } from "framer-motion";
@@ -7,6 +7,9 @@ import './hero.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import hero3 from "/images/rolety5.jpg"
+import hero4 from "/images/zaluzje1.jpg"
+
 
 // bg-surella-500 ===> HERO main div
 //bg-gradient-to-tr from-teal-900 via-surella-500 to-teal-600 animated-background
@@ -39,6 +42,9 @@ const Hero = () => {
           </SwiperSlide>
           <SwiperSlide>  
             <img src={hero3} className="object-cover h-full w-full" alt="hero" />
+          </SwiperSlide>
+          <SwiperSlide>  
+            <img src={hero4} className="object-cover h-full w-full" alt="hero" />
           </SwiperSlide>
         </Swiper>
         </div>
