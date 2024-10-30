@@ -2,7 +2,7 @@ import { useState } from "react";
 import { XlWrapper } from "@components/global/Wrappers";
 import Title from '../global/Title';
 import { IoIosArrowDown } from "react-icons/io";
-import { rollo } from '../../assets';
+import { rollo, rollo2 } from '../../assets';
 
 type Props = {
   title: string;
@@ -39,6 +39,8 @@ const Colab = () => {
     setOpenIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
+  const rollos = [rollo, rollo2, rollo2, rollo2];
+
   return (
     <XlWrapper vertical id="Colab">
       <Title title='Poznaj Surelle' subtitle='Trochę o nas' />
@@ -70,7 +72,11 @@ const Colab = () => {
           />
         </div>
         <div className="w-full bg-slate-300">
-          <img src={rollo} className="w-full h-full object-cover" alt=""/>
+        {openIndex !== null ? (
+            <img src={rollos[openIndex]} className="w-full h-full object-cover" alt={rollos[openIndex]} />
+          ) : (
+            <img src={rollo} className="w-full h-full object-cover" alt="Deafult" />
+          )}
         </div>
       </div>
     </XlWrapper>
