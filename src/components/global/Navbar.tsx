@@ -49,7 +49,7 @@ const Navbar = () => {
                     <div className="justify-end hidden xl:flex gap-10 w-full">
                         <Title title="O nas" href="#About" />
                         <Title title="Realizacje" href="#Gallery"/>
-                        <Title title="Współpraca" href="#Work"/>
+                        <Title title="Współpraca" href="#Colab"/>
                         <motion.div className="w-full h-full bg-surella-600 text-white px-8 py-1"
                             whileTap={{ y:4 }}>
                             <a href="#Contact"
@@ -83,7 +83,7 @@ const Navbar = () => {
             className="xl:hidden fixed top-[80px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
                 <a href="#About" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</a>
                 <a href="#Gallery" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</a>
-                <a href="#Work" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</a>
+                <a href="#Colab" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</a>
                 <a href="#Contact" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Kontakt</a>
             </motion.div>
         </>
