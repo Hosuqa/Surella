@@ -19,16 +19,19 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
         onClick={onClick}
       >
         <p className='uppercase font-bold text-white text-[18px] tracking-wider'>{title}</p>
-        <IoIosArrowDown className={`w-10 h-10 text-white transform ${isOpen ? "rotate-180" : ""}`} />
+        <IoIosArrowDown className={`w-10 h-10 text-white transform duration-500 ${isOpen ? "rotate-180" : ""}`} />
       </div>
-      {isOpen && (
-        <div className="p-4 bg-surella-500 text-white text-[16px]">
-          {description}
-        </div>
-      )}
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out text-white text-[16px] bg-surella-600 ${
+          isOpen ? "px-8 pb-8 bg-surella-600 text-white text-[16px] leading-relaxed tracking-wide text-justify": ""
+        }`}
+      >
+        {isOpen && <div>{description}</div>}
+      </div>
     </div>
   );
 };
+
 
 const Colab = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -40,8 +43,8 @@ const Colab = () => {
   return (
     <XlWrapper vertical id="Colab">
       <Title title='Poznaj Surelle' subtitle='Trochę o nas' />
-      <div className="w-full bg-slate-100 flex">
-        <div className="flex flex-col w-full bg-slate-200 gap-2">
+      <div className="w-full flex gap-4">
+        <div className="flex flex-col w-full gap-4">
           <ColabBox
             title="CIEZKO MI SIE ROBI"
             description="CIEZKO MI SIE ROBI"
@@ -50,7 +53,7 @@ const Colab = () => {
           />
           <ColabBox
             title="CIEZKO MI SIE ROBI"
-            description="CBIC"
+            description="Lorem ipsum dolor sit amet consectetur  elit. Lorem ipsum dolor sit amet  adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum dolor sit amet consectetur  elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. "
             isOpen={openIndex === 1}
             onClick={() => toggleBox(1)}
           />
@@ -68,7 +71,7 @@ const Colab = () => {
           />
         </div>
         <div className="w-full bg-slate-300">
-          <img src={rollo} className="w-full" alt=""/>
+          <img src={rollo} className="w-full h-full object-cover" alt=""/>
         </div>
       </div>
     </XlWrapper>
