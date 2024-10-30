@@ -21,17 +21,16 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
         <p className='uppercase font-bold text-white text-[18px] tracking-wider'>{title}</p>
         <IoIosArrowDown className={`w-10 h-10 text-white transform duration-500 ${isOpen ? "rotate-180" : ""}`} />
       </div>
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out text-white text-[16px] bg-surella-600 ${
-          isOpen ? "px-8 pb-8 bg-surella-600 text-white text-[16px] leading-relaxed tracking-wide text-justify": ""
-        }`}
-      >
-        {isOpen && <div>{description}</div>}
+      <div>
+        {isOpen && (
+          <div className="px-8 pb-8 bg-surella-600 text-white text-[16px] leading-relaxed tracking-wide text-justify">
+            {description}
+          </div>
+        )}
       </div>
     </div>
   );
 };
-
 
 const Colab = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
