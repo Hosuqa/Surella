@@ -25,18 +25,18 @@ const text = texts[1]?.contactText;
                             <div className="w-full h-full flex gap-4">
                                 <div className="w-full h-full">
                                     <p className="pb-1">Imię</p>
-                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2" type="text"></input>
+                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" type="text"></input>
                                 </div>
                                 <div className="w-full h-full">
                                     <p className="pb-1">Nazwisko</p>
-                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2" type="text"></input>
+                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" type="text"></input>
                                 </div>
                             </div>
                             <div className="w-full h-full flex flex-col ">
                                 <p className="pt-2 pb-1">Email</p>
-                                <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2"  type="email"></input>
+                                <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"  type="email"></input>
                                 <p className="pt-2 pb-1">Wiadomość</p>
-                                <textarea className=" w-full 2xl:h-[200px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none" placeholder="Tutaj napisz swoją wiadomość do nas"></textarea>
+                                <textarea className=" w-full 2xl:h-[200px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none rounded-none" placeholder="Tutaj napisz swoją wiadomość do nas"></textarea>
                                 <motion.div className="w-fit h-fit cursor-pointer px-14 py-2 mt-5 font-bold tracking-widest uppercase bg-surella-800/80"
                                 whileTap={{ y:4 }}>
                                     <p>Wyślij</p>

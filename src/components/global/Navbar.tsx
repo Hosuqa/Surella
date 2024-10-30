@@ -64,13 +64,13 @@ const Navbar = () => {
                     whileTap={{ scale: 0.9 }}
                     >
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-opacity duration-200 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-300 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] bg-surella-600 transition-transform duration-200 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
                         ></motion.div>
                     </motion.div>
                 </div>
@@ -81,10 +81,10 @@ const Navbar = () => {
             //animate={{ scale: menuOpen ? 0 : 1 , opacity: menuOpen ? 0 : 1}}
             transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
             className="xl:hidden fixed top-[80px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
-                <Link to="/"  className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</Link>
-                <Link to="/realizacje" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</Link>
-                <Link to="/wspolpraca" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</Link>
-                <Link to="/kontakt" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Kontakt</Link>
+                <a href="#About" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</a>
+                <a href="#Gallery" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</a>
+                <a href="#Work" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</a>
+                <a href="#Contact" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Kontakt</a>
             </motion.div>
         </>
     );
