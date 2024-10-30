@@ -16,7 +16,7 @@ import hero4 from "/images/zaluzje1.jpg"
 const Hero = () => {
   return (
     <>
-      <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-500">
+      <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
         <div className={`${styles.paddingX} flex lg:shrink-0 xl:shrink flex-col w-full lg:w-[550px] xl:w-[660px] h-1/2 lg:h-full lg:justify-end justify-center lg:pb-[200px]`}>
           <h2 className={`${styles.heroHeadText} text-white font-semibold uppercase`}>
             Surella.pl

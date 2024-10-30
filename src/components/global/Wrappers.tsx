@@ -31,7 +31,15 @@ export const LgWrapper = ({ className, children, vertical=false, horizontal=true
 
 export const XlWrapper = ({ className, children, vertical=false, horizontal=true, id }: Props) => {
     return (
-        <div id={id} className={`${ vertical ? "py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28" : "" } ${ horizontal ? "mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-72" : "" } ${ className }`}>
+        <div id={id} className={`${ vertical ? "py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-38" : "" } ${ horizontal ? "mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-72" : "" } ${ className }`}>
+            { children }
+        </div>
+    );
+}
+
+export const CounterWrapper = ({ className, children, vertical=false, horizontal=true }: Props) => {
+    return (
+        <div className={`${ vertical ? "py-12 md:py-16 lg:py-20 xl:py-24 2xl:pb-10 2xl:pt-[72p]" : "" } ${ horizontal ? "px-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-56" : "" } ${ className }`}>
             { children }
         </div>
     );

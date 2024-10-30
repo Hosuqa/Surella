@@ -58,7 +58,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
 
 const GalleryComp = ({image, title, onClick }: Props) => {
     return (
-        <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group" onClick={onClick}>
+        <div className="relative cursor-pointer bg-black h-[100px] md:h-[200px] w-full flex flex-col justify-center shadow-xl group" onClick={onClick}>
             <img
                 src={image}
                 className=" object-cover w-full h-full group-hover:opacity-80 opacity-50 duration-300"
@@ -87,10 +87,10 @@ const Gallery = () => {
     return (
         <>
             <GalleryModal currentSet={currentSet} onClick={() => setCurrentSet(null)}/>
-            <div id="Gallery" className='bg-surella-700 w-full h-fit '>
-                <XlWrapper >
-                    <Title title="Nasze realizacje" subtitle="Zobacz i oceń"  lineColor="bg-white" titleColor='text-white' subtitleColor='text-white' className='pt-12 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28'/>
-                    <div className="relative cursor-pointer bg-black h-[300px] w-full flex flex-col justify-center shadow-xl group mb-6" onClick={ () => setCurrentSet(images.rolety)} >
+            <div  className='bg-white w-full h-fit '>
+                <XlWrapper id="Gallery">
+                    <Title title="Nasze realizacje" subtitle="Zobacz i oceń" />
+                    <div className="relative cursor-pointer bg-black h-[100px] md:h-[200px] w-full flex flex-col justify-center shadow-xl group mb-6" onClick={ () => setCurrentSet(images.rolety)} >
                         <img
                             src="../images/rolety1.jpg"
                             className=" object-cover w-full h-full group-hover:opacity-80 opacity-50 duration-300"
@@ -108,7 +108,7 @@ const Gallery = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={` grid grid-cols-2 w-full h-full gap-5 items-center justify-self-center justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
+                    <div className={` flex flex-col md:grid md:grid-cols-2 w-full h-full gap-5 items-center justify-self-center justify-center text-surella-700 font-[500] tracking-wider pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28`}>
                         <GalleryComp image="../images/zaluzje3.jpg" title='Żaluzje' onClick={ () => setCurrentSet(images.zaluzje)}/>
                         <GalleryComp image="../images/moskitiera2.jpg" title='Moskitiery' onClick={ () => setCurrentSet(images.moskitiery)}/>
                         <GalleryComp image="../images/firany8.jpg" title='Firany' onClick={ () => setCurrentSet(images.firany)}/>

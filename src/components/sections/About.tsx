@@ -20,7 +20,7 @@ import texts from '../../texts.json'
 const IconBox = ({title, icon}: Props) => {
   return (
     <div
-    className='paralax_out bg-surella-500 text-white w-full h-full min-w-[160px] flex flex-col justify-center items-center p-6'>
+    className='paralax_out bg-surella-600 text-white w-full h-full min-w-[160px] flex flex-col justify-center items-center p-6'>
       {React.cloneElement(icon, { className: 'paralax_in md:w-16 md:h-16 w-10 h-10' })}
       <p className='paralax_in pt-4 uppercase font-bold text-[18px] tracking-wider'>{title}</p>
     </div>
