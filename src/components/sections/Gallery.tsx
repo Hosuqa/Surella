@@ -38,7 +38,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
                     </div>
                 </div>
             
-                <div className='absolute flex bottom-0 w-full h-[10vh] bg-black/70'>
+                <div className='absolute flex bottom-14 md:bottom-0 w-full h-[10vh] bg-black/70'>
                     <div className='w-full h-full p-2 gap-2 flex px-4'>
                         { currentSet && currentSet.map((image) => (
                             <div className='h-full aspect-square overflow-hidden group cursor-pointer' onClick={ () =>  setCurrentPhoto(image) }>
