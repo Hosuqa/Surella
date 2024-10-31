@@ -20,8 +20,12 @@ const styles = {
       "2xl:text-[22px] md:text-[18px] text-[16px]",
     galleryText:
       "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
+    colabtext:
+      "2xl:text-[18px] text-[14px]",
+    colabtitle:
+      "2xl:text-[23px] md:text-[20px] text-[14px]",
     contactText:
-      "2xl:text-[44px] md:text-[32px]  text-[28px]"
+      "2xl:text-[44px] md:text-[32px]  text-[28px]",
   };
   
   export { styles };
