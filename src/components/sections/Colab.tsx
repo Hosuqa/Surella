@@ -3,7 +3,7 @@ import { XlWrapper } from "@components/global/Wrappers";
 import { styles } from "../../styles";
 import Title from '../global/Title';
 import { IoIosArrowDown } from "react-icons/io";
-import { rollo, rollo2 } from '../../assets';
+import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
 
 type Props = {
   title: string;
@@ -48,7 +48,7 @@ const Colab = () => {
     });
   };
 
-  const rollos = [rollo, rollo2, rollo, rollo2];
+  const rollos = [rollo, rollo2, rollo3, rollo4];
   const currentIndex = openIndex !== null ? openIndex : lastOpenIndex;
 
   return (
