@@ -4,3 +4,20 @@
   .paralax_in {
     transform: translateZ(70px);
   } */
+
+.toggle{
+  animation: animation 0.5s ease alternate;
+  overflow: hidden;
+}
+
+@keyframes animation {
+  0%{
+    height: 0%;
+    
+
+  }
+  100% {
+      height: 100%;
+
+  }
+}

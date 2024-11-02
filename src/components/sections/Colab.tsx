@@ -4,7 +4,7 @@ import { styles } from "../../styles";
 import Title from '../global/Title';
 import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
-
+import "./About.css"
 type Props = {
   title: string;
   description: string;
@@ -14,7 +14,7 @@ type Props = {
 
 const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-red-700">
       <div 
         className='grow flex w-full bg-surella-600 py-2 px-4 lg:py-4 lg:px-8 items-center justify-between cursor-pointer'
         onClick={onClick}
@@ -22,14 +22,12 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
         <p className={`${styles.colabtitle} font-bold text-white text-[18px] tracking-wider`}>{title}</p>
         <IoIosArrowDown className={`w-6 h-6 lg:w-10 lg:h-10 text-white transform duration-500 ${isOpen ? "rotate-180" : ""}`} />
       </div>
-      <div>
         {isOpen && (
-          <div className={`${styles.colabtext} -translate-y-[1px] px-8 pb-8 bg-surella-600 text-white text-[16px] leading-relaxed tracking-wide text-justify`}>
+          <div className={`${styles.colabtext} toggle -translate-y-[1px] px-8 pb-8 bg-surella-600 text-white text-[16px] leading-relaxed tracking-wide text-justify`}>
             {description}
               {/* -translate-y-[1px] - fix border na ipad */}
           </div>
         )}
-      </div>
     </div>
   );
 };
