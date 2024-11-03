@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { styles } from "../../styles";
 import { hero1, hero2 } from '../../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,31 +10,75 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import hero3 from "/images/rolety5.jpg"
 import hero4 from "/images/zaluzje1.jpg"
+import gsap from "gsap";
+import { TextPlugin } from 'gsap/TextPlugin';
 
+gsap.registerPlugin(TextPlugin);
 
-// bg-surella-500 ===> HERO main div
-//bg-gradient-to-tr from-teal-900 via-surella-500 to-teal-600 animated-background
 const Hero = () => {
+  
+  useEffect(() => {
+      gsap.to(
+        ".text",
+        {
+        text: "Surella.pl",
+        ease: "power1.Out",
+        duration: 1,
+        speed:10,
+        }
+      );
+      gsap.fromTo(
+        ".herotxt",
+        {height:30},
+        {
+          text: "Tworzymy przestrzeń dla Twojego komfortu.",
+          duration: 1.4,
+          ease: "power1.Out",
+          delay:0.8,
+          speed:5,
+        }
+      );
+      gsap.fromTo(
+        ".herobutton",
+        { opacity:0, y:50 },
+        {
+          opacity:1,
+          y:0,
+          delay:2.1,
+          duration: 0.8,
+        }
+      );
+      gsap.fromTo(
+        ".photo",
+        { y:"-100%"},
+        {
+          y:0,
+          duration: 2,
+        }
+      );
+    },
+ []);
+
   return (
     <>
       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
         <div className={`${styles.paddingX} flex lg:shrink-0 xl:shrink flex-col w-full lg:w-[550px] xl:w-[660px] h-1/2 lg:h-full lg:justify-end justify-center lg:pb-[200px]`}>
-          <h2 className={`${styles.heroHeadText} text-white font-semibold uppercase`}>
-            Surella.pl
+          <h2 className={`${styles.heroHeadText} text hero text-white font-semibold uppercase`}>
+            
           </h2>
-          <p className={`${styles.heroSubText} text-white text-nowrap -translate-y-2 md:-translate-y-3`}> 
-            Tworzymy przestrzeń dla Twojego komfortu.
+          <p className={`${styles.heroSubText} herotxt text-white text-nowrap -translate-y-2 md:-translate-y-3`}> 
+           
           </p>
-          <motion.div className="w-fit h-fit  bg-white mt-2"
+          <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2"
             whileTap={{ y:4 }}>
-              <motion.p className={`${styles.heroButton} duration-300 hover:text-surella-600 text-center text-surella-500 font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-3 cursor-pointer uppercase text-nowrap`}
+              <p className={`${styles.heroButton} duration-300 hover:text-surella-600 text-center text-surella-500 font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-3 cursor-pointer uppercase text-nowrap`}
                > 
                 Sprawdź wycenę
-              </motion.p>
+              </p>
           </motion.div>
         </div>
-        <div className="overflow-hidden flex-1 w-full h-1/2 lg:w-3/5 lg:h-full border-t-[8px] lg:border-t-[0px] lg:border-l-[12px] border-white">
-        <Swiper pagination={{ dynamicBullets: true, }} speed={2000} effect={'fade'} modules={[Pagination, Autoplay, EffectFade]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full ">
+        <div className="bg-white overflow-hidden flex-1 w-full h-1/2 lg:w-3/5 lg:h-full border-t-[8px] lg:border-t-[0px] lg:border-l-[12px] border-white">
+        <Swiper pagination={{ dynamicBullets: true, }} speed={2000} effect={'fade'} modules={[Pagination, Autoplay, EffectFade]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="photo h-full w-full ">
           <SwiperSlide>
             <img src={hero1} className="object-cover h-full w-full" alt="hero" />
           </SwiperSlide>

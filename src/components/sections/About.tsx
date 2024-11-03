@@ -34,12 +34,13 @@ const About = () => {
       {
         opacity: 1,
         y: 0,
+        delay:0.5,
         duration: 0.8,
         stagger: 0.25,
         scrollTrigger: {
           trigger: ".description",
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
         },
       }
     );
@@ -50,11 +51,12 @@ const About = () => {
       {
         opacity: 1,
         x: 0,
+        delay:0.4,
         duration: 1,
         scrollTrigger: {
           trigger: ".description",
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
         },
       }
     );
