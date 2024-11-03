@@ -4,7 +4,7 @@ import { styles } from "../../styles";
 import Title from '../global/Title';
 import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
-import "./About.css"
+import "./Colab.css"
 type Props = {
   title: string;
   description: string;

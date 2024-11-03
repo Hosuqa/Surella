@@ -10,6 +10,15 @@
   overflow: hidden;
 }
 
+.image-transition {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.image-transition.active {
+  opacity: 1;
+}
+
 @keyframes animation {
   0%{
     height: 0%;
