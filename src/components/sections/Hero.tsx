@@ -16,7 +16,7 @@ import { TextPlugin } from 'gsap/TextPlugin';
 gsap.registerPlugin(TextPlugin);
 
 const Hero = () => {
-  const words = ["komfortu", "stylu", "spokoju"];
+  const words = ["żaluzje", "plisy", "moskitiery", "markizy", "zasłony"];
   useEffect(() => {
     gsap.timeline()
       .to(
@@ -30,7 +30,7 @@ const Hero = () => {
         }
       )
       .to(".herotxt", {
-        text: "Tworzymy przestrzeń dla Twojego komfortu",
+        text: "U nas znajdziesz najlepsze żaluzje",
         duration: 1.4,
         ease: "power1.out",
         speed: 5,
@@ -39,7 +39,7 @@ const Hero = () => {
           const changeLastWord = () => {
             index = (index + 1) % words.length; 
             gsap.to(".herotxt", {
-              text: `Tworzymy przestrzeń dla Twojego ${words[index]}`,
+              text: `U nas znajdziesz najlepsze ${words[index]}`,
               duration: 2,
               ease: "power1.out",
               onComplete: changeLastWord, // Ustawia wywołanie rekurencyjne po zakończeniu animacji
