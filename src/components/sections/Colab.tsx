@@ -14,7 +14,7 @@ type Props = {
 
 const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
   return (
-    <div className="flex flex-col h-full bg-red-700">
+    <div className="flex flex-col h-full">
       <div 
         className='grow flex w-full bg-surella-600 py-2 px-4 lg:py-4 lg:px-8 items-center justify-between cursor-pointer'
         onClick={onClick}
