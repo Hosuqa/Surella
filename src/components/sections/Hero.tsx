@@ -16,36 +16,44 @@ import { TextPlugin } from 'gsap/TextPlugin';
 gsap.registerPlugin(TextPlugin);
 
 const Hero = () => {
-  
+  const words = ["komfortu", "stylu", "spokoju"];
   useEffect(() => {
-      gsap.to(
+    gsap.timeline()
+      .to(
         ".text",
         {
         text: "Surella.pl",
         ease: "power1.Out",
         delay:0.1,
-        duration: 1,
-        speed:10,
+        duration: 1.4,
+        speed:5,
         }
-      );
-      gsap.fromTo(
-        ".herotxt",
-        {height:30},
-        {
-          text: "Tworzymy przestrzeń dla Twojego komfortu.",
-          duration: 1.4,
-          ease: "power1.Out",
-          delay:0.9,
-          speed:5,
-        }
-      );
-      gsap.fromTo(
+      )
+      .to(".herotxt", {
+        text: "Tworzymy przestrzeń dla Twojego komfortu",
+        duration: 1.4,
+        ease: "power1.out",
+        speed: 5,
+        onComplete: () => {
+          let index = 0;
+          const changeLastWord = () => {
+            index = (index + 1) % words.length; 
+            gsap.to(".herotxt", {
+              text: `Tworzymy przestrzeń dla Twojego ${words[index]}`,
+              duration: 2,
+              ease: "power1.out",
+              onComplete: changeLastWord, // Ustawia wywołanie rekurencyjne po zakończeniu animacji
+            });
+          };
+          changeLastWord();
+        },
+      })
+      .fromTo(
         ".herobutton",
         { opacity:0, y:50 },
         {
           opacity:1,
           y:0,
-          delay:2.1,
           duration: 0.9,
         }
       );
@@ -59,7 +67,7 @@ const Hero = () => {
           <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase`}>
             
           </div>
-          <p className={`${styles.heroSubText} herotxt my-3 text-white text-nowrap `}> 
+          <p className={`${styles.heroSubText} herotxt my-3 h-[30px] text-white text-nowrap `}> 
            
           </p>
           <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2"
