@@ -23,6 +23,7 @@ const Hero = () => {
         {
         text: "Surella.pl",
         ease: "power1.Out",
+        delay:0.1,
         duration: 1,
         speed:10,
         }
@@ -34,7 +35,7 @@ const Hero = () => {
           text: "Tworzymy przestrzeń dla Twojego komfortu.",
           duration: 1.4,
           ease: "power1.Out",
-          delay:0.8,
+          delay:0.9,
           speed:5,
         }
       );
@@ -45,15 +46,7 @@ const Hero = () => {
           opacity:1,
           y:0,
           delay:2.1,
-          duration: 0.8,
-        }
-      );
-      gsap.fromTo(
-        ".photo",
-        { y:"-100%"},
-        {
-          y:0,
-          duration: 2,
+          duration: 0.9,
         }
       );
     },
@@ -63,10 +56,10 @@ const Hero = () => {
     <>
       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
         <div className={`${styles.paddingX} flex lg:shrink-0 xl:shrink flex-col w-full lg:w-[550px] xl:w-[660px] h-1/2 lg:h-full lg:justify-end justify-center lg:pb-[200px]`}>
-          <h2 className={`${styles.heroHeadText} text hero text-white font-semibold uppercase`}>
+          <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase`}>
             
-          </h2>
-          <p className={`${styles.heroSubText} herotxt text-white text-nowrap -translate-y-2 md:-translate-y-3`}> 
+          </div>
+          <p className={`${styles.heroSubText} herotxt my-3 text-white text-nowrap `}> 
            
           </p>
           <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2"
