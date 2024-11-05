@@ -8,8 +8,8 @@ const Contact = () => {
 const text = texts[1]?.contactText;
 
     return (
-        <XlWrapper id="Contact" vertical>
-            <div className="w-full" >
+        <XlWrapper id="Contact" >
+            <div className="w-full pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28" >
                 <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="bg-slate-100 w-full">
