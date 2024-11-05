@@ -1,18 +1,55 @@
 import Title from "@components/global/Title";
+import { useEffect } from "react";
 import { XlWrapper } from "@components/global/Wrappers";
 import texts from '../../texts.json'
 import { styles } from "../../styles";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
 const text = texts[1]?.contactText;
+
+useEffect(() => {
+    gsap.fromTo(
+      ".textbox",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.25,
+        scrollTrigger: {
+          trigger: ".textbox",
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+    gsap.fromTo(
+        ".conbox",
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.25,
+          scrollTrigger: {
+            trigger: ".textbox",
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+  }, []);
 
     return (
         <XlWrapper id="Contact" >
             <div className="w-full pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28" >
                 <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
-                    <div className="bg-slate-100 w-full">
+                    <div className="textbox bg-slate-100 w-full">
                         <div className="h-fit p-10">
                             <p className={`${styles.aboutText} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
                         </div>
@@ -20,7 +57,7 @@ const text = texts[1]?.contactText;
                             <p className={`${styles.contactText} text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
                         </div>
                     </div>
-                    <div className="w-full h-full bg-surella-600">
+                    <div className="conbox w-full h-full bg-surella-600">
                         <div className="w-full h-full flex flex-col uppercase tracking-wide text-white p-10">
                             <div className="w-full h-full flex gap-4">
                                 <div className="w-full h-full">

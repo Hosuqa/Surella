@@ -23,9 +23,8 @@ const Hero = () => {
         ".text",
         {
         text: "Surella.pl",
-        ease: "power1.Out",
         delay:0.1,
-        duration: 1.4,
+        duration: 1,
         speed:5,
         }
       )
@@ -48,13 +47,14 @@ const Hero = () => {
           changeLastWord();
         },
       })
-      .fromTo(
+      gsap.fromTo(
         ".herobutton",
         { opacity:0, y:50 },
         {
           opacity:1,
+          delay:2,
           y:0,
-          duration: 0.9,
+          duration: 1.3,
         }
       );
     },
@@ -67,8 +67,8 @@ const Hero = () => {
           <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase`}>
             
           </div>
-          <p className={`${styles.heroSubText} herotxt my-3 h-[30px] text-white text-nowrap `}> 
-           
+          <p className={`${styles.heroSubText} herotxt my-3 h-[30px] text-white text-nowrap ml-1`}> 
+           {/* margin zeby wizualnie było git (ml-1) */}
           </p>
           <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2"
             whileTap={{ y:4 }}>
