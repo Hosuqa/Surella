@@ -6,11 +6,12 @@ import Gallery from '@components/sections/Gallery';
 import Footer from '@components/global/Footer';
 import Contact from '@components/sections/Contact';
 import Colab from '@components/sections/Colab';
+import Sandbox from '@components/sections/Sandbox';
 
 const ContentBox = () => {
     return (
         <>
-            <Navbar/><Hero/><About/><Gallery/><Counter/><Colab/><Contact/><Footer/>
+            <Navbar/><Hero/><About/><Gallery/><Counter/><Colab/><Contact/><Sandbox/><Footer/>
         </>
     );
 }
