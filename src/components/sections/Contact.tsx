@@ -36,7 +36,7 @@ useEffect(() => {
           duration: 0.8,
           stagger: 0.25,
           scrollTrigger: {
-            trigger: ".textbox",
+            trigger: ".conbox",
             start: "top 90%",
             toggleActions: "play none none none",
           },

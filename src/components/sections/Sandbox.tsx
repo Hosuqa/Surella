@@ -67,14 +67,14 @@ const Sandbox = () => {
             <div className="w-full h-[full]">
                 <Title title="Sandbox tester" subtitle="Test" titleColor="text-red-900" subtitleColor="text-red-800" lineColor="bg-red-800" />
                 <div className="flex w-full h-full">
-                    <div className="sqareImageLeft g-green-100 w-full flex flex-col">
+                    <div className="sqareImageLeft w-full flex flex-col">
                         <img src={hero2} className="sqareImageLeft object-cover h-[200px] m-10" />
-                        <div className="sqareImageLeft g-green-400 h-fit mx-10 my-10 flex flex-col justify-center items-end">
+                        <div className="sqareImageLeft h-fit mx-10 my-10 flex flex-col justify-center items-end">
                             <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">ROLETY</p>
                             <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                         </div>
                         <img src={hero1} className="sqareImageLeft object-cover h-[200px] m-10" />
-                        <div className="sqareImageLeft g-green-400 h-fit mx-10 my-10 flex flex-col justify-center items-end">
+                        <div className="sqareImageLeft h-fit mx-10 my-10 flex flex-col justify-center items-end">
                             <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">ROLETY</p>
                             <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                         </div>
@@ -84,18 +84,18 @@ const Sandbox = () => {
                         <div className="bg-surella-600 h-5 w-5"></div>
                         <div className="bg-surella-600 w-1 flex-grow"></div>
                     </div>
-                    <div className="sqareImageRight g-green-100 w-full flex flex-col">
-                        <div className="sqareImageRight g-green-400 h-fit mx-10 my-10 flex flex-col justify-center items-start">
+                    <div className="sqareImageRight w-full flex flex-col">
+                        <div className="sqareImageRight h-fit mx-10 my-10 flex flex-col justify-center items-start">
                             <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Żaluzje</p>
                             <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                         </div>
                         <img src={hero3} className="sqareImageRight object-cover h-[200px] m-10" />
-                        <div className="sqareImageRight g-green-400 h-fit mx-10 my-10 flex flex-col justify-center items-start">
+                        <div className="sqareImageRight h-fit mx-10 my-10 flex flex-col justify-center items-start">
                             <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Firany</p>
                             <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                         </div>
                         <img src={hero3} className="sqareImageRight object-cover h-[200px] m-10" />
-                        <div className="sqareImageRight g-green-400 h-fit mx-10 my-10 flex flex-col justify-center items-start">
+                        <div className="sqareImageRight h-fit mx-10 my-10 flex flex-col justify-center items-start">
                             <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Firany</p>
                             <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                         </div>

@@ -38,7 +38,7 @@ const About = () => {
         duration: 0.8,
         stagger: 0.25,
         scrollTrigger: {
-          trigger: ".description",
+          trigger: ".icon-box",
           start: "top 90%",
           toggleActions: "play none none none",
         },
