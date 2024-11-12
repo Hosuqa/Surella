@@ -6,7 +6,7 @@ import { styles } from "../../styles";
 import images from '../../images.json'
 
 import { useEffect, useState } from 'react';
-import { FaXmark } from "react-icons/fa6";
+import { FaXmark, FaMagnifyingGlass  } from "react-icons/fa6";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -120,7 +120,10 @@ const Gallery = () => {
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń" />
                     <div className="flex w-full h-full">
                         <div className="sqareImageLeft w-full flex flex-col">
-                            <img src="../images/rolety1.jpg"  onClick={ () => setCurrentSet(images.rolety)} className="sqareImageLeft object-cover h-[200px] m-10" />
+                            <div className="relative h-[200px] m-10 cursor-pointer" onClick={() => setCurrentSet(images.rolety)}>
+                                <img src="../images/rolety1.jpg" className="object-cover w-full h-full" />
+                                <FaMagnifyingGlass  className="h-10 w-10 object-cover absolute bottom-3 right-3 text-white text-lg bg-black/30 p-2" />
+                            </div>
                             <div className=" h-[200px] sqareImageLeft mx-10 my-10 flex flex-col justify-center items-end tracking-wider">
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Żaluzje</p>
                                 <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
