@@ -22,61 +22,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
     const [currentPhoto, setCurrentPhoto] = useState(currentSet ? currentSet[0] : "");
     
     useEffect(() => {
-
         if (currentSet != null) setCurrentPhoto(currentSet[0]);
-
-        (gsap.utils.toArray(".sqareImageLeft") as HTMLElement[]).forEach((element) => {
-            gsap.fromTo(
-                element,
-                { opacity: 0, x: 50 },
-                {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 90%",
-                        toggleActions: "play none none none",
-                    },
-                }
-            );
-        });
-
-        (gsap.utils.toArray(".sqareImageRight") as HTMLElement[]).forEach((element) => {
-            gsap.fromTo(
-                element,
-                { opacity: 0, x: -50 },
-                {
-                    opacity: 1,
-                    x: 0,
-                    delay: 0.1,
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 90%",
-                        toggleActions: "play none none none",
-                    },
-                }
-            );
-        });
-
-        // Trigger for the line element
-        gsap.fromTo(
-            ".line",
-            { opacity: 0, y: -50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: ".line",
-                    start: "top 90%",
-                    toggleActions: "play none none none",
-                },
-            }
-        );
-
-
     }, [currentSet]);
 
     return (
@@ -112,6 +58,58 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
 const Gallery = () => {
 
     const [currentSet, setCurrentSet] = useState<string[] | null>(null);
+
+    useEffect(() =>{
+        (gsap.utils.toArray(".sqareImageLeft") as HTMLElement[]).forEach((element) => {
+            gsap.fromTo(
+                element,
+                { opacity: 0, x: 50 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 90%",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+        });
+
+        (gsap.utils.toArray(".sqareImageRight") as HTMLElement[]).forEach((element) => {
+            gsap.fromTo(
+                element,
+                { opacity: 0, x: -50 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    delay: 0.1,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 90%",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+        });
+
+        gsap.fromTo(
+            ".line",
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: ".line",
+                    start: "top 20%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    })
 
     return (
         <>
