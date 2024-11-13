@@ -50,9 +50,6 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
     );
 }
 
-
-
-
 const Gallery = () => {
 
     const [currentSet, setCurrentSet] = useState<string[] | null>(null);
@@ -116,29 +113,37 @@ const Gallery = () => {
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń" />
                     <div className="flex w-full h-full">
                         <div className="sqareImageLeft w-full flex flex-col">
-                            <div className="relative h-[200px] my-10 mr-10 cursor-pointer duration-300 group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
-                                <div className='h-full w-full absolute duration-300 bg-black/0 group-hover:bg-black/25'></div>
-                                <img src="../images/rolety1.jpg" className="object-cover w-full h-full " />
-                                <FaMagnifyingGlass  className="h-10 w-10 object-cover absolute bottom-3 right-3 text-white bg-surella-600/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[46px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[60px]'>
-                                    Zobacz więcej rolet
+                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                                <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
+                                <img src="../images/rolety1.jpg" className="object-cover w-full h-full" />
+                                <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
+                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                    Zobacz więcej
                                 </div>
                             </div>
                             <div className=" h-[200px] sqareImageLeft my-10 mr-10 flex flex-col justify-center items-end tracking-wider">
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Żaluzje</p>
                                 <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="relative h-[200px] my-10 mr-10 cursor-pointer" onClick={() => setCurrentSet(images.moskitiery)}>
+                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                                <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/moskitiera2.jpg" className="object-cover w-full h-full" />
-                                <FaMagnifyingGlass  className="h-10 w-10 object-cover absolute bottom-3 right-3 text-white text-lg bg-black/30 p-2" />
+                                <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
+                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                    Zobacz więcej
+                                </div>
                             </div>
                             <div className=" h-[200px] sqareImageLeft my-10 mr-10 flex flex-col justify-center items-end tracking-wider">
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Firany</p>
                                 <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="relative h-[200px] my-10 mr-10 cursor-pointer" onClick={() => setCurrentSet(images.oslony)}>
+                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                                <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/oslony2.jpg" className="object-cover w-full h-full" />
-                                <FaMagnifyingGlass  className="h-10 w-10 object-cover absolute bottom-3 right-3 text-white text-lg bg-black/30 p-2" />
+                                <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
+                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                    Zobacz więcej
+                                </div>
                             </div>
                         </div>
                         <div className="line bg-gren-700 w-fit flex flex-col items-center">
@@ -150,12 +155,26 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Rolety</p>
                                 <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <img src="../images/zaluzje3.jpg" onClick={ () => setCurrentSet(images.zaluzje)} className="sqareImageRight object-cover h-[200px] my-10 ml-10" />
+                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                                <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
+                                <img src="../images/zaluzje3.jpg" className="object-cover w-full h-full" />
+                                <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
+                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                    Zobacz więcej
+                                </div>
+                            </div>
                             <div className=" h-[200px] sqareImageRight my-10 ml-10 flex flex-col justify-center items-start tracking-wider">
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Moskitiera</p>
                                 <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <img src="../images/firany8.jpg" onClick={ () => setCurrentSet(images.firany)} className="sqareImageRight object-cover h-[200px] my-10 ml-10" />
+                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                                <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
+                                <img src="../images/firany8.jpg" className="object-cover w-full h-full" />
+                                <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
+                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                    Zobacz więcej
+                                </div>
+                            </div>
                             <div className=" h-[200px] sqareImageRight  my-10 ml-10 flex flex-col justify-center items-start tracking-wider">
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Osłony zewnętrzne</p>
                                 <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
