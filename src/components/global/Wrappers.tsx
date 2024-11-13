@@ -39,7 +39,7 @@ export const XlWrapper = ({ className, children, vertical=false, horizontal=true
 
 export const CounterWrapper = ({ className, children, vertical=false, horizontal=true }: Props) => {
     return (
-        <div className={`${ vertical ? "py-12 md:py-16 lg:py-20 xl:py-24 2xl:pb-10 2xl:pt-[72p]" : "" } ${ horizontal ? "px-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-56" : "" } ${ className }`}>
+        <div className={`${ vertical ? "pb-8 pt-12 md:pt-16 md:pb-10  lg:pb-12 lg:pt-20 xl:pb-20 xl:pt-28 2xl:pb-10 2xl:pt-[72p]" : "" } ${ horizontal ? "px-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-56" : "" } ${ className }`}>
             { children }
         </div>
     );
