@@ -6,7 +6,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { div } from "framer-motion/client";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +36,7 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
 };
 
 const Colab = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number>(0);
 
   const toggleBox = (index: number) => {
     setOpenIndex(index);
@@ -109,12 +108,8 @@ const Colab = () => {
             onClick={() => toggleBox(3)}
           />
         </div>
-        <div className="picbox w-full h-[240px] md:h-[400px] lg:h-[450px] xl:h-[500px]  2xl:h-[600px] bg-slate-300">
-          {openIndex !== null ? (
+        <div className="picbox w-full h-[240px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px]">
             <img src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
-          ) : (
-            <img src={rollo} className="w-full h-full object-cover" alt="Default" />
-          )}
         </div>
       </div>
     </XlWrapper>
