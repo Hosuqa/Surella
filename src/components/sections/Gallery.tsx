@@ -23,13 +23,13 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
         if (currentSet) {
             gsap.fromTo(
                 ".gallery-modal",
-                { opacity: 0},
-                { opacity: 1, duration: 0.2 }
+                {  y:1000},
+                {  y:0 ,duration: 0.5 }
             );
             gsap.fromTo(
                 ".thumbnail-image",
                 { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "power1.out" }
+                { opacity: 1, y: 0,delay:0.2, duration: 0.2, stagger: 0.1, ease: "power1.out" }
             );
         }
         
