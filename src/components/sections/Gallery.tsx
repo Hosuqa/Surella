@@ -2,9 +2,7 @@
 
 import { XlWrapper } from '@components/global/Wrappers'
 import Title from '../global/Title'
-import { styles } from "../../styles";
 import images from '../../images.json'
-
 import { useEffect, useState } from 'react';
 import { FaXmark, FaMagnifyingGlass  } from "react-icons/fa6";
 import gsap from "gsap";
