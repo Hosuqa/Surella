@@ -91,15 +91,15 @@ const Gallery = () => {
         });
 
         gsap.fromTo(
-            ".line",
+            ".Yline",
             { opacity: 0, y: 50 },
             {
                 opacity: 1,
                 y: 0,
                 duration: 0.8,
                 scrollTrigger: {
-                    trigger: ".line",
-                    start: "top 20%",
+                    trigger: ".Yline",
+                    start: "top 90%",
                     toggleActions: "play none none none",
                 },
             }
@@ -117,7 +117,7 @@ const Gallery = () => {
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/rolety1.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ const Gallery = () => {
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/moskitiera2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
@@ -141,12 +141,12 @@ const Gallery = () => {
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/oslony2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
                         </div>
-                        <div className="line bg-gren-700 w-fit flex flex-col items-center">
+                        <div className="Yline bg-gren-700 w-fit flex flex-col items-center">
                             <div className="bg-surella-600 h-5 w-5"></div>
                             <div className="bg-surella-600 w-1 flex-grow"></div>
                         </div>
@@ -159,7 +159,7 @@ const Gallery = () => {
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/zaluzje3.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ const Gallery = () => {
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/firany8.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
-                                <div className='flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
+                                <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
