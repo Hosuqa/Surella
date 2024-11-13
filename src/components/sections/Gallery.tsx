@@ -20,11 +20,23 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
     const [currentPhoto, setCurrentPhoto] = useState(currentSet ? currentSet[0] : "");
     
     useEffect(() => {
-        if (currentSet != null) setCurrentPhoto(currentSet[0]);
+        if (currentSet) {
+            gsap.fromTo(
+                ".gallery-modal",
+                { opacity: 0},
+                { opacity: 1, duration: 0.2 }
+            );
+            gsap.fromTo(
+                ".thumbnail-image",
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "power1.out" }
+            );
+        }
+        
     }, [currentSet]);
 
     return (
-        <div className={`${currentSet ? "fixed" : "hidden"} flex z-[9999] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}>
+        <div className={`gallery-modal ${currentSet ? "fixed" : "hidden"} flex z-[9999] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}>
             <div className='relative w-full h-full flex'>
                 <FaXmark className='absolute top-4 right-4 xl:right-2 w-[5vw] h-[5vh] cursor-pointer text-white' onClick={onClick}/>
                 <div className='w-full h-[90vh] xl:py-20 xl:px-72 lg:py-16 lg:px-48 md:py-12 md:px-24 py-10 px-8'>
@@ -36,7 +48,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
                 <div className='absolute flex bottom-14 md:bottom-0 w-full h-[10vh] bg-black/70'>
                     <div className='w-full h-full p-2 gap-2 flex px-4'>
                         { currentSet && currentSet.map((image) => (
-                            <div className='h-full aspect-square overflow-hidden group cursor-pointer' onClick={ () =>  setCurrentPhoto(image) }>
+                            <div className='thumbnail-image h-full aspect-square overflow-hidden group cursor-pointer' onClick={ () =>  setCurrentPhoto(image) }>
                                 <div className='w-full h-full relative'>
                                     <img src={image} className='object-cover w-full h-full group-hover:scale-[1.2] duration-300'/>
                                     <div className="bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-70 opacity-0 duration-300"></div>
@@ -104,7 +116,7 @@ const Gallery = () => {
                 },
             }
         );
-    })
+    }, []);
 
     return (
         <>
@@ -125,7 +137,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Żaluzje</p>
                                 <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.moskitiery)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/moskitiera2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -137,7 +149,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Firany</p>
                                 <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                            <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.oslony)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/oslony2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -155,7 +167,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Rolety</p>
                                 <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.zaluzje)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/zaluzje3.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -167,7 +179,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">Moskitiera</p>
                                 <p className="text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
                             </div>
-                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                            <div className="sqareImageRight relative h-[200px] my-10 ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.firany)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/firany8.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />

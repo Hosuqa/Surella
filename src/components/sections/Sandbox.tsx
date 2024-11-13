@@ -26,7 +26,7 @@ const Sandbox = () => {
     }, []);
 
     return (
-        <XlWrapper vertical id="Contact">
+        <XlWrapper vertical >
             <div className="w-full h-[full]">
                 <Title title="Sandbox tester" subtitle="Test" titleColor="text-red-900" subtitleColor="text-red-800" lineColor="bg-red-800" />
 
