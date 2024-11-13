@@ -19,9 +19,9 @@ type Props = {
 const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
   return (
     <div className="txtbox">
-      <div className={` duration-300 overflow-hidden border-surella-600 border-[2px] ${isOpen ? "h-[300px]" : "h-[84px]"} `}>
+      <div className={` duration-300 overflow-hidden border-surella-600 border-[2px] ${isOpen ? "h-[200px] xl:h-[300px]" : "h-[60px] xl:h-[84px]"} `}>
         <div 
-          className='flex w-full h-[84px] bg-surella-600 py-2 px-4 lg:py-4 lg:px-8 justify-between items-center cursor-pointer'
+          className='flex w-full h-[60px] xl:h-[84px] bg-surella-600 py-2 px-4 lg:py-4 lg:px-8 justify-between items-center cursor-pointer'
           onClick={onClick}
         >
           <p className={`${styles.colabtitle} font-semibold text-white text-[18px] tracking-wider`}>{title}</p>
@@ -108,7 +108,7 @@ const Colab = () => {
             onClick={() => toggleBox(3)}
           />
         </div>
-        <div className="picbox w-full h-[240px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px]">
+        <div className="picbox w-full h-[240px] md:h-[400px] xl:h-[600px]">
             <img src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
         </div>
       </div>
