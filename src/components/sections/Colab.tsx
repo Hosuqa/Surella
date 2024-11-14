@@ -21,13 +21,13 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
     <div className="txtbox">
       <div className={` duration-300 overflow-hidden border-surella-600 border-[2px] ${isOpen ? "h-[200px] xl:h-[300px]" : "h-[60px] xl:h-[84px]"} `}>
         <div 
-          className='flex w-full h-[60px] xl:h-[84px] bg-surella-600 py-2 px-4 lg:py-4 lg:px-8 justify-between items-center cursor-pointer'
+          className='flex w-full h-[60px] xl:h-[84px] bg-surella-600 group py-2 px-4 lg:py-4 lg:px-8 justify-between items-center cursor-pointer'
           onClick={onClick}
         >
           <p className={`${styles.colabtitle} font-semibold text-white text-[18px] tracking-wider`}>{title}</p>
-          <IoIosArrowDown className={`w-6 h-6  text-white transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+          <IoIosArrowDown className={`w-6 h-6 group-hover:scale-125 text-white transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
         </div>
-        <div className={`${styles.colabtext} px-8 py-2  text-surella-800 text-[16px] leading-relaxed tracking-wide text-justify duration-200 `}>
+        <div className={`${styles.colabtext} px-8 py-2 text-surella-800 text-[16px] leading-relaxed tracking-wide text-justify duration-200 `}>
           {description}
         </div>
       </div>

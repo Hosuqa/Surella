@@ -80,7 +80,7 @@ const Title = ({ title, subtitle, className, titleColor = "text-surella-600", su
                     </p>
                     <div
                         ref={lineRef}
-                        className={`wline h-[4px] w-0 ml-4 ${lineColor} opacity-90 mx-6`}
+                        className={`wline h-[4px] w-0 ml-4 ${lineColor} opacity-90 mr-1`}
                     ></div>
                 </div>
                 <p
