@@ -60,46 +60,54 @@ const Hero = () => {
     },
  []);
 
-  return (
-    <>
-      <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
-        <div className={`${styles.paddingX} flex lg:shrink-0 xl:shrink flex-col w-full lg:w-[550px] xl:w-[660px] h-1/2 lg:h-full lg:justify-end justify-center lg:pb-[200px]`}>
-          <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase`}>
-            
-          </div>
-          <p className={`${styles.heroSubText} herotxt my-3 h-[30px] text-white text-nowrap ml-1`}> 
-           {/* margin zeby wizualnie było git (ml-1) */}
-          </p>
-          <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2"
-            whileTap={{ y:4 }}>
-              <p className={`${styles.heroButton} duration-300 hover:text-surella-600 text-center text-surella-500 font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-3 cursor-pointer uppercase text-nowrap`}
-               > 
-                Sprawdź wycenę
-              </p>
-          </motion.div>
-        </div>
-        <div className="bg-white overflow-hidden flex-1 w-full h-1/2 lg:w-3/5 lg:h-full border-t-[8px] lg:border-t-[0px] lg:border-l-[12px] border-white">
-        <Swiper pagination={{ dynamicBullets: true, }} speed={2000} effect={'fade'} modules={[Pagination, Autoplay, EffectFade]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="photo h-full w-full ">
-          <SwiperSlide>
-            <img src={hero1} className="object-cover h-full w-full" alt="hero" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={hero2} className="object-cover h-full w-full" alt="hero" />
-          </SwiperSlide>
-          <SwiperSlide>  
-            <img src={hero3} className="object-cover h-full w-full" alt="hero" />
-          </SwiperSlide>
-          <SwiperSlide>  
-            <img src={hero4} className="object-cover h-full w-full" alt="hero" />
-          </SwiperSlide>
-        </Swiper>
-        </div>
-      </div>
-    </>
-  );
-};
 
-export default Hero;
+   return (
+     <>
+       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
+         <div className="bg-white overflow-hidden flex-1 w-full h-full relative">
+          <div className='z-20 flex flex-col mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-32 2xl:mx-72 my-16 sm:my-24 md:my-28 lg:my-32 2xl:my-40 absolute bottom-0 h-fit w-fit '>
+           <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase `}></div>
+           <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white text-nowrap ml-1 `}></p>
+           <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2 "
+             whileTap={{ y:4 }}>
+               <p className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
+                 Sprawdź wycenę
+               </p>
+           </motion.div>
+          </div>
+          <Swiper
+             speed={2000}
+             effect={'fade'}
+             modules={[Pagination, Autoplay, EffectFade]}
+             autoplay={{ delay: 3500, disableOnInteraction: false }}
+             loop={true}
+             className="photo h-full w-full"
+           >
+             <SwiperSlide>
+               <img src={hero1} className="object-cover h-full w-full " alt="hero" />
+               <div className="absolute inset-0 bg-black/40"></div>
+             </SwiperSlide>
+             <SwiperSlide>
+               <img src={hero2} className="object-cover h-full w-full " alt="hero" />
+               <div className="absolute inset-0 bg-black/10"></div>
+             </SwiperSlide>
+             <SwiperSlide>
+               <img src={hero3} className="object-cover h-full w-full " alt="hero" />
+               <div className="absolute inset-0 bg-black/20"></div>
+             </SwiperSlide>
+             <SwiperSlide>
+               <img src={hero4} className="object-cover h-full w-full " alt="hero" />
+               <div className="absolute inset-0 bg-black/20"></div>
+             </SwiperSlide>
+           </Swiper>
+         </div>
+       </div>
+     </>
+   );
+ };
+ 
+ export default Hero;
+ 
 
 {/*
 <div className="flex flex-col xl:flex-row bg-white w-full h-[calc(95vh-96px)] mt-24 relative gap-2 overflow-hidden">
