@@ -12,6 +12,8 @@ import hero3 from "/images/rolety5.jpg"
 import hero4 from "/images/zaluzje1.jpg"
 import gsap from "gsap";
 import { TextPlugin } from 'gsap/TextPlugin';
+import { IoIosArrowRoundDown } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -57,14 +59,24 @@ const Hero = () => {
           duration: 1.3,
         }
       );
+      gsap.fromTo(
+        ".arrowhero",
+        { y:60, opacity: 0 },
+        {
+          opacity:1,
+          delay:2.4,
+          y:0,
+          duration: 1.7,
+        }
+      );
     },
  []);
-
+// 85vh
 
    return (
      <>
        <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] mt-[80px] bg-surella-600">
-         <div className="bg-white overflow-hidden flex-1 w-full h-full relative">
+         <div className="bg-white overflow-hidden flex w-full h-full relative">
           <div className='z-20 flex flex-col mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-32 2xl:mx-72 my-20 sm:my-24 md:my-28 lg:my-32 2xl:my-40 absolute bottom-0 h-fit w-fit '>
            <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase `}></div>
            <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white text-nowrap ml-1 `}></p>
@@ -75,6 +87,12 @@ const Hero = () => {
                </p>
            </motion.div>
           </div>
+          <a href="#About"className='arrowhero w-fit h-fit absolute z-20 bottom-0 right-0 left-0 m-auto flex flex-col items-center text-center justify-center mb-6'>
+            <IoIosArrowRoundDown className='text-white w-fit h-10 mb-1 cursor-pointer'/>
+            {/* <p className='text-white text-[14px] cursor-pointer'>
+              Zobacz więcej
+            </p> */}
+          </a>
           <Swiper
              speed={2000}
              effect={'fade'}
@@ -89,15 +107,15 @@ const Hero = () => {
              </SwiperSlide>
              <SwiperSlide>
                <img src={hero2} className="object-cover h-full w-full " alt="hero" />
-               <div className="absolute inset-0 bg-black/10"></div>
+               <div className="absolute inset-0 bg-black/40"></div>
              </SwiperSlide>
              <SwiperSlide>
                <img src={hero3} className="object-cover h-full w-full " alt="hero" />
-               <div className="absolute inset-0 bg-black/20"></div>
+               <div className="absolute inset-0 bg-black/40"></div>
              </SwiperSlide>
              <SwiperSlide>
                <img src={hero4} className="object-cover h-full w-full " alt="hero" />
-               <div className="absolute inset-0 bg-black/20"></div>
+               <div className="absolute inset-0 bg-black/40"></div>
              </SwiperSlide>
            </Swiper>
          </div>
