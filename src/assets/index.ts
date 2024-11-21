@@ -7,7 +7,9 @@ import rollo from "./rollo.webp"
 import rollo2 from "./rollo2.webp"
 import rollo3 from "./rollo3.webp"
 import rollo4 from "./rollo4.webp"
+import google from "./Google.png"
 export{
+    google,
     surellawhite,
     surella,
     hero1,
