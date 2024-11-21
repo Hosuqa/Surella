@@ -12,7 +12,7 @@ import Sandbox from '@components/sections/Sandbox';
 const ContentBox = () => {
     return (
         <>
-            <Navbar/><Hero/><About/><Gallery/><Counter/><Colab/><Contact/><Review/><Sandbox/><Footer/>
+            <Navbar/><Hero/><About/><Gallery/><Counter/><Colab/><Review/><Contact/><Sandbox/><Footer/>
         </>
     );
 }
