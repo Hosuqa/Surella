@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { styles } from "../../styles";
 import { Link } from "react-router-dom";
 import { surellawhite } from '../../assets';
+import { surella } from '../../assets';
 import { motion } from "framer-motion";
 import './Navbar.css'
 
@@ -60,8 +61,12 @@ const Navbar = () => {
                             className="flex xl:justify-start gap-2 w-fit cursor-pointer items-center"
                             onClick={() => window.scrollTo(0, 0)}
                         >
-                            <img src={surellawhite} alt="logo" className="w-10 h-10 object-contain" />
-                            <p className="text-[25px] text-white font-interExtraBold font-bold ">Surella</p>
+                            <img 
+                                src={scrolled ? surella : surellawhite} 
+                                alt="logo" 
+                                className="w-10 h-10 object-contain transition-all duration-500" 
+                            />
+                            <p className={` ${scrolled ? "text-surella-600" : "text-white"} text-[25px]  font-interExtraBold font-bold`}>Surella</p>
                         </Link>
                     </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
