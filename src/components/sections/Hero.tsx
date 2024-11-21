@@ -13,7 +13,6 @@ import hero4 from "/images/zaluzje1.jpg"
 import gsap from "gsap";
 import { TextPlugin } from 'gsap/TextPlugin';
 import { IoIosArrowRoundDown } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -75,7 +74,7 @@ const Hero = () => {
 
    return (
      <>
-       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(85vh)] bg-surella-600">
+       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(92vh)] bg-surella-600">
          <div className="bg-white overflow-hidden flex w-full h-full relative">
           <div className='z-20 flex flex-col mx-6 sm:mx-10 md:mx-16 lg:mx-24 xl:mx-32 2xl:mx-72 my-20 sm:my-24 md:my-28 lg:my-32 2xl:my-40 absolute bottom-0 h-fit w-fit '>
            <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase `}></div>

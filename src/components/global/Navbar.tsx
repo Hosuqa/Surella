@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styles } from "../../styles";
 import { Link } from "react-router-dom";
-import { surella } from '../../assets';
+import { surellawhite } from '../../assets';
 import { motion } from "framer-motion";
 import './Navbar.css'
 
@@ -13,10 +13,11 @@ type Props = {
 const Title = ({ title, href }: Props) => {
     return (
         <div className="w-full h-full justify-center items-center">
-            {/* usunąć div i w-fot => w-full */}
             <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
-                <a href={href}
-                   className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-surella-600 tracking-wider font-interExtraBold font-bold cursor-pointer`}>
+                <a href={href} 
+                   className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-white tracking-wider font-interExtraBold font-bold cursor-pointer`}
+                  >
+
                    {title}
                 </a>
                 <div className="animation"></div>
@@ -27,30 +28,47 @@ const Title = ({ title, href }: Props) => {
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 500) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <nav className={`${styles.paddingX} w-full h-20 flex items-center py-5 sticky top-0 z-40 bg-white uppercase shadow-lg text-nowrap`}>
-                <div className="w-full flex justify-between items-center">
+            <motion.nav className={`${styles.paddingX} w-full h-20 flex items-center py-5 fixed top-0 z-40 uppercase text-nowrap transition-colors duration-500 `}
+                animate={{ backgroundColor: scrolled ? "#fff" : "transparent" }} >
+                   <div className="w-full flex justify-between items-center">
                     <div className="h-full w-full">
                         <Link
                             to="/"
                             className="flex xl:justify-start gap-2 w-fit cursor-pointer items-center"
                             onClick={() => window.scrollTo(0, 0)}
                         >
-                            <img src={surella} alt="logo" className="w-10 h-10 object-contain" />
-                            <p className="text-[25px] text-surella-600 font-interExtraBold font-bold ">Surella</p>
+                            <img src={surellawhite} alt="logo" className="w-10 h-10 object-contain" />
+                            <p className="text-[25px] text-white font-interExtraBold font-bold ">Surella</p>
                         </Link>
                     </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
                         <Title title="O nas" href="#About" />
                         <Title title="Realizacje" href="#Gallery"/>
                         <Title title="Współpraca" href="#Colab"/>
-                        <motion.div className="w-full h-full bg-surella-600 hover:bg-surella-700 duration-300 text-white px-8 py-[6px]"
+                        <motion.div className="w-full h-full bg-surella-600 hover:bg-surella-700 duration-300 text-surella-600 px-8 py-[6px]"
                             whileTap={{ y:4 }}>
                             <a href="#Contact"
                             className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interExtraBold font-bold cursor-pointer`}>
@@ -74,7 +92,7 @@ const Navbar = () => {
                         ></motion.div>
                     </motion.div>
                 </div>
-            </nav>
+            </motion.nav>
             <motion.div
             initial={{ y:"-100%"}}
             animate={{ y: menuOpen ? 0 : "-100%" }}
