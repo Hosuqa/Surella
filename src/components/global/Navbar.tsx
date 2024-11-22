@@ -5,6 +5,7 @@ import { surellawhite } from '../../assets';
 import { surella } from '../../assets';
 import { motion } from "framer-motion";
 import './Navbar.css'
+import gsap from "gsap";
 
 type Props = {
     title: string;
@@ -36,8 +37,18 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        gsap.fromTo(
+            ".navgsap",
+            { opacity: 0, y: -20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay:0.2,
+            }
+        );
         const handleScroll = () => {
-            if (window.scrollY > 500) {
+            if (window.scrollY > 750) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -52,9 +63,15 @@ const Navbar = () => {
 
     return (
         <>
-            <motion.nav className={`${styles.paddingX} w-full h-20 flex items-center py-5 fixed top-0 z-40 uppercase text-nowrap transition-colors duration-500 `}
-                animate={{ backgroundColor: scrolled ? "#fff" : "transparent" }} >
-                   <div className="w-full flex justify-between items-center">
+            <motion.nav
+            className={`${styles.paddingX} ${scrolled ? "text-surella-600 shadow-lg" : "text-white"} navgsap w-full h-20 flex items-center py-5 fixed top-0 z-40 uppercase text-nowrap transition-colors duration-500`}
+            animate={{
+                backgroundColor: scrolled ? "#fff" : "transparent",
+                boxShadow: scrolled
+                ? "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1)"
+                : "none",
+            }}>
+                <div className="w-full flex justify-between items-center">
                     <div className="h-full w-full">
                         <Link
                             to="/"
