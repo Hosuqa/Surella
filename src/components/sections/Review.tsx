@@ -19,7 +19,7 @@ type Props = {
 
 const ReviewCard = (props: Props) => {
     return (
-        <div className="w-full h-[350px] border-2 border-surella-600  justify-center items-center">
+        <div className="select-none w-full h-[350px] border-2 border-surella-600  justify-center items-center">
             <div className="h-fit flex justify-between items-center m-6">
                 <img src={google} alt="google" className="h-8 w-8"/>
                 <p className="text-surella-600 font-bold">
@@ -36,7 +36,7 @@ const ReviewCard = (props: Props) => {
                 </div>
                 <div className="h-[2px] my-4 w-full bg-white "></div>
                 <p className="text-white font-bold mb-4">{props.name}:</p>
-                <p className="text-[15px] text-white tracking-widest leading-relaxed ">"{props.text}"</p>
+                <p className=" text-[15px] text-white tracking-widest leading-relaxed ">"{props.text}"</p>
             </div>
         </div>
     );
