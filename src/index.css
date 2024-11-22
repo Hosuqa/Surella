@@ -53,3 +53,8 @@
 *::-webkit-scrollbar-thumb:active {
   background-color: #165A58;
 }
+
+body {
+  overflow-x: hidden; 
+  /* reviewsilder fix */
+}
