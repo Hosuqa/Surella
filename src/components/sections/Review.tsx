@@ -44,7 +44,21 @@ const ReviewCard = (props: Props) => {
 
 const Sandbox = () => {
     useEffect(() => {
-
+        gsap.fromTo(
+            ".reviewbox",
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger:0.15,
+                scrollTrigger: {
+                    trigger: ".reviewbox",
+                    start: "top 90%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
     }, []);
 
     return (
@@ -55,7 +69,7 @@ const Sandbox = () => {
                     <div className="w-screen ">
                         <ReviewSlider options={{align: "center"}}>
                         {Review.map((testimonial, i) => (
-                            <div key={i} className="mr-10 flex-[0_0_90%] md:flex-[0_0_50%] xl:flex-[0_0_29%]  ">
+                            <div key={i} className="reviewbox mr-10 flex-[0_0_90%] md:flex-[0_0_50%] xl:flex-[0_0_29%]  ">
                                 <ReviewCard {...testimonial} />
                             </div>
                         ))}

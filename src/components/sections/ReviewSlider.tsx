@@ -7,6 +7,7 @@ const ReviewSlider = ({ children, options }: Props) => {
   const [emblaRef] = useEmblaCarousel({
     slidesToScroll: 1,
     duration: 100,
+    startIndex:3, // żeby gsap stager aniamcja działala ładnie
     loop: true,
     align: "start",
     ...options,
