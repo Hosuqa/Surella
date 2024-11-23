@@ -26,10 +26,10 @@ const ReviewCard = (props: Props) => {
         </div>
         <div className="bg-surella-600 h-[220px] p-6 flex flex-col mb-2 mx-2"> 
           <p className="text-white font-bold ">{props.name}:</p>
-          <p className="text-[15px] text-white tracking-widest leading-relaxed my-4 mx-2 ">
+          <p className="text-[15px] text-white tracking-widest leading-relaxed my-4 mx-4 ">
             "{props.text}"
           </p>
-          <div className="flex text-white gap-4  mx-2">
+          <div className="flex text-white gap-4  mx-4">
           <FaStar className="h-6 w-6" />
           <FaStar className="h-6 w-6" />
           <FaStar className="h-6 w-6" />
@@ -40,7 +40,7 @@ const ReviewCard = (props: Props) => {
       </div>
     );
   };
-  
+
 const Sandbox = () => {
   useEffect(() => {
     gsap.fromTo(
