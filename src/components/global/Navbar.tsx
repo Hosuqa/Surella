@@ -37,16 +37,6 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        gsap.fromTo(
-            ".navgsap",
-            { opacity: 0, y: -20 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                delay:0.2,
-            }
-        );
         const handleScroll = () => {
             if (window.scrollY > 750) {
                 setScrolled(true);
