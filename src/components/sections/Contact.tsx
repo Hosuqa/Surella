@@ -14,7 +14,7 @@ const text = texts[1]?.contactText;
 useEffect(() => {
     gsap.fromTo(
       ".textbox",
-      { opacity: 0, x: -50 },
+      { opacity: 0, x: -20 },
       {
         opacity: 1,
         x: 0,
@@ -29,7 +29,7 @@ useEffect(() => {
     );
     gsap.fromTo(
         ".conbox",
-        { opacity: 0, x: 50 },
+        { opacity: 0, x: 20 },
         {
           opacity: 1,
           x: 0,
@@ -69,7 +69,7 @@ useEffect(() => {
                                     <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" type="text"></input>
                                 </div>
                             </div>
-                            <div className="w-full h-full flex flex-col ">
+                            <div className="w-full h-full flex flex-col">
                                 <p className="pt-2 pb-1">Email</p>
                                 <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"  type="email"></input>
                                 <p className="pt-2 pb-1">Wiadomość</p>

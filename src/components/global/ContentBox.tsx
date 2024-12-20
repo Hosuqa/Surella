@@ -58,11 +58,11 @@ const ContentBox = () => {
         <>
             <Navbar />
             <Hero openModal={handleButtonClick} />
-            <About />
+            <About /> 
             <Gallery />
             <Counter />
             <Colab />
-            <Review />
+            <Review /> 
             <Contact />
             <Sandbox />
             <Footer />

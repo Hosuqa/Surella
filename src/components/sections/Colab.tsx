@@ -48,7 +48,7 @@ const Colab = () => {
   useEffect(() => {
     gsap.fromTo(
         ".txtbox",
-        { opacity: 0, x: -50 },
+        { opacity: 0, x: -20 },
         {
             opacity: 1,
             x: 0,
@@ -63,7 +63,7 @@ const Colab = () => {
     );
     gsap.fromTo(
       ".picbox",
-      { opacity: 0, x: 50 },
+      { opacity: 0, x: 20 },
       {
           opacity: 1,
           x: 0,

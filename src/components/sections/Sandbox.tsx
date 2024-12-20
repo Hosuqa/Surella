@@ -29,6 +29,10 @@ const Sandbox = () => {
         <XlWrapper vertical >
             <div className="w-full h-[full]">
                 <Title title="Sandbox tester" subtitle="Test" titleColor="text-red-900" subtitleColor="text-red-800" lineColor="bg-red-800" />
+                <div className="bg-emerald-500 h-[50vh]"></div>
+                <div className="bg-emerald-600 h-[50vh]"></div>
+                <div className="bg-emerald-700 h-[50vh]"></div>
+                <div className="bg-emerald-800 h-[50vh]"></div>
 
             </div>
         </XlWrapper>
