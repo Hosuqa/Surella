@@ -34,7 +34,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
             gsap.fromTo(
                 ".thumbnail-image",
                 { opacity: 0, y: 20 },
-                { opacity: 1, y: 0,delay:0.2, duration: 0.2, stagger: 0.1, ease: "power1.out" }
+                { opacity: 1, y: 0,delay:0.2, duration: 0.2, stagger: 0.05, ease: "power1.out" }
             );
         }
         
