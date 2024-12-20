@@ -16,7 +16,11 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 
 gsap.registerPlugin(TextPlugin);
 
-const Hero = () => {
+interface HeroProps {
+  openModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ openModal }) => {
   const words = ["żaluzje", "plisy", "moskitiery", "markizy", "zasłony"];
   useEffect(() => {
     gsap.timeline()
@@ -81,7 +85,7 @@ const Hero = () => {
            <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white text-nowrap ml-1 `}></p>
            <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2 "
              whileTap={{ y:4 }}>
-               <p className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
+               <p onClick={openModal} className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
                  Sprawdź wycenę
                </p>
            </motion.div>

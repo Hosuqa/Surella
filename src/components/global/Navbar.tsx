@@ -5,7 +5,6 @@ import { surellawhite } from '../../assets';
 import { surella } from '../../assets';
 import { motion } from "framer-motion";
 import './Navbar.css'
-import gsap from "gsap";
 
 type Props = {
     title: string;

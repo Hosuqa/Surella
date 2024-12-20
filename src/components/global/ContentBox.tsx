@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { gsap } from "gsap"; // Import GSAP
 import Navbar from '@components/global/Navbar';
 import Hero from '@components/sections/Hero';
 import About from '@components/sections/About';
@@ -10,9 +11,11 @@ import Colab from '@components/sections/Colab';
 import Review from '@components/sections/Review';
 import Sandbox from '@components/sections/Sandbox';
 import { FaCalculator } from "react-icons/fa6";
+import Modal from '@components/global/Modal'; // Import Modal component
 
 const ContentBox = () => {
-    const [scrolled, setScrolled] = useState(false); 
+    const [scrolled, setScrolled] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,11 +32,32 @@ const ContentBox = () => {
         };
     }, []);
 
+    useEffect(() => {
+        if (scrolled) {
+            gsap.to(".calcbutton", {
+                x: 0,
+                duration: 0.2,
+                ease: "power1.out",
+            });
+        } else {
+            gsap.to(".calcbutton", {
+                x: 120,
+                opacity: 1,
+                duration: 0.2,
+                ease: "power1.in",
+            });
+        }
+    }, [scrolled]);
+
+    // Toggle modal visibility
+    const handleButtonClick = () => {
+        setIsModalOpen(!isModalOpen);
+    };
 
     return (
         <>
             <Navbar />
-            <Hero />
+            <Hero openModal={handleButtonClick} />
             <About />
             <Gallery />
             <Counter />
@@ -43,12 +67,16 @@ const ContentBox = () => {
             <Sandbox />
             <Footer />
 
-            {scrolled && (
-                <button
-                    className="calcbutton fixed bottom-6 right-6 bg-surella-700 text-white py-2 px-4 shadow-lg hover:bg-surella-800 duration-500 z-50">
-                    <FaCalculator className="m-2 h-10 w-10"/>
-                </button>
-            )}
+            {/* Modal */}
+            <Modal isOpen={isModalOpen} onClose={handleButtonClick} />
+
+            {/* Button to open modal */}
+            <button
+                className="calcbutton fixed bottom-3 right-3 xl:bottom-6 xl:right-6 bg-surella-700 text-white p-3 shadow-lg hover:bg-surella-800 duration-500 z-50"
+                onClick={handleButtonClick}
+            >
+                <FaCalculator className="m-2 h-6 w-6 md:h-8 md:w-8" />
+            </button>
         </>
     );
 };

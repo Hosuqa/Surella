@@ -1,7 +1,6 @@
 import Title from "@components/global/Title";
 import { XlWrapper } from "@components/global/Wrappers";
 import { useEffect } from "react";
-import { styles } from "../../styles";
 import { FaStar } from "react-icons/fa6";
 import { google } from "../../assets";
 import ReviewSlider from "@components/sections/ReviewSlider";
