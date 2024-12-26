@@ -68,49 +68,51 @@ const Sandbox = () => {
         </div>
     </XlWrapper>
     <div className="reviews-slider">
-      <Swiper
-  effect={'coverflow'}
-  grabCursor={true}
-  centeredSlides={true}
-  slidesPerView={'auto'}
-  loop={true}
-  speed={550}
-  autoplay={{
-    delay: 5000, 
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  }}
-  coverflowEffect={{
-    rotate: 40,
-    stretch: 0,
-    depth: 100,
-    modifier: 1.1,
-    slideShadows: false,
-    scale: 0.9,
-  }}
-  modules={[EffectCoverflow, Autoplay]} // Include the Autoplay module here
-  className=""
->
-  <SwiperSlide>
+          <Swiper
+      effect={'coverflow'}
+      grabCursor={true}
+      centeredSlides={true}
+      slidesPerView={'auto'}
+      loop={true}
+      speed={550}
+      autoplay={{
+        delay: 5000, 
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      coverflowEffect={{
+        rotate: 40,
+        stretch: 0,
+        depth: 100,
+        modifier: 1.1,
+        slideShadows: false,
+        scale: 0.9,
+      }}
+      modules={[EffectCoverflow, Autoplay]} // Include the Autoplay module here
+    >
+  <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard text="text" date="2024" name="ania" />
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard 
       text="Ale bym sobie takaroletkę strzeliła. Generalnie to polecam chłopaków dobrze robią dobra energia" 
       date="2024" 
       name="ania" 
     />
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard text="text" date="2024" name="ania" />
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard text="text" date="2024" name="ania" />
   </SwiperSlide>
-  <SwiperSlide>
+    <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard text="text" date="2024" name="ania" />
   </SwiperSlide>
-  <SwiperSlide>
+    <SwiperSlide className="w-[550px] h-[350px]">
+    <ReviewCard text="text" date="2024" name="ania" />
+  </SwiperSlide>
+    <SwiperSlide className="w-[550px] h-[350px]">
     <ReviewCard text="text" date="2024" name="ania" />
   </SwiperSlide>
 </Swiper>
