@@ -15,3 +15,15 @@
         background-position: 100% 50%;
     }
 }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }

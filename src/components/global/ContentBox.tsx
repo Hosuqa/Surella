@@ -66,7 +66,6 @@ const ContentBox = () => {
             <Contact />
             <Sandbox />
             <Footer />
-
             {/* Modal */}
             <Modal isOpen={isModalOpen} onClose={handleButtonClick} />
 

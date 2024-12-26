@@ -37,7 +37,6 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps ) => {
                 { opacity: 1, y: 0,delay:0.2, duration: 0.2, stagger: 0.05, ease: "power1.out" }
             );
         }
-        
     }, [currentSet]);
 
     return (

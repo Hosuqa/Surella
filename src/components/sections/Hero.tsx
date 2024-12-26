@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import { styles } from "../../styles";
 import { hero1, hero2 } from '../../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import { motion } from "framer-motion";
 import './hero.css';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import hero3 from "/images/rolety5.jpg"
 import hero4 from "/images/zaluzje1.jpg"
@@ -99,7 +98,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
           <Swiper
              speed={2000}
              effect={'fade'}
-             modules={[Pagination, Autoplay, EffectFade]}
+             modules={[Autoplay, EffectFade]}
              autoplay={{ delay: 3500, disableOnInteraction: false }}
              loop={true}
              className="photo h-full w-full"

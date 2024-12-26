@@ -1,0 +1,13 @@
+.reviews-slider .swiper {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  
+  .reviews-slider .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 550px;
+    height: 350px;
+  }
+  

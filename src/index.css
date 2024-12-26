@@ -48,10 +48,10 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #208481;
+  background-color: #165A58;
 }
 *::-webkit-scrollbar-thumb:active {
-  background-color: #165A58;
+  background-color: #208481;
 }
 
 body {
