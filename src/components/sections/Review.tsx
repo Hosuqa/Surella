@@ -61,11 +61,11 @@ const Sandbox = () => {
 
   return (
     <div className="bg my-20">
-      {/* <XlWrapper >
+      <XlWrapper >
         <div className="w-full h-full">
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
-      </XlWrapper> */}
+      </XlWrapper>
       <div className="reviews-slider ">
         <Swiper
           effect="coverflow"
