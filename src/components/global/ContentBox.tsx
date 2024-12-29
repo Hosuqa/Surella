@@ -9,7 +9,7 @@ import Footer from '@components/global/Footer';
 import Contact from '@components/sections/Contact';
 import Colab from '@components/sections/Colab';
 import Review from '@components/sections/Review';
-import Sandbox from '@components/sections/Sandbox';
+// import Sandbox from '@components/sections/Sandbox';
 import { FaCalculator } from "react-icons/fa6";
 import Modal from '@components/global/Modal'; // Import Modal component
 
