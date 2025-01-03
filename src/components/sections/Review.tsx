@@ -18,7 +18,7 @@ type Props = {
 };
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-surella-500 select-none w-full h-full border-2 border-surella700 justify-beween flex flex-col items-center">
+  <div className="bg-surella-500 select-none w-full h-full  justify-beween flex flex-col items-center">
     <img src={surellawhite} alt="" className="w-14 h-14 md:my-6 my-4 "/>
     <p className="text-white font-bold text-xl">{props.name}:</p>
     <div className=" h-ful p-4 md:p-6 flex flex-col">
