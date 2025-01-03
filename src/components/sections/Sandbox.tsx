@@ -2,7 +2,7 @@ import Title from "@components/global/Title";
 import { XlWrapper } from "@components/global/Wrappers";
 
 import { useEffect } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

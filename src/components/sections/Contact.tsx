@@ -4,7 +4,7 @@ import { XlWrapper } from "@components/global/Wrappers";
 import texts from '../../texts.json'
 import { styles } from "../../styles";
 import { motion } from "framer-motion";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

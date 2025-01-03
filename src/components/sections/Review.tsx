@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
 import reviewData from "../../Review.json";
 import { surellawhite } from '../../assets';
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation,EffectCoverflow } from "swiper/modules";
@@ -23,7 +23,7 @@ const ReviewCard2 = (props: Props) => (
     <img src={surellawhite} alt="" className="w-14 h-14 md:my-6 my-4 "/>
     <p className="text-white font-bold text-xl">{props.name}:</p>
     <div className=" h-ful p-4 md:p-6 flex flex-col">
-      <p className="text-[15px] text-white tracking-widest leading-relaxed mx-4">
+      <p className="text-[15px] xl:text-[17px] text-white tracking-widest leading-relaxed mx-4">
         "{props.text}"
       </p>
     </div>

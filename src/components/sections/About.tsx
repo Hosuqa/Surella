@@ -5,7 +5,7 @@ import { FaToolbox, FaHandshake, FaMoneyCheckDollar } from "react-icons/fa6";
 import { FaTools } from "react-icons/fa";
 import React, { ReactElement, useEffect } from 'react';
 import texts from '../../texts.json';
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

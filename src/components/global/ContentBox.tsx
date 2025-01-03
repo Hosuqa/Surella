@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { gsap } from "gsap"; // Import GSAP
+import { gsap } from "gsap";
 import Navbar from '@components/global/Navbar';
 import Hero from '@components/sections/Hero';
 import About from '@components/sections/About';

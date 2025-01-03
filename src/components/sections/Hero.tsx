@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import hero3 from "/images/rolety5.jpg"
 import hero4 from "/images/zaluzje1.jpg"
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { TextPlugin } from 'gsap/TextPlugin';
 import { IoIosArrowRoundDown } from "react-icons/io";
 

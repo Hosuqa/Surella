@@ -4,7 +4,7 @@ import { styles } from "../../styles";
 import Title from '../global/Title';
 import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

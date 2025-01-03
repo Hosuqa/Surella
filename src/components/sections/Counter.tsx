@@ -4,7 +4,7 @@ import { FaBuilding } from "react-icons/fa6";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LuBlinds } from "react-icons/lu";
 import CountUp from 'react-countup';
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

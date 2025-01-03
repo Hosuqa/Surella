@@ -5,7 +5,7 @@ import Title from '../global/Title'
 import images from '../../images.json'
 import { useEffect, useState } from 'react';
 import { FaXmark, FaMagnifyingGlass  } from "react-icons/fa6";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IoIosArrowDown } from "react-icons/io";
 gsap.registerPlugin(ScrollTrigger);
