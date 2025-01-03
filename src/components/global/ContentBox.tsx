@@ -36,13 +36,14 @@ const ContentBox = () => {
         if (scrolled) {
             gsap.to(".calcbutton", {
                 x: 0,
+                opacity: 1,
                 duration: 0.2,
                 ease: "power1.out",
             });
         } else {
             gsap.to(".calcbutton", {
                 x: 120,
-                opacity: 1,
+                opacity: 0,
                 duration: 0.2,
                 ease: "power1.in",
             });
@@ -71,7 +72,7 @@ const ContentBox = () => {
 
             <Modal isOpen={isModalOpen} onClose={handleButtonClick} />
             <button
-                className="calcbutton fixed bottom-3 right-3 xl:bottom-6 xl:right-6 bg-surella-700 text-white p-3 shadow-lg hover:bg-surella-800 duration-500 z-50"
+                className="opacity-0 calcbutton fixed bottom-3 right-3 xl:bottom-6 xl:right-6 bg-surella-700 text-white p-3 shadow-lg hover:bg-surella-800 duration-500 z-20"
                 onClick={handleButtonClick}
             >
                 <FaCalculator className="m-2 h-6 w-6 md:h-8 md:w-8" />

@@ -1,7 +1,5 @@
 import Title from "@components/global/Title";
 import { XlWrapper } from "@components/global/Wrappers";
-import { FaStar } from "react-icons/fa6";
-import { google } from "../../assets";
 import reviewData from "../../Review.json";
 
 import gsap from "gsap";
@@ -19,28 +17,6 @@ type Props = {
   name: string;
   date: string;
 };
-
-const ReviewCard = (props: Props) => (
-  <div className="select-none w-full h-full border-2 border-surella-500 bg-white flex flex-col justify-between">
-    <div className="flex h-fit items-center justify-between bg-white p-4">
-      <img src={google} alt="google" className="h-8 w-8" />
-      <p className="text-surella-600 font-bold">{props.date}</p>
-    </div>
-    <div className="bg-surella-500 h-full p-6 flex flex-col">
-      <p className="text-white font-bold">{props.name}:</p>
-      <p className="text-[15px] text-white tracking-widest leading-relaxed my-4 mx-4">
-        "{props.text}"
-      </p>
-      <div className="flex text-white gap-4 mx-4">
-        <FaStar className="h-6 w-6" />
-        <FaStar className="h-6 w-6" />
-        <FaStar className="h-6 w-6" />
-        <FaStar className="h-6 w-6" />
-        <FaStar className="h-6 w-6" />
-      </div>
-    </div>
-  </div>
-);
 
 const ReviewCard2 = (props: Props) => (
   <div className="bg-surella-500 select-none w-full h-full border-2 border-surella700 justify-beween flex flex-col items-center">
