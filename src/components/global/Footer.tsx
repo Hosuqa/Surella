@@ -1,6 +1,6 @@
 import { surellawhite } from '../../assets';
-import { Link } from "react-router-dom";
-import { IoIosArrowDown } from "react-icons/io";
+// import { Link } from "react-router-dom";
+// import { IoIosArrowDown } from "react-icons/io";
 
 
 const Footer = () => {

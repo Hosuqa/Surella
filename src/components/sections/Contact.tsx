@@ -54,7 +54,7 @@ useEffect(() => {
                             <p className={`${styles.aboutText} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
                         </div>
                         <div className="h-fit p-10 pt-0 lg:pt-4 2xl:pt-10 text-center">
-                            <p className={`${styles.contactText} text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
+                            <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
                         </div>
                     </div>
                     <div className="conbox w-full h-full bg-surella-600">
