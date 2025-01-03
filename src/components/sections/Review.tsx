@@ -1,4 +1,5 @@
 import Title from "@components/global/Title";
+import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
 import reviewData from "../../Review.json";
 import { surellawhite } from '../../assets';
@@ -30,7 +31,22 @@ const ReviewCard2 = (props: Props) => (
 );
 
 const Sandbox = () => {
-
+  useEffect(() => {
+    gsap.fromTo(
+      ".review_box",
+      { opacity: 0, y:50},
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: ".review_box",
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
   return (
     <div className="bg my-20">
       <XlWrapper >
@@ -38,7 +54,7 @@ const Sandbox = () => {
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
       </XlWrapper>
-      <div className="reviews-slider ">
+      <div className="reviews-slider review_box">
         <Swiper
           effect="coverflow"
           grabCursor={true}
@@ -78,7 +94,7 @@ const Sandbox = () => {
           className="relative"
         >
           {reviewData.map((review, index) => (
-            <SwiperSlide key={index} className="h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
+            <SwiperSlide key={index} className=" h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
               <ReviewCard2 text={review.text} date={review.date} name={review.name} />
             </SwiperSlide>
           ))}
