@@ -16,7 +16,7 @@ const Title = ({ title, href }: Props) => {
         <div className="w-full h-full justify-center items-center">
             <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
                 <a href={href} 
-                   className={`${styles.NavbarText} w-full py-1 hidden xl:flex justify-center text-white tracking-wider font-interExtraBold font-bold cursor-pointer`}
+                   className={`${styles.NavbarText}  w-full py-1 hidden xl:flex justify-center tracking-wider font-interExtraBold font-bold cursor-pointer`}
                   >
 
                    {title}
@@ -53,7 +53,7 @@ const Navbar = () => {
     return (
         <>
             <motion.nav
-            className={`${styles.paddingX} ${scrolled ? "text-surella-600 shadow-lg" : "text-white"} navgsap w-full h-20 flex items-center py-5 fixed top-0 z-40 uppercase text-nowrap transition-colors duration-500`}
+            className={`${styles.paddingX} ${scrolled ? "text-surella-600" : "text-white"} navgsap w-full h-20 flex items-center py-5 fixed top-0 z-40 uppercase text-nowrap transition-colors duration-500`}
             animate={{
                 backgroundColor: scrolled ? "#fff" : "transparent",
                 boxShadow: scrolled
@@ -93,13 +93,13 @@ const Navbar = () => {
                     whileTap={{ scale: 0.9 }}
                     >
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-white transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-white transition-opacity duration-200 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-opacity duration-200 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] bg-white transition-transform duration-200 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
                         ></motion.div>
                     </motion.div>
                 </div>
