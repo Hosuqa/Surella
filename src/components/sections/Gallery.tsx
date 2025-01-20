@@ -8,6 +8,7 @@ import { FaXmark, FaMagnifyingGlass  } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IoIosArrowDown } from "react-icons/io";
+import texts from '../../texts.json';
 gsap.registerPlugin(ScrollTrigger);
 
 type GalleryModalProps = {
@@ -197,7 +198,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">
                                     Żaluzje
                                 </p>
-                                <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="text-surella-800 text-end">{texts[3].blinds}</p>
                             </div>
                             <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.moskitiery)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -211,7 +212,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[30px] text-surella-700 font-interBold font-bold mb-4">
                                     Firany
                                 </p>
-                                <p className="text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="text-surella-800 text-end">{texts[5].curtains}</p>
                             </div>
                             <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.oslony)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -231,7 +232,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
                                     Rolety
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="hidden sm:flex text-surella-800 text-start">{texts[2].rollerblinds}</p>
                             </div>
                             <div className=" sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -245,7 +246,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
                                     Żaluzje
                                 </p>
-                                <p className="text-surella-800 text-start hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="text-surella-800 text-start hidden">{texts[3].blinds}</p>
                             </div>
                             <div className="sqareImageRight relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.zaluzje)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -257,9 +258,9 @@ const Gallery = () => {
                             </div>
                             <div className=" sm:h-[200px] sqareImageRight sm:my-10 sm:ml-10 flex flex-col justify-center items-start tracking-wider">
                                 <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
-                                    Moskitiera
+                                    Moskitiery
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="hidden sm:flex text-surella-800 text-start">{texts[4].mosquitonets}</p>
                             </div>
                             <div className="sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.moskitiery)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -273,7 +274,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
                                     Firany
                                 </p>
-                                <p className="hidden text-surella-800 text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="hidden text-surella-800 text-end">{texts[5].curtains}</p>
                             </div>
                             <div className="sqareImageRight relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.firany)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
@@ -287,7 +288,7 @@ const Gallery = () => {
                                 <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
                                     Osłony zewnętrzne
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur neque accusantium corrupti! Id illo nostrum molestias quod, modi fuga culpa corrupti accusantium tempora libero natus odio praesentium, aut optio!</p>
+                                <p className="hidden sm:flex text-surella-800 text-start">{texts[6].covers}</p>
                             </div>
                             <div className="sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.oslony)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
