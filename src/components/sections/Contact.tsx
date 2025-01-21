@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import emailjs from "emailjs-com";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdMail } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -140,12 +142,19 @@ const Contact = () => {
             <div className="w-full">
                 <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
-                    <div className="textbox bg-slate-100 w-full">
-                        <div className="h-fit p-10">
-                            <p className={`${styles.aboutText} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
+                    <div className="textbox bg-slate-100 w-full flex flex-col  ">
+                        <div className="h-1/2 bg-red-400= p-10">
+                            <p className={`${styles.contactTextMain} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
                         </div>
-                        <div className="h-fit p-10 pt-0 lg:pt-4 2xl:pt-10 text-center">
-                            <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
+                        <div className="h-1/4 bg-red-30 flex flex-col gap-10 my-10 md:my-0">
+                            <div className="h-fit text-center flex justify-center  items-center ">
+                                <BsFillTelephoneFill className="text-surella-600 h-8 w-8 mr-10"/>
+                                <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
+                            </div>
+                            <div className="h-fit  text-center flex justify-center items-center">
+                                <MdMail className="text-surella-600 h-10 w-10 mr-10"/>
+                                <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>surella@client.pl</p>
+                            </div>
                         </div>
                     </div>
                     <div className="conbox w-full h-full bg-surella-600">

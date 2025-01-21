@@ -25,7 +25,9 @@ const styles = {
   colabtitle:
     "2xl:text-[20px] md:text-[20px] text-[14px]",
   contactText:
-    "2xl:text-[44px] md:text-[32px]  text-[28px]",
+    "2xl:text-[36px] md:text-[32px]  text-[28px]",
+  contactTextMain:
+    "2xl:text-[20px] md:text-[18px] text-[16px]",
 };
 
 export { styles };
