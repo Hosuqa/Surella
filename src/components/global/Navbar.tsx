@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { surellawhite } from '../../assets';
 import { surella } from '../../assets';
 import { motion } from "framer-motion";
+import { FaXmark } from "react-icons/fa6";
 import './Navbar.css'
 
 type Props = {
@@ -93,13 +94,13 @@ const Navbar = () => {
                     whileTap={{ scale: 0.9 }}
                     >
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[10.5px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-opacity duration-200 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-opacity duration-200 `}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 ${menuOpen ? '-rotate-45  -translate-y-[11px]' : ''}`}
+                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
                         ></motion.div>
                     </motion.div>
                 </div>
@@ -107,13 +108,19 @@ const Navbar = () => {
             <motion.div
             initial={{ x:"150%"}}
             animate={{ x: menuOpen ? 0 : "150%" }}
-            //animate={{ scale: menuOpen ? 0 : 1 , opacity: menuOpen ? 0 : 1}}
             transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-            className="xl:hidden fixed top-[80px] right-0 bg-surella-800 flex flex-col z-10 gap-8 p-10 uppercase">
-                <a href="#About" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>O nas</a>
-                <a href="#Gallery" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Realizacje</a>
-                <a href="#Colab" className={`text-white font-bold ${styles.NavbarText} ${'visible'}}`}>Współpraca</a>
-                <a href="#Contact" className={`text-white font-bold ${styles.NavbarText} ${'visible'}`}>Kontakt</a>
+            className="xl:hidden fixed top-0 right-0 w-fit h-full z-50 bg-surella-800 flex flex-col gap-8 px-10 py-16 sm:p-20 uppercase">
+                <motion.div
+                whileTap={{ scale: 0.9 }}
+                className="absolute top-5 right-5 z-50">
+                    <FaXmark onClick={toggleMenu}  className=" text-white font-bold text-3xl"/>
+                </motion.div>
+                <motion.div className="flex flex-col gap-8 text-white font-bold text-end mt-6">
+                    <motion.a href="#About" whileTap={{ scale: 0.9 }}>O nas</motion.a>
+                    <motion.a href="#Gallery" whileTap={{ scale: 0.9 }}>Realizacje</motion.a>
+                    <motion.a href="#Colab" whileTap={{ scale: 0.9 }}>Współpraca</motion.a>
+                    <motion.a href="#Contact" whileTap={{ scale: 0.9 }}>Kontakt</motion.a>
+                </motion.div>
             </motion.div>
         </>
     );
