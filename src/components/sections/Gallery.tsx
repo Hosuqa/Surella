@@ -8,6 +8,8 @@ import { FaXmark, FaMagnifyingGlass  } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IoIosArrowDown } from "react-icons/io";
+import { motion } from "framer-motion";
+
 import texts from '../../texts.json';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,18 +75,27 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         <div
             role="dialog"
             aria-hidden={!currentSet}
-            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} flex z-[9999] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}
+            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}
         >
             <div className="relative w-full h-full flex">
+                <motion.div
+                whileTap={{ x: -4 }}
+                onClick={closeModal}
+                className='absolute top-0 right-0 m-4 w-10 h-10 '>                   
                 <FaXmark
-                    className="absolute top-4 right-4 xl:right-2 w-[5vw] h-[5vh] cursor-pointer text-white"
-                    onClick={closeModal}
+                    className="w-full h-full cursor-pointer text-white z-50"
+                    
                 />
-                <div className="w-full h-[90vh] xl:py-20 xl:px-72 lg:py-16 lg:px-48 md:py-12 md:px-24 py-10 px-8 flex items-center justify-center">
-                    <IoIosArrowDown
-                        className="absolute left-4 md:left-10 text-white w-12 h-12 rotate-90 cursor-pointer"
-                        onClick={() => navigate("prev")}
-                    />
+                </motion.div>
+                <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6  py-4  flex items-center justify-center">
+                    <motion.div
+                    whileTap={{ x: -4 }}
+                    onClick={() => navigate("prev")}
+                    className='w-12 h-12 absolute left-4 md:left-10 z-50'>
+                        <IoIosArrowDown
+                            className=" text-white h-full w-full rotate-90 cursor-pointer"
+                        />
+                    </motion.div>
                     <div className="w-full h-full relative gallery-modal">
                         <img
                             src={currentPhoto}
@@ -93,27 +104,33 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                             alt="zdjecie"
                         />
                     </div>
-                    <IoIosArrowDown
-                        className="absolute right-4 md:right-10 text-white w-12 h-12 -rotate-90 cursor-pointer"
-                        onClick={() => navigate("next")}
-                    />
+                    <motion.div
+                    whileTap={{ x: 4 }}
+                    onClick={() => navigate("prev")}
+                    className='w-12 h-12 absolute right-4 md:right-10 z-50'>
+                        <IoIosArrowDown
+                            className=" text-white h-full w-full -rotate-90 cursor-pointer "
+                        />
+                    </motion.div>
                 </div>
 
-                <div className="absolute flex bottom-14 md:bottom-0 w-full h-[10vh] bg-black/70">
-                    <div className="w-full h-full p-2 gap-2 flex px-4">
+                <div className="absolute flex bottom-0 w-full h-[12vh] bg-black/70">
+                    <div className="w-full h-full py-2 flex items-center overflow-x-auto overflow-y-hidden ">
                         {currentSet &&
                             currentSet.map((image) => (
                                 <div
                                     key={image}
-                                    className="thumbnail-image h-full aspect-square overflow-hidden group cursor-pointer"
+                                    className="thumbnail-image h-full aspect-square group cursor-pointer ml-3"
                                     onClick={() => setCurrentPhoto(image)}
                                 >
                                     <div className="w-full h-full relative">
                                         <img
                                             src={image}
-                                            className="object-cover w-full h-full group-hover:scale-[1.2] duration-300"
+                                            className="object-cover w-full h-full duration-300"
+                                            alt="zdjecie"
+                                            draggable="false"
                                         />
-                                        <div className="bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-70 opacity-0 duration-300"></div>
+                                        <div className="bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-0 z-50 opacity-30 duration-300"></div>
                                     </div>
                                 </div>
                             ))}
