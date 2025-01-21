@@ -23,21 +23,16 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
 
     useEffect(() => {
         if (currentSet) {
-            // Background animation on open
             gsap.fromTo(
                 ".gallery-modal-bg",
                 { opacity: 0 },
                 { opacity: 1, duration: 0.4 }
             );
-
-            // Image open animation
             gsap.fromTo(
                 ".gallery-modal",
                 { scale: 0.6 },
                 { scale: 1, duration: 0.4 }
             );
-
-            // Thumbnail animation
             gsap.fromTo(
                 ".thumbnail-image",
                 { opacity: 0, y: 20 },
@@ -84,7 +79,6 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                 className='absolute top-0 right-0 m-4 w-10 h-10 '>                   
                 <FaXmark
                     className="w-full h-full cursor-pointer text-white z-50"
-                    
                 />
                 </motion.div>
                 <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6  py-4  flex items-center justify-center">
@@ -106,7 +100,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                     </div>
                     <motion.div
                     whileTap={{ x: 4 }}
-                    onClick={() => navigate("prev")}
+                    onClick={() => navigate("next")}
                     className='w-12 h-12 absolute right-4 md:right-10 z-50'>
                         <IoIosArrowDown
                             className=" text-white h-full w-full -rotate-90 cursor-pointer "
@@ -119,10 +113,11 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                         {currentSet &&
                             currentSet.map((image) => (
                                 <div
-                                    key={image}
-                                    className="thumbnail-image h-full aspect-square group cursor-pointer ml-3"
-                                    onClick={() => setCurrentPhoto(image)}
-                                >
+                                key={image}
+                                className={`thumbnail-image h-full aspect-square group cursor-pointer ml-3 ${currentPhoto === image ? " opacity-100" : "opacity-50"
+                                }`}
+                                onClick={() => setCurrentPhoto(image)}
+                            >
                                     <div className="w-full h-full relative">
                                         <img
                                             src={image}
@@ -130,7 +125,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                                             alt="zdjecie"
                                             draggable="false"
                                         />
-                                        <div className="bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-0 z-50 opacity-30 duration-300"></div>
+                                        <div className={`bg-black w-full h-full absolute top-0 bottom-0 group-hover:opacity-0 z-50 ${currentPhoto === image ? " opacity-0" : "opacity-50"} duration-300`}></div>
                                     </div>
                                 </div>
                             ))}
@@ -140,8 +135,9 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         </div>
     );
 };
-const Gallery = () => {
 
+
+const Gallery = () => {
     const [currentSet, setCurrentSet] = useState<string[] | null>(null);
 
     useEffect(() =>{

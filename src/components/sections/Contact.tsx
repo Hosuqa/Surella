@@ -143,10 +143,10 @@ const Contact = () => {
                 <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="textbox bg-slate-100 w-full flex flex-col  ">
-                        <div className="h-1/2 bg-red-400= p-10">
+                        <div className="h-1/2 px-10 pt-10">
                             <p className={`${styles.contactTextMain} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
                         </div>
-                        <div className="h-1/4 bg-red-30 flex flex-col gap-10 my-10 md:my-0">
+                        <div className="h-1/2 bg-red-30 flex flex-col gap-10 my-10">
                             <div className="h-fit text-center flex justify-center  items-center ">
                                 <BsFillTelephoneFill className="text-surella-600 h-8 w-8 mr-10"/>
                                 <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
