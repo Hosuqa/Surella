@@ -23,6 +23,10 @@ const Contact = () => {
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
+    const [errors, setErrors] = useState({
+        email: "",
+        telephone: ""
+    });
 
     useEffect(() => {
         gsap.fromTo(
@@ -60,15 +64,56 @@ const Contact = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
-    
+
+    const validateEmail = () => {
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(form.email)) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                email: "Proszę wprowadzić poprawny adres e-mail."
+            }));
+            return false;
+        }
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: ""
+        }));
+        return true;
+    };
+
+    const validateTelephone = () => {
+        const telephoneRegex = /^[0-9]{9}$/;
+        if (!telephoneRegex.test(form.telephone)) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                telephone: "Proszę wprowadzić poprawny numer telefonu."
+            }));
+            return false;
+        }
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            telephone: ""
+        }));
+        return true;
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setStatus("");
+
+        const isEmailValid = validateEmail();
+        const isTelephoneValid = validateTelephone();
+
+        if (!isEmailValid || !isTelephoneValid) {
+            setLoading(false);
+            return;
+        }
+
         const emailServiceId = "KEY";
         const emailTemplateId = "KEY";
         const emailPublicKey = "KEY";        
-        
+
         emailjs.send(
             emailServiceId,
             emailTemplateId,
@@ -88,7 +133,7 @@ const Contact = () => {
         }).finally(() => {
             setLoading(false);
         });
-    }
+    };
 
     return (
         <XlWrapper vertical id="Contact">
@@ -140,14 +185,18 @@ const Contact = () => {
                                     type="email"
                                     required
                                 />
+                                {errors.email && <p className="text-xs mt-2 font-bold text-red-300">{errors.email}</p>}
+
                                 <p className="pt-2 pb-1">Numer telefonu</p>
                                 <input 
-                                name="telephone"
-                                value={form.telephone}
-                                onChange={handleChange}
-                                className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"
-                                type="tel">
-                                </input>
+                                    name="telephone"
+                                    value={form.telephone}
+                                    onChange={handleChange}
+                                    className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"
+                                    type="tel"
+                                />
+                                {errors.telephone && <p className="text-xs mt-2 font-bold text-red-300">{errors.telephone}</p>}
+
                                 <p className="pt-2 pb-1">Wiadomość</p>
                                 <textarea 
                                     name="message"
