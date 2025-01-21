@@ -1,53 +1,99 @@
 import Title from "@components/global/Title";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { XlWrapper } from "@components/global/Wrappers";
-import texts from '../../texts.json'
+import texts from '../../texts.json';
 import { styles } from "../../styles";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from "emailjs-com";
 
 gsap.registerPlugin(ScrollTrigger);
-const Contact = () => {
-const text = texts[1]?.contactText;
 
-useEffect(() => {
-    gsap.fromTo(
-      ".textbox",
-      { opacity: 0, x: -20 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        stagger: 0.25,
-        scrollTrigger: {
-          trigger: ".textbox",
-          start: "top 90%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-    gsap.fromTo(
-        ".conbox",
-        { opacity: 0, x: 20 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          stagger: 0.25,
-          scrollTrigger: {
-            trigger: ".conbox",
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-  }, []);
+const Contact = () => {
+    const text = texts[1]?.contactText;
+
+    const [form, setForm] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+        telephone: ""
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState("");
+
+    useEffect(() => {
+        gsap.fromTo(
+            ".textbox",
+            { opacity: 0, x: -20 },
+            {
+                opacity: 1,
+                x: 0,
+                duration: 0.8,
+                stagger: 0.25,
+                scrollTrigger: {
+                    trigger: ".textbox",
+                    start: "top 90%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+        gsap.fromTo(
+            ".conbox",
+            { opacity: 0, x: 20 },
+            {
+                opacity: 1,
+                x: 0,
+                duration: 0.8,
+                stagger: 0.25,
+                scrollTrigger: {
+                    trigger: ".conbox",
+                    start: "top 90%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    }, []);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+    
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus("");
+        const emailServiceId = "KEY";
+        const emailTemplateId = "KEY";
+        const emailPublicKey = "KEY";        
+        
+        emailjs.send(
+            emailServiceId,
+            emailTemplateId,
+            {
+                firstName: form.firstName,
+                lastName: form.lastName,
+                email: form.email,
+                message: form.message,
+                telephone: form.telephone
+            },
+            emailPublicKey
+        ).then(() => {
+            setStatus("Wiadomość wysłana pomyślnie!");
+            setForm({ firstName: "", lastName: "", email: "", message: "", telephone: "" });
+        }).catch(() => {
+            setStatus("Wystąpił błąd. Spróbuj ponownie.");
+        }).finally(() => {
+            setLoading(false);
+        });
+    }
 
     return (
         <XlWrapper vertical id="Contact">
-            <div className="w-full" >
-                <Title title="Skontaktuj się z nami" subtitle="Współpraca" ></Title>
+            <div className="w-full">
+                <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="textbox bg-slate-100 w-full">
                         <div className="h-fit p-10">
@@ -58,33 +104,77 @@ useEffect(() => {
                         </div>
                     </div>
                     <div className="conbox w-full h-full bg-surella-600">
-                        <div className="w-full h-full flex flex-col uppercase tracking-wide text-white p-10">
+                        <form onSubmit={handleSubmit} className="w-full h-full flex flex-col uppercase tracking-wide text-white p-10">
                             <div className="w-full h-full flex gap-4">
                                 <div className="w-full h-full">
                                     <p className="pb-1">Imię</p>
-                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" type="text"></input>
+                                    <input 
+                                        name="firstName"
+                                        value={form.firstName}
+                                        onChange={handleChange}
+                                        className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"
+                                        type="text" 
+                                        required
+                                    />
                                 </div>
+                                
                                 <div className="w-full h-full">
                                     <p className="pb-1">Nazwisko</p>
-                                    <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" type="text"></input>
+                                    <input 
+                                        name="lastName"
+                                        value={form.lastName}
+                                        onChange={handleChange}
+                                        className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none" 
+                                        type="text"
+                                        required
+                                    />
                                 </div>
                             </div>
                             <div className="w-full h-full flex flex-col">
                                 <p className="pt-2 pb-1">Email</p>
-                                <input className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"  type="email"></input>
+                                <input 
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"  
+                                    type="email"
+                                    required
+                                />
+                                <p className="pt-2 pb-1">Numer telefonu</p>
+                                <input 
+                                name="telephone"
+                                value={form.telephone}
+                                onChange={handleChange}
+                                className="w-full h-[30px] text-surella-800 focus:outline-none px-2 rounded-none"
+                                type="tel">
+                                </input>
                                 <p className="pt-2 pb-1">Wiadomość</p>
-                                <textarea className=" w-full 2xl:h-[200px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none rounded-none" placeholder="Tutaj napisz swoją wiadomość do nas"></textarea>
-                                <motion.div className="w-fit h-fit cursor-pointer px-14 py-2 mt-5 font-bold tracking-widest uppercase bg-surella-800/80"
-                                whileTap={{ y:4 }}>
-                                    <p>Wyślij</p>
-                                </motion.div>
+                                <textarea 
+                                    name="message"
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    className="w-full 2xl:h-[200px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none rounded-none" 
+                                    placeholder="Tutaj napisz swoją wiadomość do nas"
+                                    required
+                                />
+                                <div className="flex justify-between items-center mt-10 gap-4">
+                                    <motion.button 
+                                        type="submit"
+                                        className="w-fit h-fit cursor-pointer px-14 py-2 font-bold tracking-widest uppercase bg-surella-800/80"
+                                        whileTap={{ y: 4 }}
+                                        disabled={loading}
+                                    >
+                                        {loading ? "Wysyłanie..." : "Wyślij"}
+                                    </motion.button>
+                                    {status && <p className="text-center text-xs md:text-base">{status}</p>}
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </XlWrapper>
     );
-}
+};
 
 export default Contact;
