@@ -153,7 +153,7 @@ const Contact = () => {
                             </div>
                             <div className="h-fit  text-center flex justify-center items-center">
                                 <MdMail className="text-surella-600 h-10 w-10 mr-10"/>
-                                <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>surella@client.pl</p>
+                                <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>biuro@surella.pl</p>
                             </div>
                         </div>
                     </div>
