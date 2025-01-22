@@ -1,32 +1,26 @@
 [
     {
       "name": "Anonim",
-      "date": "09-2024",
       "text": "Jesteśmy bardzo zadowoleni. Profesjonalnie, szybko i w milej atmosferze. Od pomiarów do realizacji. Polecam serdecznie!"
     },
     {
-        "name": "Ewa",
-        "date": "02-2024",
-        "text": "Na ekranach kin chrony naturśmy okazję porozmawiać z reżyserem Adrianem Pankiem i jego gwiazdami, Sandrą Drzymalską oraz Jakubem Gierszałem."
+        "name": "Jakub",
+        "text": "Jestem bardzo zadowolony z moskitiery drzwiowej którą Surella zamontowała dla mnie na tarasie. Serdecznie polecam"
     },
     {
-        "name": "Piotr",
-        "date": "04-2020",
-        "text": "Bardzo dobre rolety, dobra cena,profesjonalny montaż"
-    },
-    {
-        "name": "Anonim",
-        "date": "09-2024",
-        "text": "Jesteśmy bardzo zadowoleni. Profesjonalnie, szybko i w milej atmosferze. Od pomiarów do realizacji. Polecam serdecznie!"
+        "name": "Mateusz",
+        "text": "Pomocny fachowiec"
     },
     {
         "name": "Ewa",
-        "date": "02-2024",
-        "text": "Na ekranach kin debiutuje a z walki naliśmgo gwiazdami, Sandrą Drzymalską oraz Jakubem Gierszałem."
+        "text": "Bardzo dobre wyroby, kompetentny właściciel. Polecam!"
     },
     {
         "name": "Piotr",
-        "date": "04-2020",
         "text": "Bardzo dobre rolety, dobra cena,profesjonalny montaż"
+    },
+    {
+        "name": "Agata",
+        "text": "wszystko super i profesjonalnie zrobione od początku do końca, bardzo polecam!!"
     }
   ]

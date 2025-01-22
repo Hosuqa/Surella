@@ -17,7 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 type Props = {
   text: string;
   name: string;
-  date: string;
 };
 
 const ReviewCard2 = (props: Props) => (
@@ -109,7 +108,7 @@ const Sandbox = () => {
           >
             {reviewData.map((review, index) => (
               <SwiperSlide key={index} className=" h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
-                <ReviewCard2 text={review.text} date={review.date} name={review.name} />
+                <ReviewCard2 text={review.text} name={review.name} />
               </SwiperSlide>
             ))}
           </Swiper>
