@@ -8,29 +8,29 @@
 } 
 @font-face {
   font-family: 'inter';
-  src: url('./fonts/Inter28pt-Regular.woff2') format('woff2'),
-  url('./fonts/Inter28pt-Regular.woff') format('woff');
+  src: url('/fonts/Inter28pt-Regular.woff2') format('woff2'),
+  url('/fonts/Inter28pt-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'interBold';
-  src: url('./fonts/Inter24pt-Bold.woff2') format('woff2'),
-  url('./fonts/Inter24pt-Bold.woff') format('woff');
+  src: url('/fonts/Inter24pt-Bold.woff2') format('woff2'),
+  url('/fonts/Inter24pt-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'interExtraBold';
-  src: url('./fonts/Inter24pt-ExtraBold.woff2') format('woff2'),
-  url('./fonts/Inter24pt-ExtraBold.woff') format('woff');
+  src: url('/fonts/Inter24pt-ExtraBold.woff2') format('woff2'),
+  url('/fonts/Inter24pt-ExtraBold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'interMedium';
-  src: url('./fonts/Inter24pt-Medium.woff2') format('woff2'),
-  url('./fonts/Inter24pt-Medium.woff') format('woff');
+  src: url('/fonts/Inter24pt-Medium.woff2') format('woff2'),
+  url('/fonts/Inter24pt-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
