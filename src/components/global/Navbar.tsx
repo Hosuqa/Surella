@@ -79,7 +79,7 @@ const Navbar = () => {
                     <div className="justify-end hidden xl:flex gap-10 w-full">
                         <Title title="O nas" href="#About" />
                         <Title title="Realizacje" href="#Gallery"/>
-                        <Title title="Współpraca" href="#Colab"/>
+                        <Title title="Opinie" href="#Reviews"/>
                         <motion.div className="w-full h-full bg-surella-600 hover:bg-surella-700 duration-300 text-surella-600 px-8 py-[6px]"
                             whileTap={{ y:4 }}>
                             <a href="#Contact"
@@ -118,7 +118,7 @@ const Navbar = () => {
                 <motion.div className="flex flex-col gap-8 text-white font-bold text-end mt-6">
                     <motion.a href="#About" whileTap={{ scale: 0.9 }}>O nas</motion.a>
                     <motion.a href="#Gallery" whileTap={{ scale: 0.9 }}>Realizacje</motion.a>
-                    <motion.a href="#Colab" whileTap={{ scale: 0.9 }}>Współpraca</motion.a>
+                    <motion.a href="#Reviews" whileTap={{ scale: 0.9 }}>Opinie</motion.a>
                     <motion.a href="#Contact" whileTap={{ scale: 0.9 }}>Kontakt</motion.a>
                 </motion.div>
             </motion.div>

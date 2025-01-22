@@ -2,7 +2,7 @@ import Title from "@components/global/Title";
 import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
 import reviewData from "../../Review.json";
-import { surellawhite } from '../../assets';
+import { google } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +10,8 @@ import { Autoplay, Navigation,EffectCoverflow } from "swiper/modules";
 import 'swiper/css/navigation';
 import 'swiper/css';
 import './Review.css'
+import { FaStar } from "react-icons/fa";
+
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
@@ -19,13 +21,24 @@ type Props = {
 };
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-surella-500 select-none w-full h-full  justify-beween flex flex-col items-center">
-    <img src={surellawhite} alt="" className="w-14 h-14 md:my-6 my-4 "/>
-    <p className="text-white font-bold text-xl">{props.name}:</p>
-    <div className=" h-ful p-4 md:p-6 flex flex-col">
-      <p className="text-[15px] xl:text-[17px] text-white tracking-widest leading-relaxed mx-4">
-        "{props.text}"
-      </p>
+  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-full  justify-beween flex flex-col px-10 py-6">
+    <div className="flex justify-between items-center">
+      <img src={google} alt="" className="w-14 h-14 my-4 "/>
+      <div className="flex text-surella-600 gap-2">
+        <FaStar className="h-6 w-6"/>
+        <FaStar className="h-6 w-6"/>
+        <FaStar className="h-6 w-6"/>
+        <FaStar className="h-6 w-6"/>
+        <FaStar className="h-6 w-6"/>
+      </div>
+    </div>
+    <div className="ml-1">
+      <p className="text-surella-700 font-bold text-xl">{props.name}:</p>
+      <div className=" h-ful flex flex-col">
+        <p className="text-[15px] xl:text-[17px] text-surella-800 tracking-widest leading-relaxed mt-2">
+            "{props.text}"
+        </p>
+      </div>
     </div>
   </div>
 );
@@ -49,7 +62,7 @@ const Sandbox = () => {
   }, []);
   return (
     <div className="bg my-20">
-      <XlWrapper >
+      <XlWrapper  >
         <div className="w-full h-full">
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>

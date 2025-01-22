@@ -95,9 +95,12 @@ const Colab = () => {
             ))}
           </div>
         <div className="picbox w-full h-[240px] md:h-[400px] xl:h-[600px]">
-            <img src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
+            <img  src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
         </div>
+        
       </div>
+      <div id='Reviews'></div>
+      {/* Opinie nav id */}
     </XlWrapper>
   );
 };
