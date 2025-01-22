@@ -59,12 +59,18 @@ const ContentBox = () => {
         <>
             <Navbar />
             <Hero openModal={handleButtonClick} />
-            <About /> 
-            <Gallery />
-            <Counter />
-            <Colab />
-            <Review />
-            <Contact />
+            <div className="flex flex-col items-center">
+                <About /> 
+                <Gallery />
+            </div>
+                <Counter />
+            <div className="flex flex-col items-center">
+                <Colab />
+            </div>
+                <Review />
+            <div className="flex flex-col items-center">
+                <Contact />
+            </div>
             {/* <Sandbox /> */}
             <Footer />
             <Modal isOpen={isModalOpen} onClose={handleButtonClick} />

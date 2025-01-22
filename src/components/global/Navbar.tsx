@@ -14,7 +14,7 @@ type Props = {
 
 const NavTitle = ({ title, href }: Props) => {
     return (
-        <div className="w-full h-full flex justify-center items-center ">
+        <div className="w-full h-full justify-center items-center">
             <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
                 <a href={href} 
                    className={`${styles.NavbarText}  w-full py-1 hidden xl:flex justify-center tracking-wider font-interBold cursor-pointer`}

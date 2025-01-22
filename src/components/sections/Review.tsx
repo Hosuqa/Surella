@@ -1,7 +1,7 @@
 import Title from "@components/global/Title";
 import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
-import reviewData from "../../Review.json";
+import reviewData from "../../review.json";
 import { google } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -21,7 +21,7 @@ type Props = {
 };
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-full  justify-beween flex flex-col px-10 py-6">
+  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-full max-w-[800px] justify-beween flex flex-col px-10 py-6">
     <div className="flex justify-between items-center">
       <img src={google} alt="" className="w-14 h-14 my-4 "/>
       <div className="flex text-surella-600 gap-2">
@@ -54,66 +54,68 @@ const Sandbox = () => {
         duration: 0.6,
         scrollTrigger: {
           trigger: ".review_box",
-          start: "top 90%",
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       }
     );
   }, []);
   return (
-    <div className="bg my-20">
-      <XlWrapper  >
-        <div className="w-full h-full">
+    <>
+      <XlWrapper>
+        <div className="w-full h-full ">
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
       </XlWrapper>
-      <div className="reviews-slider review_box">
-        <Swiper
-          effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={3}
-          loop={true}
-          speed={550}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-            scale: 0.8,
-          }}
-          navigation
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1500: {
-              slidesPerView: 3,
-              spaceBetween: 100,
-            },
-          }}
-          modules={[EffectCoverflow, Autoplay, Navigation]}
-          className="relative"
-        >
-          {reviewData.map((review, index) => (
-            <SwiperSlide key={index} className=" h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
-              <ReviewCard2 text={review.text} date={review.date} name={review.name} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="my-20 ">
+        <div className="reviews-slider review_box">
+          <Swiper
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={3}
+            loop={true}
+            speed={550}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+              scale: 0.8,
+            }}
+            navigation
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1500: {
+                slidesPerView: 3,
+                spaceBetween: 100,
+              },
+            }}
+            modules={[EffectCoverflow, Autoplay, Navigation]}
+            className="relative "
+          >
+            {reviewData.map((review, index) => (
+              <SwiperSlide key={index} className=" h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
+                <ReviewCard2 text={review.text} date={review.date} name={review.name} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

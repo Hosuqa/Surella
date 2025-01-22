@@ -28,7 +28,7 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
           <p className={`${styles.colabtitle} font-semibold text-white text-[18px] tracking-wider`}>{title}</p>
           <IoIosArrowDown className={`w-6 h-6 group-hover:scale-125 text-white transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
         </div>
-        <div className={`${styles.colabtext} px-8 py-2 text-surella-800 text-[16px] leading-relaxed tracking-wide text-justify duration-200 `}>
+        <div className={`${styles.colabtext} p-8  text-surella-800 text-[16px] leading-relaxed tracking-wide text-justify duration-200 `}>
           {description}
         </div>
       </div>
@@ -97,7 +97,6 @@ const Colab = () => {
         <div className="picbox w-full h-[240px] md:h-[400px] xl:h-[600px]">
             <img  src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
         </div>
-        
       </div>
       <div id='Reviews'></div>
       {/* Opinie nav id */}

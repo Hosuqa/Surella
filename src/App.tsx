@@ -5,7 +5,7 @@ const App = () => {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <div className='relative z-0'><ContentBox/></div> } />
+          <Route path="/" element={ <div className='relative z-0 '><ContentBox/></div> } />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     </BrowserRouter>
