@@ -74,7 +74,7 @@ const Title = ({ title, subtitle, className, titleColor = "text-surella-600", su
                 <div className="flex items-center h-full">
                     <p
                         ref={subtitleRef}
-                        className={`${styles.titleSubTitle} basis-30 text-nowrap text-center h-full uppercase ${subtitleColor} font-interExtraBold`}
+                        className={`${styles.titleSubTitle} basis-30 text-nowrap text-center h-full uppercase ${subtitleColor} font-interMedium`}
                     >
                         {subtitle}
                     </p>
@@ -85,7 +85,7 @@ const Title = ({ title, subtitle, className, titleColor = "text-surella-600", su
                 </div>
                 <p
                     ref={titleRef}
-                    className={`${styles.titleHead} ${titleColor} uppercase text-nowrap font-interExtraBold font-bold`}
+                    className={`${styles.titleHead} ${titleColor} uppercase text-nowrap font-interBold font-bold`}
                 >
                     {title}
                 </p>

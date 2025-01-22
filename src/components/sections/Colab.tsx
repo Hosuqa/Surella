@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import colabData from '../../Colab.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,31 +84,16 @@ const Colab = () => {
       <Title title='Poznaj Surelle' subtitle='Trochę o nas' />
       <div className="w-full flex flex-col-reverse xl:flex-row gap-4 ">
         <div className="txtbox flex flex-col w-full gap-4">
-          <ColabBox
-            title="Poznaj Surelle od dobrej storny"
-            description="CIEZKO MI SIE ROBI"
-            isOpen={openIndex === 0}
-            onClick={() => toggleBox(0)}
-          />
-          <ColabBox
-            title="Dobrej Surelle dobrej dobrej"
-            description="Lorem ipsum dolor sit amet consectetur elit. Lorem ipsum dolor sit amet  adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum dolor sit amet consectetur  elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. "
-            isOpen={openIndex === 1}
-            onClick={() => toggleBox(1)}
-          />
-          <ColabBox
-            title="Poznaj Surelle od dobrej"
-            description="Pierwszym projektem, w którym wystąpi powracający do aktorstwa Armie Hammer, będzie western Frontier Crucible"
-            isOpen={openIndex === 2}
-            onClick={() => toggleBox(2)}
-          />
-          <ColabBox
-            title="Poznaj Surelle dobrej strony"
-            description="Gwiazdą westernu został Thomas Jane . W obsadzie Frontier Cruciblesą również Myles Clohessy"
-            isOpen={openIndex === 3}
-            onClick={() => toggleBox(3)}
-          />
-        </div>
+            {Object.values(colabData).slice(0, 4).map((item, index) => (
+              <ColabBox
+                key={index}
+                title={item.title}
+                description={item.description}
+                isOpen={openIndex === index}
+                onClick={() => toggleBox(index)}
+              />
+            ))}
+          </div>
         <div className="picbox w-full h-[240px] md:h-[400px] xl:h-[600px]">
             <img src={rollos[openIndex]} className="w-full h-full object-cover" alt={`Image ${openIndex}`} />
         </div>

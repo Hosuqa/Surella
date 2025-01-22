@@ -27,9 +27,8 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
         ".text",
         {
         text: "Surella.pl",
-        delay:0.1,
+        delay:0.15,
         duration: 1,
-        speed:5,
         }
       )
       .to(".herotxt", {
@@ -77,14 +76,14 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
 
    return (
      <>
-       <div className="flex lg:flex-row flex-col font-interExtraBold h-[calc(100vh)] bg-surella-600">
+       <div className="flex lg:flex-row flex-col h-[calc(100vh)] bg-surella-600">
          <div className="bg-white overflow-hidden flex w-full h-full relative">
           <div className='z-20 flex flex-col mx-6 sm:mx-16 md:mx-24 lg:mx-24 xl:mx-48 2xl:mx-72 my-32 sm:my-36 md:my-40 lg:my-48 2xl:my-56 absolute bottom-0 h-fit w-fit '>
-           <div className={`${styles.heroHeadText} text leading-none text-white font-semibold uppercase `}></div>
-           <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white text-nowrap ml-1 `}></p>
+           <div className={`${styles.heroHeadText} text leading-none text-white font-interExtraBold font-semibold uppercase `}></div>
+           <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white font-interMedium text-nowrap ml-1 `}></p>
            <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2 "
              whileTap={{ y:4 }}>
-               <p onClick={openModal} className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interExtraBold font-bold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
+               <p onClick={openModal} className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interBold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
                  Sprawdź wycenę
                </p>
            </motion.div>

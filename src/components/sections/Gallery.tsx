@@ -74,12 +74,12 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         >
             <div className="relative w-full h-full flex">
                 <motion.div
-                whileTap={{ x: -4 }}
+                whileTap={{ y: -4 }}
                 onClick={closeModal}
-                className='absolute top-0 right-0 m-4 w-10 h-10 '>                   
-                <FaXmark
-                    className="w-full h-full cursor-pointer text-white z-50"
-                />
+                className='absolute top-0 right-0 m-4 w-10 h-10 z-50'>                   
+                    <FaXmark
+                        className="w-full h-full cursor-pointer text-white "
+                    />
                 </motion.div>
                 <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6  py-4  flex items-center justify-center">
                     <motion.div
