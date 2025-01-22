@@ -12,9 +12,9 @@ type Props = {
     href: string;
 };
 
-const Title = ({ title, href }: Props) => {
+const NavTitle = ({ title, href }: Props) => {
     return (
-        <div className="w-full h-full justify-center items-center">
+        <div className="w-full h-full flex justify-center items-center ">
             <div className="flex flex-col w-fit box mt-[2px] overflow-hidden">
                 <a href={href} 
                    className={`${styles.NavbarText}  w-full py-1 hidden xl:flex justify-center tracking-wider font-interBold cursor-pointer`}
@@ -77,9 +77,9 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
-                        <Title title="O nas" href="#About" />
-                        <Title title="Realizacje" href="#Gallery"/>
-                        <Title title="Opinie" href="#Reviews"/>
+                        <NavTitle title="O nas" href="#About" />
+                        <NavTitle title="Realizacje" href="#Gallery"/>
+                        <NavTitle title="Opinie" href="#Reviews"/>
                         <motion.div className="w-full h-full bg-surella-600 hover:bg-surella-700 duration-300 text-surella-600 px-8 py-[6px]"
                             whileTap={{ y:4 }}>
                             <a href="#Contact"
