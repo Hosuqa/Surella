@@ -1,6 +1,54 @@
 {
-    "zewnętrzne": ["Rolety zewnętrzne", "Żaluzje fasadowe", "Markizy"],
-    "wewnętrzne": ["Rolety rzymskie", "Plisy", "Verticale"],
-    "moskitiery": ["Moskitiery ramkowe", "Moskitiery rolowane", "Moskitiery przesuwne"]
+  "zewnętrzne": {
+      "Rolety zewnętrzne": {
+        
+      },
+      "Rolety screen": null,
+      "Markizy": null
+  },
+  "wewnętrzne": {
+    "Roleta materiałowa": {
+      "height": {
+        "125": {
+            "width": [
+              {
+                "colors": ["biały","brąz"],
+                "sizes": [[50,142],[60,159],[70,174],[80,192],[90,209],[100,226],[110,240],[120,260],[130,276],[140,294],[150,309],[160,325]]
+              },
+              {
+                "colors": ["decor","anoda","antracyt"],
+                "sizes": [[50,142],[60,159],[70,174],[80,192],[90,209],[100,226],[110,240],[120,260],[130,276],[140,294],[150,309],[160,325]]
+              }
+            ]
+          },
+        "150": {
+            "width": [
+              {
+                "colors": ["biały","brąz"],
+                "sizes": [[50,161],[60,180],[70,198],[80,215],[90,235],[100,254],[110,273],[120,260],[130,276],[140,294],[150,309],[160,325]]
+              }
+            ]
+          },
+        "200": {
+          "width": [
+            {
+              "colors": ["biały","brąz"],
+              "sizes": [[50,190],[60,214],[70,235],[80,259],[90,281],[100,303],[110,325],[120,351],[130,372],[140,394],[150,418],[160,439]]
+            }
+          ]
+        },
+        "230": {
+          "width": [
+            {
+              "colors": ["biały","brąz"],
+              "sizes": [[50,207],[60,232],[70,254],[80,280],[90,303],[100,329],[110,352],[120,378],[130,401],[140,425],[150,449],[160,472]]
+            }
+          ]
+        }
+      }
+  }, "Roleta wolnowisząca":null, "Roleta dachowa":null, "Roleta dzień noc":null, "Roleta rzymska":null, "Żaluzje":null, "Plisy":null
+  },
+  "moskitiery": {
+      "Moskitiery okienne":null, "Moskitiery drzwiowe wachadłowe":null, "Moskitiery drzwiowe przesuwne":null, "Moskitiery drzwiowe plisowane":null, "Moskitiera dachowa rolowana":null
   }
-  
+}
