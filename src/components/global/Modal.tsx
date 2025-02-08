@@ -49,13 +49,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const matchingWidthGroups = widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth));
   const colorOptions = Array.from(new Set(matchingWidthGroups.flatMap((group: any) => group.colors || [])));
   
-  const handleSelectHeight = (height: string) => {
-    setSelectedHeight(height);
-    setSelectedWidth(null);
-    setSelectedColor(null);
-    setSelectedPrice(null);
-  };
-  
   const handleSelectWidth = (width: number) => {
     setSelectedWidth(width);
     setSelectedColor(null);
