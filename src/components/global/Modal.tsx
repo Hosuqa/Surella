@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 import categoriesDataRaw from "../../products.json";
-import { IoIosArrowDown } from "react-icons/io";
 import "./Modal.css";
 
 interface ProductCategory {
@@ -35,20 +34,39 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleAddToCart = () => {
-    if (selectedProduct && selectedHeight && selectedWidth && selectedColor && selectedPrice !== null) {
-      setCart([...cart, { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor, price: selectedPrice }]);
+    // Dodajemy do koszyka tylko gdy kalkulator obsługuje wycenę (tab "wewnętrzne")
+    if (
+      activeTab === "wewnętrzne" &&
+      selectedProduct &&
+      selectedHeight &&
+      selectedWidth &&
+      selectedColor &&
+      selectedPrice !== null
+    ) {
+      setCart([
+        ...cart,
+        { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor, price: selectedPrice },
+      ]);
     }
   };
 
   const productData = selectedProduct ? categoriesData[activeTab]?.[selectedProduct] : undefined;
-  const heightOptions = productData ? Object.keys(productData["height"] || {}) : [];
-  const widthGroups = selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
-  
-  const widthOptions = Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0]))));
-  
-  const matchingWidthGroups = widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth));
-  const colorOptions = Array.from(new Set(matchingWidthGroups.flatMap((group: any) => group.colors || [])));
-  
+
+  // Logika dot. kalkulatora – tylko dla tab "wewnętrzne"
+  const heightOptions = activeTab === "wewnętrzne" && productData ? Object.keys(productData["height"] || {}) : [];
+  const widthGroups =
+    activeTab === "wewnętrzne" && selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
+  const widthOptions: number[] =
+      activeTab === "wewnętrzne" ? Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0])))) : [];
+  const matchingWidthGroups =
+    activeTab === "wewnętrzne" && widthGroups && selectedWidth
+      ? widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth))
+      : [];
+  const colorOptions =
+    activeTab === "wewnętrzne" && matchingWidthGroups
+      ? Array.from(new Set(matchingWidthGroups.flatMap((group: any) => group.colors || [])))
+      : [];
+
   const handleSelectWidth = (width: number) => {
     setSelectedWidth(width);
     setSelectedColor(null);
@@ -57,20 +75,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   const handleSelectColor = (color: string) => {
     setSelectedColor(color);
-  
-    // Pobieramy grupy dla wybranej wysokości i szerokości
-    const widthGroups = selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
-    const matchingGroup = widthGroups.find((group: any) => group.colors.includes(color));
-  
-    if (matchingGroup) {
-      // Pobieramy właściwą cenę dla wybranej szerokości
-      const priceEntry = matchingGroup.sizes.find((s: number[]) => s[0] === selectedWidth);
-      setSelectedPrice(priceEntry ? priceEntry[1] : null);
-    } else {
-      setSelectedPrice(null);
+
+    if (activeTab === "wewnętrzne" && selectedHeight) {
+      const widthGroups = productData?.["height"]?.[selectedHeight]?.["width"] || [];
+      const matchingGroup = widthGroups.find((group: any) => group.colors.includes(color));
+      if (matchingGroup) {
+        const priceEntry = matchingGroup.sizes.find((s: number[]) => s[0] === selectedWidth);
+        setSelectedPrice(priceEntry ? priceEntry[1] : null);
+      } else {
+        setSelectedPrice(null);
+      }
     }
   };
-  
 
   if (!isOpen) return null;
 
@@ -82,7 +98,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           <FaXmark className="cursor-pointer w-8 h-8" onClick={onClose} />
         </div>
 
-        {/* Kategorie */}
+        {/* Zakładki */}
         <div className="flex gap-10 justify-center mt-4">
           {Object.keys(categoriesData).map((tab) => (
             <button
@@ -105,7 +121,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-8 ">
-          {/* Pierwsza kolumna - Wybór produktu, wysokości, szerokości i koloru */}
+          {/* Lewa kolumna – wybór produktu oraz (opcje kalkulatora lub komunikat) */}
           <div className="bg-slate-100 p-4 h-[420px] max-h-[420px] overflow-y-auto flex flex-col">
             <h3 className="text-surella-800 mb-2 text-xl font-bold">Wybierz produkt:</h3>
             <select
@@ -115,11 +131,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             >
               <option value="">Wybierz produkt</option>
               {Object.keys(categoriesData[activeTab]).map((product) => (
-                <option key={String(product)} value={product}>{product}</option>
+                <option key={product} value={product}>
+                  {product}
+                </option>
               ))}
             </select>
 
-            {selectedProduct && (
+            {selectedProduct && activeTab === "zewnętrzne" && productData?.text && (
+              // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
+              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
+                <p>{productData.text}</p>
+              </div>
+            )}
+
+            {selectedProduct && activeTab === "wewnętrzne" && (
               <>
                 <div className="mt-4">
                   <h4 className="text-lg font-bold">Wysokość:</h4>
@@ -130,7 +155,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   >
                     <option value="">Wybierz wysokość</option>
                     {heightOptions.map((height) => (
-                      <option key={String(height)} value={height}>{height}</option>
+                      <option key={height} value={height}>
+                        {height}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -144,8 +171,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         value={selectedWidth || ""}
                       >
                         <option value="">Wybierz szerokość</option>
-                        {(widthOptions as number[]).map((width: number) => (
-                          <option key={String(width)} value={String(width)}>{width}</option>
+                        {widthOptions.map((width: number) => (
+                          <option key={width} value={width}>
+                            {width}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -157,9 +186,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                           onChange={(e) => handleSelectColor(e.target.value)}
                           value={selectedColor || ""}
                         >
-                          <option value="">Wybierz kolor</option> 
-                          {(colorOptions as string[]).map((color) => (
-                            <option key={color} value={color}>{color}</option>
+                          <option value="">Wybierz kolor</option>
+                          {(colorOptions as string[]).map((color: string) => (
+                            <option key={color} value={color}>
+                              {color}
+                            </option>
                           ))}
                         </select>
                       </div>
@@ -169,39 +200,26 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               </>
             )}
 
-            {/* Przyciski na dole */}
-            <div className="mt-auto">
-              <button
-                className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300 disabled:"
-                onClick={handleAddToCart}
-                disabled={!selectedHeight || !selectedWidth || !selectedColor}
-                title={!selectedHeight || !selectedWidth || !selectedColor ? "Wybierz wszystkie opcje, aby dodać do wyceny" : ""}
-              >
-                Dodaj do wyceny
-              </button>
-            </div>
-          </div>
-
-          {/* Druga kolumna - Obecne ustawienia
-          <div className="text-center bg-slate-100 p-4">
-            {selectedProduct ? (
-              <>
-                <h3 className="text-xl font-bold">{selectedProduct}</h3>
-                <p>Wysokość: {selectedHeight || "-"}</p>
+            {/* Przycisk dodania do wyceny – tylko dla tab "wewnętrzne" */}
+            {activeTab === "wewnętrzne" && (
+              <div className="mt-auto">
                 <button
-                  className="bg-surella-600 text-white px-20 py-2 mt-4"
+                  className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300"
                   onClick={handleAddToCart}
-                  disabled={!selectedHeight}
+                  disabled={!selectedHeight || !selectedWidth || !selectedColor}
+                  title={
+                    !selectedHeight || !selectedWidth || !selectedColor
+                      ? "Wybierz wszystkie opcje, aby dodać do wyceny"
+                      : ""
+                  }
                 >
                   Dodaj do wyceny
                 </button>
-              </>
-            ) : (
-              <p>Wybierz produkt, aby zobaczyć szczegóły</p>
+              </div>
             )}
-          </div> */}
+          </div>
 
-          {/* Trzecia kolumna - Koszyk */}
+          {/* Prawa kolumna – koszyk */}
           <div className="bg-slate-100 p-4">
             <h2 className="text-xl font-bold text-surella-800">Twój koszyk:</h2>
             {cart.length > 0 ? (
