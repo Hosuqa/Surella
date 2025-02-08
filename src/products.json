@@ -1,10 +1,14 @@
 {
   "zewnętrzne": {
       "Rolety zewnętrzne": {
-        
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny rolet zewnętrznych. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
       },
-      "Rolety screen": null,
-      "Markizy": null
+      "Rolety screen": {
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny rolet screen. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
+      },
+      "Markizy": {
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny markiz. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
+      }
   },
   "wewnętrzne": {
     "Roleta materiałowa": {
@@ -63,15 +67,32 @@
         "150":{
           "width": [
             {
-            "sizes": [[50,110],[60,125],[70,142],[80,158],[90,174],[100,191],[110,207],[120,223],[130,241],[140,259],[150,274],[160,290],[170,306],[180,324],[190,338],[200,356]]
+            "sizes": [[50,110],[60,125],[70,142],[80,158],[90,174],[100,191],[110,207],[120,223],[130,241],[140,259],[150,274],[160,290],[170,306],[180,324],[190,338],[200,356],[210,447],[220,509],[230,533]]
+            }
+          ]
+        },
+        "200":{
+          "width": [
+            {
+            "sizes":[[50,151],[]]
             }
           ]
         }
       }
 
-  }, "Roleta dachowa":null, "Roleta dzień noc":null, "Roleta rzymska":null, "Żaluzje":null, "Plisy":null
+  }, "Roleta dachowa":null, "Roleta dzień noc":null, "Roleta rzymska":null, "Żaluzje drewniane":null, "Żaluzje bambusowe":null, 
+     "Żaluzje aluminiowe": {
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny żaluzji aluminiowych. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
+      },
+     "Żaluzje pionowe": {
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny żaluzji pionowych. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."},  "Plisy":null
   },
   "moskitiery": {
-      "Moskitiery okienne":null, "Moskitiery drzwiowe wachadłowe":null, "Moskitiery drzwiowe przesuwne":null, "Moskitiery drzwiowe plisowane":null, "Moskitiera dachowa rolowana":null
+      "Moskitiery okienne":null, "Moskitiery drzwiowe wachadłowe":null,
+      "Moskitiery drzwiowe przesuwne": {
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny moskitier drzwiowych przesuwnych. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
+      }, "Moskitiery drzwiowe plisowane":{
+        "text": "Niestety nasz kalkulator nie obsługuje wyceny moskitier drzwiowych plisowanych. Prosimy o skontaktowanie się z naszym specjalistą w celu wyceny."
+      }, "Moskitiera dachowa rolowana":null
   }
 }

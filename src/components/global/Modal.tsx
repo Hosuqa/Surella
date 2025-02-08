@@ -3,6 +3,7 @@ import { FaXmark } from "react-icons/fa6";
 import categoriesDataRaw from "../../products.json";
 import { IoIosArrowDown } from "react-icons/io";
 import "./Modal.css";
+
 interface ProductCategory {
   [category: string]: {
     [product: string]: any;
@@ -17,11 +18,12 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<string>("zewnętrzne");
+  const [activeTab, setActiveTab] = useState<string>("wewnętrzne");
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [selectedHeight, setSelectedHeight] = useState<string | null>(null);
   const [selectedWidth, setSelectedWidth] = useState<number | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
   const [cart, setCart] = useState<any[]>([]);
 
   const handleSelectProduct = (product: string) => {
@@ -29,20 +31,53 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     setSelectedHeight(null);
     setSelectedWidth(null);
     setSelectedColor(null);
+    setSelectedPrice(null);
   };
 
   const handleAddToCart = () => {
-    if (selectedProduct && selectedHeight && selectedWidth && selectedColor) {
-      setCart([...cart, { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor }]);
+    if (selectedProduct && selectedHeight && selectedWidth && selectedColor && selectedPrice !== null) {
+      setCart([...cart, { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor, price: selectedPrice }]);
     }
   };
 
   const productData = selectedProduct ? categoriesData[activeTab]?.[selectedProduct] : undefined;
   const heightOptions = productData ? Object.keys(productData["height"] || {}) : [];
-  const widthOptions = selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
-  const colorOptions = selectedWidth
-    ? widthOptions.find((w: any) => w.sizes.some((s: number[]) => s[0] === selectedWidth))?.colors || []
-    : [];
+  const widthGroups = selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
+  
+  const widthOptions = Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0]))));
+  
+  const matchingWidthGroups = widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth));
+  const colorOptions = Array.from(new Set(matchingWidthGroups.flatMap((group: any) => group.colors || [])));
+  
+  const handleSelectHeight = (height: string) => {
+    setSelectedHeight(height);
+    setSelectedWidth(null);
+    setSelectedColor(null);
+    setSelectedPrice(null);
+  };
+  
+  const handleSelectWidth = (width: number) => {
+    setSelectedWidth(width);
+    setSelectedColor(null);
+    setSelectedPrice(null);
+  };
+
+  const handleSelectColor = (color: string) => {
+    setSelectedColor(color);
+  
+    // Pobieramy grupy dla wybranej wysokości i szerokości
+    const widthGroups = selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
+    const matchingGroup = widthGroups.find((group: any) => group.colors.includes(color));
+  
+    if (matchingGroup) {
+      // Pobieramy właściwą cenę dla wybranej szerokości
+      const priceEntry = matchingGroup.sizes.find((s: number[]) => s[0] === selectedWidth);
+      setSelectedPrice(priceEntry ? priceEntry[1] : null);
+    } else {
+      setSelectedPrice(null);
+    }
+  };
+  
 
   if (!isOpen) return null;
 
@@ -53,6 +88,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           <h2 className="text-2xl font-bold">Kalkulator</h2>
           <FaXmark className="cursor-pointer w-8 h-8" onClick={onClose} />
         </div>
+
         {/* Kategorie */}
         <div className="flex gap-10 justify-center mt-4">
           {Object.keys(categoriesData).map((tab) => (
@@ -67,6 +103,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 setSelectedHeight(null);
                 setSelectedWidth(null);
                 setSelectedColor(null);
+                setSelectedPrice(null);
               }}
             >
               {tab.toUpperCase()}
@@ -74,9 +111,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-8">
+        <div className="mt-6 grid grid-cols-2 gap-8 ">
           {/* Pierwsza kolumna - Wybór produktu, wysokości, szerokości i koloru */}
-          <div className="bg-slate-100 p-4 max-h-[360px] overflow-y-auto">
+          <div className="bg-slate-100 p-4 h-[420px] max-h-[420px] overflow-y-auto flex flex-col">
             <h3 className="text-surella-800 mb-2 text-xl font-bold">Wybierz produkt:</h3>
             <select
               className="w-full p-2 border border-gray-300 rounded"
@@ -85,10 +122,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             >
               <option value="">Wybierz produkt</option>
               {Object.keys(categoriesData[activeTab]).map((product) => (
-                <option key={product} value={product}>{product}</option>
+                <option key={String(product)} value={product}>{product}</option>
               ))}
             </select>
-            
+
             {selectedProduct && (
               <>
                 <div className="mt-4">
@@ -100,7 +137,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   >
                     <option value="">Wybierz wysokość</option>
                     {heightOptions.map((height) => (
-                      <option key={height} value={height}>{height}</option>
+                      <option key={String(height)} value={height}>{height}</option>
                     ))}
                   </select>
                 </div>
@@ -110,13 +147,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       <h4 className="text-lg font-bold">Szerokość:</h4>
                       <select
                         className="w-full p-2 border border-gray-300 rounded"
-                        onChange={(e) => setSelectedWidth(parseInt(e.target.value))}
+                        onChange={(e) => handleSelectWidth(parseInt(e.target.value))}
                         value={selectedWidth || ""}
                       >
                         <option value="">Wybierz szerokość</option>
-                        {widthOptions.flatMap((w: any) => w.sizes.map((s: number[]) => (
-                          <option key={s[0]} value={s[0]}>{s[0]}</option>
-                        )))}
+                        {(widthOptions as number[]).map((width: number) => (
+                          <option key={String(width)} value={String(width)}>{width}</option>
+                        ))}
                       </select>
                     </div>
                     {selectedWidth && (
@@ -124,11 +161,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         <h4 className="text-lg font-bold">Kolor:</h4>
                         <select
                           className="w-full p-2 border border-gray-300 rounded"
-                          onChange={(e) => setSelectedColor(e.target.value)}
+                          onChange={(e) => handleSelectColor(e.target.value)}
                           value={selectedColor || ""}
                         >
-                          <option value="">Wybierz kolor</option>
-                          {colorOptions.map((color: string) => (
+                          <option value="">Wybierz kolor</option> 
+                          {(colorOptions as string[]).map((color) => (
                             <option key={color} value={color}>{color}</option>
                           ))}
                         </select>
@@ -138,8 +175,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 )}
               </>
             )}
+
+            {/* Przyciski na dole */}
+            <div className="mt-auto">
+              <button
+                className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300 disabled:"
+                onClick={handleAddToCart}
+                disabled={!selectedHeight || !selectedWidth || !selectedColor}
+                title={!selectedHeight || !selectedWidth || !selectedColor ? "Wybierz wszystkie opcje, aby dodać do wyceny" : ""}
+              >
+                Dodaj do wyceny
+              </button>
+            </div>
           </div>
-          {/* Druga kolumna - Obecne ustawienia */}
+
+          {/* Druga kolumna - Obecne ustawienia
           <div className="text-center bg-slate-100 p-4">
             {selectedProduct ? (
               <>
@@ -156,15 +206,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             ) : (
               <p>Wybierz produkt, aby zobaczyć szczegóły</p>
             )}
-          </div>
+          </div> */}
 
           {/* Trzecia kolumna - Koszyk */}
           <div className="bg-slate-100 p-4">
             <h2 className="text-xl font-bold text-surella-800">Twój koszyk:</h2>
             {cart.length > 0 ? (
               cart.map((item, index) => (
-                <div key={index} className="bg-slate-200 px-4 py-3">
-                  <p className="text-gray-800 text-lg font-semibold">{item.product} - {item.height}cm</p>
+                <div key={index} className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
+                  <p className="text-gray-800 text-lg font-semibold">
+                    {item.product} - {item.height}cm x {item.width}cm, {item.color}
+                  </p>
+                  <p className="text-gray-900 font-bold">{item.price} zł</p>
                 </div>
               ))
             ) : (
