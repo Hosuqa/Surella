@@ -144,7 +144,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               </div>
             )}
 
-            {selectedProduct && activeTab === "wewnętrzne" && (
+            {selectedProduct && activeTab === "moskitiery" && productData?.text && (
+              // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
+              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
+                <p>{productData.text}</p>
+              </div>
+            )}
+
+            {selectedProduct && activeTab === "wewnętrzne"  &&(
               <>
                 <div className="mt-4">
                   <h4 className="text-lg font-bold">Wysokość:</h4>
