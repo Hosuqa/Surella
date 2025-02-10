@@ -18,75 +18,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<string>("wewnętrzne");
-  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
-  const [selectedHeight, setSelectedHeight] = useState<string | null>(null);
-  const [selectedWidth, setSelectedWidth] = useState<number | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
-  const [cart, setCart] = useState<any[]>([]);
-
-  const handleSelectProduct = (product: string) => {
-    setSelectedProduct(product);
-    setSelectedHeight(null);
-    setSelectedWidth(null);
-    setSelectedColor(null);
-    setSelectedPrice(null);
-  };
-
-  const handleAddToCart = () => {
-    // Dodajemy do koszyka tylko gdy kalkulator obsługuje wycenę (tab "wewnętrzne")
-    if (
-      activeTab === "wewnętrzne" &&
-      selectedProduct &&
-      selectedHeight &&
-      selectedWidth &&
-      selectedColor &&
-      selectedPrice !== null
-    ) {
-      setCart([
-        ...cart,
-        { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor, price: selectedPrice },
-      ]);
-    }
-  };
-
-  const productData = selectedProduct ? categoriesData[activeTab]?.[selectedProduct] : undefined;
-
-  // Logika dot. kalkulatora – tylko dla tab "wewnętrzne"
-  const heightOptions = activeTab === "wewnętrzne" && productData ? Object.keys(productData["height"] || {}) : [];
-  const widthGroups =
-    activeTab === "wewnętrzne" && selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
-  const widthOptions: number[] =
-      activeTab === "wewnętrzne" ? Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0])))) : [];
-  const matchingWidthGroups =
-    activeTab === "wewnętrzne" && widthGroups && selectedWidth
-      ? widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth))
-      : [];
-  const colorOptions =
-    activeTab === "wewnętrzne" && matchingWidthGroups
-      ? Array.from(new Set(matchingWidthGroups.flatMap((group: any) => group.colors || [])))
-      : [];
-
-  const handleSelectWidth = (width: number) => {
-    setSelectedWidth(width);
-    setSelectedColor(null);
-    setSelectedPrice(null);
-  };
-
-  const handleSelectColor = (color: string) => {
-    setSelectedColor(color);
-
-    if (activeTab === "wewnętrzne" && selectedHeight) {
-      const widthGroups = productData?.["height"]?.[selectedHeight]?.["width"] || [];
-      const matchingGroup = widthGroups.find((group: any) => group.colors.includes(color));
-      if (matchingGroup) {
-        const priceEntry = matchingGroup.sizes.find((s: number[]) => s[0] === selectedWidth);
-        setSelectedPrice(priceEntry ? priceEntry[1] : null);
-      } else {
-        setSelectedPrice(null);
-      }
-    }
-  };
+ 
 
   if (!isOpen) return null;
 
@@ -108,11 +40,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               }`}
               onClick={() => {
                 setActiveTab(tab);
-                setSelectedProduct(null);
-                setSelectedHeight(null);
-                setSelectedWidth(null);
-                setSelectedColor(null);
-                setSelectedPrice(null);
               }}
             >
               {tab.toUpperCase()}
@@ -126,8 +53,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             <h3 className="text-surella-800 mb-2 text-xl font-bold">Wybierz produkt:</h3>
             <select
               className="w-full p-2 border border-gray-300 rounded"
-              onChange={(e) => handleSelectProduct(e.target.value)}
-              value={selectedProduct || ""}
             >
               <option value="">Wybierz produkt</option>
               {Object.keys(categoriesData[activeTab]).map((product) => (
@@ -137,73 +62,55 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               ))}
             </select>
 
-            {selectedProduct && activeTab === "zewnętrzne" && productData?.text && (
+            {activeTab === "zewnętrzne" &&  (
               // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
               <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
-                <p>{productData.text}</p>
+                <p>PRODUKT</p>
               </div>
             )}
 
-            {selectedProduct && activeTab === "moskitiery" && productData?.text && (
+            {activeTab === "moskitiery" && (
               // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
               <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
-                <p>{productData.text}</p>
+                <p>productData</p>
               </div>
             )}
 
-            {selectedProduct && activeTab === "wewnętrzne"  &&(
+            {activeTab === "wewnętrzne"  &&(
               <>
                 <div className="mt-4">
                   <h4 className="text-lg font-bold">Wysokość:</h4>
                   <select
                     className="w-full p-2 border border-gray-300 rounded"
-                    onChange={(e) => setSelectedHeight(e.target.value)}
-                    value={selectedHeight || ""}
                   >
                     <option value="">Wybierz wysokość</option>
-                    {heightOptions.map((height) => (
-                      <option key={height} value={height}>
-                        {height}
+                      <option>
+                        100
                       </option>
-                    ))}
                   </select>
                 </div>
-                {selectedHeight && (
                   <>
                     <div className="mt-4">
                       <h4 className="text-lg font-bold">Szerokość:</h4>
                       <select
-                        className="w-full p-2 border border-gray-300 rounded"
-                        onChange={(e) => handleSelectWidth(parseInt(e.target.value))}
-                        value={selectedWidth || ""}
-                      >
+                        className="w-full p-2 border border-gray-300 rounded">
                         <option value="">Wybierz szerokość</option>
-                        {widthOptions.map((width: number) => (
-                          <option key={width} value={width}>
-                            {width}
+                          <option >
+                            200                           
                           </option>
-                        ))}
                       </select>
                     </div>
-                    {selectedWidth && (
                       <div className="mt-4">
                         <h4 className="text-lg font-bold">Kolor:</h4>
                         <select
-                          className="w-full p-2 border border-gray-300 rounded"
-                          onChange={(e) => handleSelectColor(e.target.value)}
-                          value={selectedColor || ""}
-                        >
+                          className="w-full p-2 border border-gray-300 rounded">
                           <option value="">Wybierz kolor</option>
-                          {(colorOptions as string[]).map((color: string) => (
-                            <option key={color} value={color}>
-                              {color}
+                            <option >
+                              color
                             </option>
-                          ))}
                         </select>
                       </div>
-                    )}
                   </>
-                )}
               </>
             )}
 
@@ -211,15 +118,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             {activeTab === "wewnętrzne" && (
               <div className="mt-auto">
                 <button
-                  className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300"
-                  onClick={handleAddToCart}
-                  disabled={!selectedHeight || !selectedWidth || !selectedColor}
-                  title={
-                    !selectedHeight || !selectedWidth || !selectedColor
-                      ? "Wybierz wszystkie opcje, aby dodać do wyceny"
-                      : ""
-                  }
-                >
+                  className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300">
                   Dodaj do wyceny
                 </button>
               </div>
@@ -229,18 +128,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           {/* Prawa kolumna – koszyk */}
           <div className="bg-slate-100 p-4">
             <h2 className="text-xl font-bold text-surella-800">Twój koszyk:</h2>
-            {cart.length > 0 ? (
-              cart.map((item, index) => (
-                <div key={index} className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
+                <div className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
                   <p className="text-gray-800 text-lg font-semibold">
-                    {item.product} - {item.height}cm x {item.width}cm, {item.color}
+                    PRODUKTY 200MM 20KM CZARNY
                   </p>
-                  <p className="text-gray-900 font-bold">{item.price} zł</p>
+                  <p className="text-gray-900 font-bold">MILION zł</p>
                 </div>
-              ))
-            ) : (
-              <p className="text-gray-600">Koszyk jest pusty.</p>
-            )}
           </div>
         </div>
       </div>
