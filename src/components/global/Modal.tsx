@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 import categoriesDataRaw from "../../products.json";
+import { FaTrash } from "react-icons/fa6";
 import "./Modal.css";
-
 interface ProductCategory {
   [category: string]: {
     [product: string]: any;
@@ -23,8 +23,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 p-10">
-      <div className="bg-white p-6 shadow-lg w-full max-w-4xl">
+    <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 p-10">
+      <div className="bg-white p-6 shadow-lg w-fit  ">
         <div className="flex justify-between items-center border-b pb-4">
           <h2 className="text-2xl font-bold">Kalkulator</h2>
           <FaXmark className="cursor-pointer w-8 h-8" onClick={onClose} />
@@ -47,9 +47,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-8 ">
+        <div className="mt-6 grid grid-cols-2 gap-8 w-[1100px]">
           {/* Lewa kolumna – wybór produktu oraz (opcje kalkulatora lub komunikat) */}
-          <div className="bg-slate-100 p-4 h-[420px] max-h-[420px] overflow-y-auto flex flex-col">
+          <div className="bg-slate-100 p-4 min-h-[436px] overflow-y-auto flex flex-col">
             <h3 className="text-surella-800 mb-2 text-xl font-bold">Wybierz produkt:</h3>
             <select
               className="w-full p-2 border border-gray-300 rounded"
