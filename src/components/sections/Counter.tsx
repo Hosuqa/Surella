@@ -40,7 +40,7 @@ const Counter = () => {
             </div>
             <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
-                <CountUp start={0} end={2639} duration={4.5} delay={1.5} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
+                <CountUp start={0} end={2639} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
                 Zadowolonych klientow
@@ -56,7 +56,7 @@ const Counter = () => {
             </div>
             <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
-                <CountUp start={0} end={16} delay={1.75} duration={6} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
+                <CountUp start={0} end={16} duration={12} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
                 Lat Doświadczenia
@@ -72,7 +72,7 @@ const Counter = () => {
             </div>
             <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
-                <CountUp start={0} end={11341} delay={2} duration={4.5} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator="," useEasing={true} />
+                <CountUp start={0} end={11341} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator="," useEasing={true} />
                 {/* easingFn={"easeOutCubic"} */}
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
