@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 import categoriesDataRaw from "../../products.json";
+import { FaTrash } from "react-icons/fa6";
 import "./Modal.css";
-
 interface ProductCategory {
   [category: string]: {
     [product: string]: any;
@@ -34,7 +34,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleAddToCart = () => {
-    // Dodajemy do koszyka tylko gdy kalkulator obsługuje wycenę (tab "wewnętrzne")
     if (
       activeTab === "wewnętrzne" &&
       selectedProduct &&
@@ -43,21 +42,71 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       selectedColor &&
       selectedPrice !== null
     ) {
-      setCart([
-        ...cart,
-        { product: selectedProduct, height: selectedHeight, width: selectedWidth, color: selectedColor, price: selectedPrice },
-      ]);
+      setCart((prevCart) => {
+        const existingIndex = prevCart.findIndex(
+          (item) =>
+            item.product === selectedProduct &&
+            item.height === selectedHeight &&
+            item.width === selectedWidth &&
+            item.color === selectedColor
+        );
+
+        if (existingIndex !== -1) {
+          const updatedCart = [...prevCart];
+          updatedCart[existingIndex].quantity += 1;
+          return updatedCart;
+        } else {
+          return [
+            ...prevCart,
+            {
+              product: selectedProduct,
+              height: selectedHeight,
+              width: selectedWidth,
+              color: selectedColor,
+              price: selectedPrice,
+              quantity: 1,
+            },
+          ];
+        }
+      });
     }
+  };
+
+  const increaseQuantity = (index: number) => {
+    setCart((prevCart) =>
+      prevCart.map((item, i) =>
+        i === index ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (index: number) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item, i) =>
+          i === index ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  const removeItem = (index: number) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  };
+
+  const clearCart = () => {
+    setCart([]);
   };
 
   const productData = selectedProduct ? categoriesData[activeTab]?.[selectedProduct] : undefined;
 
-  // Logika dot. kalkulatora – tylko dla tab "wewnętrzne"
   const heightOptions = activeTab === "wewnętrzne" && productData ? Object.keys(productData["height"] || {}) : [];
   const widthGroups =
     activeTab === "wewnętrzne" && selectedHeight ? productData?.["height"]?.[selectedHeight]?.["width"] || [] : [];
   const widthOptions: number[] =
-      activeTab === "wewnętrzne" ? Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0])))) : [];
+    activeTab === "wewnętrzne"
+      ? Array.from(new Set(widthGroups.flatMap((group: any) => group.sizes.map((s: number[]) => s[0]))))
+      : [];
   const matchingWidthGroups =
     activeTab === "wewnętrzne" && widthGroups && selectedWidth
       ? widthGroups.filter((group: any) => group.sizes.some((s: number[]) => s[0] === selectedWidth))
@@ -91,8 +140,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 p-10">
-      <div className="bg-white p-6 shadow-lg w-full max-w-4xl">
+    <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 p-10">
+      <div className="bg-white p-6 shadow-lg w-fit  ">
         <div className="flex justify-between items-center border-b pb-4">
           <h2 className="text-2xl font-bold">Kalkulator</h2>
           <FaXmark className="cursor-pointer w-8 h-8" onClick={onClose} />
@@ -120,12 +169,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-8 ">
+        <div className="mt-6 grid grid-cols-2 gap-8 w-[1100px]">
           {/* Lewa kolumna – wybór produktu oraz (opcje kalkulatora lub komunikat) */}
-          <div className="bg-slate-100 p-4 h-[420px] max-h-[420px] overflow-y-auto flex flex-col">
+          <div className="bg-slate-100 p-4 min-h-[436px] overflow-y-auto flex flex-col">
             <h3 className="text-surella-800 mb-2 text-xl font-bold">Wybierz produkt:</h3>
             <select
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 "
               onChange={(e) => handleSelectProduct(e.target.value)}
               value={selectedProduct || ""}
             >
@@ -139,14 +188,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
             {selectedProduct && activeTab === "zewnętrzne" && productData?.text && (
               // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
-              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
+              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 ">
                 <p>{productData.text}</p>
               </div>
             )}
 
             {selectedProduct && activeTab === "moskitiery" && productData?.text && (
               // Dla tab "zewnętrzne" wyświetlamy jedynie komunikat z pliku JSON
-              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 rounded">
+              <div className="mt-4 p-4 bg-gray-200 border border-gray-300 ">
                 <p>{productData.text}</p>
               </div>
             )}
@@ -156,7 +205,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div className="mt-4">
                   <h4 className="text-lg font-bold">Wysokość:</h4>
                   <select
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 "
                     onChange={(e) => setSelectedHeight(e.target.value)}
                     value={selectedHeight || ""}
                   >
@@ -173,7 +222,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     <div className="mt-4">
                       <h4 className="text-lg font-bold">Szerokość:</h4>
                       <select
-                        className="w-full p-2 border border-gray-300 rounded"
+                        className="w-full p-2 border border-gray-300 "
                         onChange={(e) => handleSelectWidth(parseInt(e.target.value))}
                         value={selectedWidth || ""}
                       >
@@ -189,7 +238,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       <div className="mt-4">
                         <h4 className="text-lg font-bold">Kolor:</h4>
                         <select
-                          className="w-full p-2 border border-gray-300 rounded"
+                          className="w-full p-2 border border-gray-300 "
                           onChange={(e) => handleSelectColor(e.target.value)}
                           value={selectedColor || ""}
                         >
@@ -211,7 +260,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             {activeTab === "wewnętrzne" && (
               <div className="mt-auto">
                 <button
-                  className="bg-surella-600 text-white px-4 py-2 w-full disabled:bg-slate-300"
+                  className="bg-surella-600 mt-8 text-white px-4 py-2 w-full disabled:bg-slate-300"
                   onClick={handleAddToCart}
                   disabled={!selectedHeight || !selectedWidth || !selectedColor}
                   title={
@@ -227,21 +276,39 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Prawa kolumna – koszyk */}
-          <div className="bg-slate-100 p-4">
-            <h2 className="text-xl font-bold text-surella-800">Twój koszyk:</h2>
-            {cart.length > 0 ? (
-              cart.map((item, index) => (
-                <div key={index} className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
-                  <p className="text-gray-800 text-lg font-semibold">
-                    {item.product} - {item.height}cm x {item.width}cm, {item.color}
-                  </p>
-                  <p className="text-gray-900 font-bold">{item.price} zł</p>
+          <div className="bg-slate-100 p-4 -lg">
+      <h2 className="text-xl font-bold text-surella-800 mb-2">Twój koszyk:</h2>
+      {cart.length > 0 ? (
+        <>
+          {cart.map((item, index) => (
+            <div key={index} className="bg-white shadow-md px-4 py-3 mt-2 flex items-center justify-between -lg">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">{item.product}</h3>
+                <p className="text-gray-600 text-sm">
+                  {item.height}cm x {item.width}cm, {item.color}
+                </p>
+              </div>
+              <div className="flex items-center gap-4 flex-col">
+                <p className="text-gray-900 font-bold">{(item.price * item.quantity).toFixed(2)} PLN</p>
+                <div className="flex items-center border -lg px-2 py-1">
+                  <button className="text-gray-700 px-2" onClick={() => decreaseQuantity(index)}>−</button>
+                  <span className="mx-2 font-semibold">{item.quantity}</span>
+                  <button className="text-gray-700 px-2" onClick={() => increaseQuantity(index)}>+</button>
                 </div>
-              ))
-            ) : (
-              <p className="text-gray-600">Koszyk jest pusty.</p>
-            )}
-          </div>
+                <button className="text-gray-600 hover:text-surella-800 duration-300" onClick={() => removeItem(index)}>
+                  <FaTrash />
+                </button>
+              </div>
+            </div>
+          ))}
+          <button className="mt-4 bg-red-500 text-white py-2 px-4 -lg w-full" onClick={clearCart}>
+            Opróżnij koszyk
+          </button>
+        </>
+      ) : (
+        <p className="text-gray-600">Koszyk jest pusty.</p>
+      )}
+    </div>
         </div>
       </div>
     </div>
