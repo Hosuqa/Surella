@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           {Object.keys(categoriesData).map((tab) => (
             <button
               key={tab}
-              className={`pb-2 text-lg font-semibold border-b-2 ${
+              className={`pb-2 text-lg font-semibold border-b-[3px] ${
                 activeTab === tab ? "text-surella-500 border-surella-500" : "text-gray-500 border-transparent"
               }`}
               onClick={() => {
@@ -128,12 +128,29 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           {/* Prawa kolumna – koszyk */}
           <div className="bg-slate-100 p-4">
             <h2 className="text-xl font-bold text-surella-800">Twój koszyk:</h2>
-                <div className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
-                  <p className="text-gray-800 text-lg font-semibold">
-                    PRODUKTY 200MM 20KM CZARNY
-                  </p>
-                  <p className="text-gray-900 font-bold">MILION zł</p>
+            <div className="bg-slate-200 px-4 py-3 mt-2 flex justify-between items-center">
+              <div className="flex flex-col">
+                <p className="text-gray-800 text-xl font-bold">
+                  PRODUKTY
+                </p>
+                <p>
+                200MM 20KM CZARNY
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="flex flex-col items-center ">
+                  <p className="text-gray-900 text-lg font-bold">342 PLN</p>
+                  <div className="flex items-center border -lg px-2 py-1">
+                    <button className="text-gray-700 px-2" >−</button>
+                    <span className="mx-2 font-semibold">22</span>
+                    <button className="text-gray-700 px-2" >+</button>
+                  </div>
                 </div>
+                <div className="h-12 w-[3px] bg-black"></div>
+                <FaTrash className="m-4 h-5 w-5"/>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
