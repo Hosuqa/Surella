@@ -1,7 +1,7 @@
 import Title from "@components/global/Title";
 import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
-import reviewData from "../../Review.json" assert {type: "json"}; 
+import reviewData from "../../Review.json"; 
 import { google } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
