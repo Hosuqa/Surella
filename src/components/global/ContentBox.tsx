@@ -11,7 +11,7 @@ import Colab from '@components/sections/Colab';
 import Review from '@components/sections/Review';
 // import Sandbox from '@components/sections/Sandbox';
 import { FaCalculator } from "react-icons/fa6";
-import Modal from '@components/global/Modal'; // Import Modal component
+// import Modal from '@components/global/Modal'; // Import Modal component
 
 const ContentBox = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -73,7 +73,7 @@ const ContentBox = () => {
             </div>
             {/* <Sandbox /> */}
             <Footer />
-            <Modal isOpen={isModalOpen} onClose={handleButtonClick} />
+            {/* <Modal isOpen={isModalOpen} onClose={handleButtonClick} /> */}
             <button
                 className="opacity-0 calcbutton fixed bottom-3 right-3 xl:bottom-6 xl:right-6 bg-surella-700 text-white p-3 shadow-lg hover:bg-surella-800 duration-500 z-20"
                 onClick={handleButtonClick}
