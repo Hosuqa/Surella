@@ -20,7 +20,7 @@ interface ColabItem {
   title: string;
   description: string;
 }
-const colabItems: ColabItem[] = Object.values(colabData);
+const colabItems: ColabItem[] = Object.keys(colabData).map(key => colabData[key as keyof typeof colabData]);
 
 const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
   return (
