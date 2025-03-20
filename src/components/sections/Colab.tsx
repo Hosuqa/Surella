@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import colabData from '../../Colab.json';
+import colabData from '../../Colab.json' assert { type: "json" };
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +16,11 @@ type Props = {
   isOpen: boolean;
   onClick: () => void;
 };
+interface ColabItem {
+  title: string;
+  description: string;
+}
+const colabItems: ColabItem[] = Object.values(colabData);
 
 const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
   return (
@@ -84,7 +89,7 @@ const Colab = () => {
       <Title title='Poznaj Surelle' subtitle='Trochę o nas' />
       <div className="w-full flex flex-col-reverse xl:flex-row gap-4 ">
         <div className="txtbox flex flex-col w-full gap-4">
-            {Object.values(colabData).slice(0, 4).map((item, index) => (
+            {colabItems.slice(0, 4).map((item, index) => (
               <ColabBox
                 key={index}
                 title={item.title}

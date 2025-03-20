@@ -1,7 +1,7 @@
 import Title from "@components/global/Title";
 import { useEffect } from 'react';
 import { XlWrapper } from "@components/global/Wrappers";
-import reviewData from "../../review.json";
+import reviewData from "../../review.json" assert {type: "json"}; 
 import { google } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -18,6 +18,11 @@ type Props = {
   text: string;
   name: string;
 };
+interface Review {
+  text: string;
+  name: string;
+}
+
 
 const ReviewCard2 = (props: Props) => (
   <div className="bg-white border-[3px] border-surella-600 select-none w-full h-full max-w-[800px] justify-beween flex flex-col px-10 py-6">
@@ -106,7 +111,7 @@ const Sandbox = () => {
             modules={[EffectCoverflow, Autoplay, Navigation]}
             className="relative "
           >
-            {reviewData.map((review, index) => (
+            {reviewData.map((review: Review, index: number) => (
               <SwiperSlide key={index} className=" h-[300px] px-6 md:px-0 md:w-[100px] md:h-[300px]">
                 <ReviewCard2 text={review.text} name={review.name} />
               </SwiperSlide>
