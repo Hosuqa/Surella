@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { XlWrapper } from '@components/global/Wrappers'
 import Title from '../global/Title'
 import images from '../../images.json'

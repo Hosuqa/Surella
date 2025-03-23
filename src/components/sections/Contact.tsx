@@ -112,9 +112,9 @@ const Contact = () => {
             return;
         }
 
-        const emailServiceId = "KEY";
-        const emailTemplateId = "KEY";
-        const emailPublicKey = "KEY";        
+        const emailServiceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+        const emailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+        const kokosy = import.meta.env.KOKOSY;      
 
         emailjs.send(
             emailServiceId,
@@ -126,7 +126,7 @@ const Contact = () => {
                 message: form.message,
                 telephone: form.telephone
             },
-            emailPublicKey
+            kokosy
         ).then(() => {
             setStatus("Wiadomość wysłana pomyślnie!");
             setForm({ firstName: "", lastName: "", email: "", message: "", telephone: "" });
