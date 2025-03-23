@@ -4,7 +4,7 @@ import { hero1, hero2 } from '../../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { motion } from "framer-motion";
-import './hero.css';
+import './Hero.css';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import hero3 from "/images/rolety5.jpg"
