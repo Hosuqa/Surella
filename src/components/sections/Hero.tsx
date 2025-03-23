@@ -15,11 +15,8 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 
 gsap.registerPlugin(TextPlugin);
 
-interface HeroProps {
-  openModal: () => void;
-}
 
-const Hero: React.FC<HeroProps> = ({ openModal }) => {
+const Hero = () => {
   const words = ["żaluzje", "plisy", "moskitiery", "markizy", "zasłony"];
   useEffect(() => {
     gsap.timeline()
@@ -71,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
         }
       );
     },
- []);
+ );
 // 85vh
 
    return (
@@ -83,16 +80,13 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
            <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white font-interMedium text-nowrap ml-1 `}></p>
            <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2 "
              whileTap={{ y:4 }}>
-               <p onClick={openModal} className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interBold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
-                 Sprawdź wycenę
-               </p>
+               <a href="#Contact" className={`${styles.heroButton} bg-surella-600 hover:bg-surella-700 duration-300 text-center text-white font-interBold px-5 sm:px-16 py-2 sm:py-4 cursor-pointer uppercase text-nowrap`}>
+                 Zadaj nam pytanie
+               </a>
            </motion.div>
           </div>
           <a href="#About"className='arrowhero w-fit h-fit absolute z-20 bottom-0 right-0 left-0 m-auto flex flex-col items-center text-center justify-center mb-6'>
             <IoIosArrowRoundDown className='text-white w-fit h-10 mb-1 cursor-pointer'/>
-            {/* <p className='text-white text-[14px] cursor-pointer'>
-              Zobacz więcej
-            </p> */}
           </a>
           <Swiper
              speed={2000}
@@ -126,28 +120,3 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
  };
  
  export default Hero;
- 
-
-{/*
-<div className="flex flex-col xl:flex-row bg-white w-full h-[calc(95vh-96px)] mt-24 relative gap-2 overflow-hidden">
-  <div className="w-full xl:w-[900px] shrink-0 grow-0 bg-surella-500 flex flex-col justify-center py-24">
-    <div className="sm:pl-24 md:pl-32 lg:pl-48 pl-8">
-      <h2 className="text-white uppercase font-[700] text-7xl mb-2">Surella.pl</h2>
-      <h4 className="text-white font-[400] text-md xl:text-2xl mb-10">Tworzymy przestrzeń dla Twojego komfortu</h4>
-      <div className="bg-white px-10 py-4 uppercase w-fit font-[700] text-surella-500 text-sm xl:text-xl">Sprawdź wycenę</div>
-    </div>
-  </div>
-  <div className="w-full bg-surella-500 relative overflow-hidden min-h-[400px]">
-    <Swiper pagination={{ dynamicBullets: true, }} modules={[Pagination, Autoplay]} autoplay={{ delay: 3500, disableOnInteraction: false,}} loop={true}  className="h-full w-full">
-      <SwiperSlide>
-        <img src={hero1} className="object-cover h-full w-full" alt="hero" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={hero2} className="object-cover h-full w-full" alt="hero" />
-      </SwiperSlide>
-      <SwiperSlide>  
-        <img src={hero3} className="object-cover h-full w-full" alt="hero" />
-      </SwiperSlide>
-    </Swiper>
-  </div>
-</div>  */}

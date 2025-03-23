@@ -19,7 +19,6 @@ const NavTitle = ({ title, href }: Props) => {
                 <a href={href} 
                    className={`${styles.NavbarText}  w-full py-1 px-4 hidden xl:flex justify-center tracking-wider font-interBold cursor-pointer`}
                   >
-
                    {title}
                 </a>
                 <div className="animation"></div>
