@@ -31,6 +31,9 @@ const Contact = () => {
     });
 
     useEffect(() => {
+        console.log("VITE_EMAIL_SERVICE_ID:", import.meta.env.VITE_EMAIL_SERVICE_ID);
+        console.log("VITE_EMAIL_TEMPLATE_ID:", import.meta.env.VITE_EMAIL_TEMPLATE_ID);
+        console.log("VITE_KOKOSY:", import.meta.env.VITE_KOKOSY);
         gsap.fromTo(
             ".textbox",
             { opacity: 0, x: -20 },
@@ -114,7 +117,7 @@ const Contact = () => {
 
         const emailServiceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
         const emailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
-        const kokosy = import.meta.env.KOKOSY;      
+        const emailPublicKey = import.meta.env.VITE_KOKOSY;
 
         emailjs.send(
             emailServiceId,
@@ -126,7 +129,7 @@ const Contact = () => {
                 message: form.message,
                 telephone: form.telephone
             },
-            kokosy
+            emailPublicKey
         ).then(() => {
             setStatus("Wiadomość wysłana pomyślnie!");
             setForm({ firstName: "", lastName: "", email: "", message: "", telephone: "" });
