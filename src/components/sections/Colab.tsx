@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { rollo, rollo2, rollo3, rollo4 } from '../../assets';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import colabData from '../../Colab.json';
+import colabData from '../../colab.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
