@@ -68,7 +68,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         <div
             role="dialog"
             aria-hidden={!currentSet}
-            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 h-full bg-black/90 backdrop-blur-md`}
+            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 h-full w-full bg-black/90 backdrop-blur-md`}
         >
             <div className="relative w-full h-full flex">
                 <motion.div
