@@ -13,7 +13,7 @@ const styles = {
   heroButton:
     "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[14px]",
   titleSubTitle:
-    "md:text-[22px] xs:text-[20px] text-[13px]",
+    "md:text-[22px] xs:text-[20px] text-[12px]",
   titleHead:
     "md:text-[36px] xs:text-[30px] text-[20px]",
   aboutText:

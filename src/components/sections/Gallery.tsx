@@ -240,7 +240,7 @@ const Gallery = () => {
                         </div>
                         <div className="sqareImageRight w-full flex flex-col">
                             <div className=" md:h-[200px] w-full sqareImageRight md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 mb-4">
+                                <p className="uppercase text-[20px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 md:mt-0 mb-1">
                                     Rolety
                                 </p>
                                 <p className="hidden md:flex text-surella-800 text-start">{texts[2].rollerblinds}</p>
@@ -254,7 +254,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className="md:hidden md:h-[200px] sqareImageLeft md:my-10 md:md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
+                                <p className="uppercase text-[20px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 md:mt-0 mt-4 mb-1">
                                     Żaluzje
                                 </p>
                                 <p className="text-surella-800 text-start hidden">{texts[3].blinds}</p>
@@ -268,7 +268,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className=" md:h-[200px] sqareImageRight md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
+                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 md:mt-0 mt-4 mb-1">
                                     Moskitiery
                                 </p>
                                 <p className="hidden md:flex text-surella-800 text-start">{texts[4].mosquitonets}</p>
@@ -282,7 +282,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className="md:hidden md:h-[200px] sqareImageLeft md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
+                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 md:mt-0 mt-4 mb-1">
                                     Firany
                                 </p>
                                 <p className="hidden text-surella-800 text-end">{texts[5].curtains}</p>
@@ -296,7 +296,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className=" md:h-[200px] sqareImageRight  md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
+                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 md:mt-0 mt-4 mb-1">
                                     Osłony zewnętrzne
                                 </p>
                                 <p className="hidden md:flex text-surella-800 text-start">{texts[6].covers}</p>
