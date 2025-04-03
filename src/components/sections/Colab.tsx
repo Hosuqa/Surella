@@ -87,7 +87,7 @@ const Colab = () => {
 
   return (
     <XlWrapper vertical id="Colab">
-      <Title title='Poznaj Surelle' subtitle='Trochę o nas' />
+      <Title title='Zobacz Co Oferujemy' subtitle='Odkryj Świat Surelli' />
       <div className="w-full flex flex-col-reverse xl:flex-row gap-4 ">
         <div className="txtbox flex flex-col w-full gap-4">
             {colabItems.slice(0, 4).map((item, index) => (
