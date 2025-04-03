@@ -1,6 +1,6 @@
 import Title from "@components/global/Title";
 import { useEffect } from 'react';
-import { XlWrapper } from "@components/global/Wrappers";
+import { ReviewWrapper } from "@components/global/Wrappers";
 import reviewData from "../../Review.json"; 
 import { google } from '../../assets';
 import { gsap } from "gsap";
@@ -25,8 +25,8 @@ interface Review {
 
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-full max-w-[800px] justify-beween flex flex-col px-10 py-6">
-    <div className="flex justify-between items-center">
+  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-fit min-h-[300px] max-w-[800px] justify-beween flex flex-col px-6 md:px-10 py-2 md:py-6">
+    <div className="flex justify-between items-center mb-4 md:mb-2">
       <img src={google} alt="" className="w-14 h-14 my-4 "/>
       <div className="flex text-surella-600 gap-2">
         <FaStar className="h-6 w-6"/>
@@ -66,11 +66,11 @@ const Sandbox = () => {
   }, []);
   return (
     <>
-      <XlWrapper>
+      <ReviewWrapper vertical>
         <div className="w-full h-full ">
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
-      </XlWrapper>
+      </ReviewWrapper>
       <div className="my-20 ">
         <div className="reviews-slider review_box">
           <Swiper

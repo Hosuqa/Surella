@@ -18,62 +18,61 @@ gsap.registerPlugin(TextPlugin);
 
 const Hero = () => {
   const words = ["żaluzje", "plisy", "moskitiery", "markizy", "zasłony"];
+
   useEffect(() => {
-    gsap.timeline()
-      .to(
-        ".text",
-        {
-        text: "Surella.pl",
-        delay:0.15,
-        duration: 1,
-        }
-      )
-      .to(".herotxt", {
-        text: "U nas znajdziesz najlepsze żaluzje",
-        duration: 1.4,
-        ease: "power1.out",
-        speed: 5,
-        onComplete: () => {
-          let index = 0;
-          const changeLastWord = () => {
-            index = (index + 1) % words.length; 
-            gsap.to(".herotxt", {
-              text: `U nas znajdziesz najlepsze ${words[index]}`,
-              duration: 2,
-              ease: "power1.out",
-              onComplete: changeLastWord, // Ustawia wywołanie rekurencyjne po zakończeniu animacji
-            });
-          };
-          changeLastWord();
-        },
-      })
-      gsap.fromTo(
-        ".herobutton",
-        { opacity:0, y:50 },
-        {
-          opacity:1,
-          delay:2,
-          y:0,
-          duration: 1.3,
-        }
-      );
-      gsap.fromTo(
-        ".arrowhero",
-        { y:60, opacity: 0 },
-        {
-          opacity:1,
-          delay:2.4,
-          y:0,
-          duration: 1.7,
-        }
-      );
-    },
- );
-// 85vh
+    let isMounted = true; // Flaga kontrolująca, czy komponent jest nadal zamontowany
+
+    const tl = gsap.timeline();
+
+    tl.to(".text", {
+      text: "Surella.pl",
+      delay: 0.15,
+      duration: 1,
+    })
+    .to(".herotxt", {
+      text: "U nas znajdziesz najlepsze żaluzje",
+      duration: 1.4,
+      ease: "power1.out",
+      speed: 5,
+      onComplete: () => {
+        let index = 0;
+        const changeLastWord = () => {
+          if (!isMounted) return; // Przerywamy rekurencję, jeśli komponent został odmontowany
+          index = (index + 1) % words.length;
+          gsap.to(".herotxt", {
+            text: `U nas znajdziesz najlepsze ${words[index]}`,
+            duration: 2,
+            ease: "power1.out",
+            onComplete: changeLastWord,
+          });
+        };
+        changeLastWord();
+      },
+    });
+
+    tl.fromTo(
+      ".herobutton",
+      { opacity: 0, y: 50 },
+      { opacity: 1, delay: 2, y: 0, duration: 1.3 }
+    );
+
+    tl.fromTo(
+      ".arrowhero",
+      { y: 60, opacity: 0 },
+      { opacity: 1, delay: 2.4, y: 0, duration: 1.7 }
+    );
+
+    // Funkcja cleanup: zatrzymanie timeline i rekurencyjnej animacji
+    return () => {
+      isMounted = false;
+      tl.kill();
+    };
+  }, []); // Pusta tablica zależności gwarantuje, że animacje uruchamiają się tylko raz przy montowaniu
+
 
    return (
      <>
-       <div className="flex lg:flex-row flex-col h-[calc(100vh)] bg-surella-600">
+       <div className="flex lg:flex-row flex-col h-svh bg-surella-600">
          <div className="bg-white overflow-hidden flex w-full h-full relative">
           <div className='z-20 flex flex-col mx-6 sm:mx-16 md:mx-24 lg:mx-24 xl:mx-48 2xl:mx-72 my-32 sm:my-36 md:my-40 lg:my-48 2xl:my-56 absolute bottom-0 h-fit w-fit '>
            <div className={`${styles.heroHeadText} text leading-none text-white font-interExtraBold font-semibold uppercase `}></div>
@@ -118,5 +117,4 @@ const Hero = () => {
      </>
    );
  };
- 
  export default Hero;

@@ -68,7 +68,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         <div
             role="dialog"
             aria-hidden={!currentSet}
-            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}
+            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 h-full bg-black/90 backdrop-blur-md`}
         >
             <div className="relative w-full h-full flex">
                 <motion.div
@@ -79,7 +79,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                         className="w-full h-full cursor-pointer text-white "
                     />
                 </motion.div>
-                <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6  py-4  flex items-center justify-center">
+                <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6 py-4 flex items-center justify-center">
                     <motion.div
                     whileTap={{ x: -4 }}
                     onClick={() => navigate("prev")}
@@ -193,10 +193,10 @@ const Gallery = () => {
     return (
         <>
             <XlWrapper vertical id="Gallery">
-                <div className="w-full h-[full]">
+                <div className="w-full">
                     <Title title="Nasze realizacje" subtitle="Zobacz i oceń" />
                     <div className="flex w-full h-full">
-                        <div className="sqareImageLeft w-full hidden sm:flex flex-col">
+                        <div className="sqareImageLeft w-full hidden md:flex flex-col">
                             <div className="sqareImageLeft relative h-[200px] my-10 mr-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/rolety1.jpg" className="object-cover w-full h-full" />
@@ -235,31 +235,31 @@ const Gallery = () => {
                             </div>
                         </div>
                         <div className="Yline bg-gren-700 w-fit flex flex-col items-center">
-                            <div className="bg-surella-600 w-0 h-0 sm:h-5 sm:w-5"></div>
-                            <div className="bg-surella-600 w-0 sm:w-1 flex-grow"></div>
+                            <div className="bg-surella-600 w-0 h-0 md:h-5 md:w-5"></div>
+                            <div className="bg-surella-600 w-0 md:w-1 flex-grow"></div>
                         </div>
                         <div className="sqareImageRight w-full flex flex-col">
-                            <div className=" sm:h-[200px] sqareImageRight sm:my-10 sm:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
+                            <div className=" md:h-[200px] w-full sqareImageRight md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
+                                <p className="uppercase text-[25px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
                                     Rolety
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">{texts[2].rollerblinds}</p>
+                                <p className="hidden md:flex text-surella-800 text-start">{texts[2].rollerblinds}</p>
                             </div>
-                            <div className=" sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
+                            <div className=" md:hidden sqareImageLeft relative h-[150px] md:h-[200px] md:my-10 md:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.rolety)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
-                                <img src="../images/rolety1.jpg" className="object-cover w-full h-full" />
+                                <img src="../images/rolety1.jpg" className="object-cover w-svw h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
                                 <div className='flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 duration-300 h-[37px] w-fit bg-surella-700/60 text-white tracking-wider absolute bottom-[10px] right-[50px]'>
                                     Zobacz więcej
                                 </div>
                             </div>
-                            <div className="sm:hidden sm:h-[200px] sqareImageLeft sm:my-10 sm:sm:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
+                            <div className="md:hidden md:h-[200px] sqareImageLeft md:my-10 md:md:ml-10 flex flex-col justify-center items-start tracking-wider">
+                                <p className="uppercase text-[25px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
                                     Żaluzje
                                 </p>
                                 <p className="text-surella-800 text-start hidden">{texts[3].blinds}</p>
                             </div>
-                            <div className="sqareImageRight relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.zaluzje)}>
+                            <div className="sqareImageRight relative h-[150px] md:h-[200px] md:my-10 md:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.zaluzje)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/zaluzje3.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -267,13 +267,13 @@ const Gallery = () => {
                                     Zobacz więcej
                                 </div>
                             </div>
-                            <div className=" sm:h-[200px] sqareImageRight sm:my-10 sm:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
+                            <div className=" md:h-[200px] sqareImageRight md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
+                                <p className="uppercase text-[25px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
                                     Moskitiery
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">{texts[4].mosquitonets}</p>
+                                <p className="hidden md:flex text-surella-800 text-start">{texts[4].mosquitonets}</p>
                             </div>
-                            <div className="sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.moskitiery)}>
+                            <div className="md:hidden sqareImageLeft relative h-[150px] md:h-[200px] md:my-10 md:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.moskitiery)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/moskitiera2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -281,13 +281,13 @@ const Gallery = () => {
                                     Zobacz więcej
                                 </div>
                             </div>
-                            <div className="sm:hidden sm:h-[200px] sqareImageLeft sm:my-10 sm:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
+                            <div className="md:hidden md:h-[200px] sqareImageLeft md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
+                                <p className="uppercase text-[25px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
                                     Firany
                                 </p>
                                 <p className="hidden text-surella-800 text-end">{texts[5].curtains}</p>
                             </div>
-                            <div className="sqareImageRight relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.firany)}>
+                            <div className="sqareImageRight relative h-[150px] md:h-[200px] md:my-10 md:ml-10 cursor-pointer group overflow-hidden" onClick={() => setCurrentSet(images.firany)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/firany8.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />
@@ -295,13 +295,13 @@ const Gallery = () => {
                                     Zobacz więcej
                                 </div>
                             </div>
-                            <div className=" sm:h-[200px] sqareImageRight  sm:my-10 sm:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[25px] sm:text-[30px] text-surella-700 font-interBold font-bold sm:mb-4 my-4">
+                            <div className=" md:h-[200px] sqareImageRight  md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
+                                <p className="uppercase text-[25px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
                                     Osłony zewnętrzne
                                 </p>
-                                <p className="hidden sm:flex text-surella-800 text-start">{texts[6].covers}</p>
+                                <p className="hidden md:flex text-surella-800 text-start">{texts[6].covers}</p>
                             </div>
-                            <div className="sm:hidden sqareImageLeft relative h-[150px] sm:h-[200px] sm:my-10 sm:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.oslony)}>
+                            <div className="md:hidden sqareImageLeft relative h-[150px] md:h-[200px] md:my-10 md:ml-10 cursor-pointer  group overflow-hidden" onClick={() => setCurrentSet(images.oslony)}>
                                 <div className='h-full w-full absolute duration-300 bg-black/05 group-hover:bg-black/25'></div>
                                 <img src="../images/oslony2.jpg" className="object-cover w-full h-full" />
                                 <FaMagnifyingGlass  className="h-8 w-8 object-cover absolute bottom-3 right-3 text-white bg-black/30 group-hover:bg-surella-700/60 p-2 duration-300 group-hover:scale-[1.15]" />

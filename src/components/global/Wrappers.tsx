@@ -44,3 +44,11 @@ export const CounterWrapper = ({ className, children, vertical=false, horizontal
         </div>
     );
 }
+
+export const ReviewWrapper = ({ className, children, vertical=false, horizontal=true }: Props) => {
+    return (
+        <div className={`${ vertical ? "pt-12 md:pt-16 lg:pt-20 xl:pt-28 2xl:pt-[72p] " : "" } ${ horizontal ? "px-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-56 " : "" } ${ className }`}>
+            { children }
+        </div>
+    );
+}
