@@ -25,7 +25,7 @@ interface Review {
 
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-white border-[2px] md:border-[3px] border-surella-600 select-none w-full h-fit min-h-[200px] max-w-[800px] justify-beween flex flex-col px-6 md:px-10 py-2 md:py-6">
+  <div className="bg-white border-[2px] md:border-[3px] border-surella-600 select-none w-full h-fit md:min-h-[260px] max-w-[800px] justify-beween flex flex-col px-4 md:px-10 py-2 md:py-6">
     <div className="flex justify-between items-center md:mb-2">
       <img src={google} alt="" className="w-10 h-10 md:w-14 md:h-14 my-2 "/>
       <div className="flex text-surella-600 gap-2">
@@ -39,7 +39,7 @@ const ReviewCard2 = (props: Props) => (
     <div className="ml-1">
       <p className="text-surella-700 font-bold text-xl">{props.name}:</p>
       <div className=" h-ful flex flex-col">
-        <p className="text-[14px] xl:text-[17px] text-surella-800 tracking-widest leading-relaxed my-2">
+        <p className="text-[13px] xl:text-[17px] text-surella-800 tracking-widest leading-relaxed my-2">
             "{props.text}"
         </p>
       </div>
@@ -112,7 +112,7 @@ const Sandbox = () => {
             className="relative "
           >
             {reviewData.map((review: Review, index: number) => (
-              <SwiperSlide key={index} className=" px-6 md:px-0 md:w-[100px] md:h-[300px]">
+              <SwiperSlide key={index} className="h-[200px] px-6 my-2 md:px-0 md:w-[100px] md:h-[300px]">
                 <ReviewCard2 text={review.text} name={review.name} />
               </SwiperSlide>
             ))}
