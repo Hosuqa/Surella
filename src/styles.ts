@@ -21,7 +21,7 @@ const styles = {
   galleryText:
     "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
   colabtext:
-    "2xl:text-[18px] text-[14px]",
+    "2xl:text-[18px] md:text-[16px] text-[14px] ",
   colabtitle:
     "2xl:text-[20px] md:text-[20px] text-[14px]",
   contactText:
