@@ -1,6 +1,6 @@
 import Title from "@components/global/Title";
 import { useEffect } from 'react';
-import { XlWrapper } from "@components/global/Wrappers";
+import { ReviewWrapper } from "@components/global/Wrappers";
 import reviewData from "../../Review.json"; 
 import { google } from '../../assets';
 import { gsap } from "gsap";
@@ -66,11 +66,11 @@ const Sandbox = () => {
   }, []);
   return (
     <>
-      <XlWrapper>
+      <ReviewWrapper vertical>
         <div className="w-full h-full ">
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
-      </XlWrapper>
+      </ReviewWrapper>
       <div className="my-20 ">
         <div className="reviews-slider review_box">
           <Swiper
