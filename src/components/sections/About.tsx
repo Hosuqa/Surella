@@ -19,7 +19,7 @@ const IconBox = ({title, icon}: Props) => {
   return (
     <div className='icon-box bg-surella-600 text-white w-full h-full min-w-[100px] flex flex-col justify-center items-center p-2 md:p-6'>
       {React.cloneElement(icon, { className: 'md:w-16 md:h-16 w-8 h-8' })}
-      <p className='pt-2 md:pt-4 uppercase font-bold text-[16px] md:text-[18px] tracking-wider'>{title}</p>
+      <p className='pt-2 md:pt-4 uppercase font-bold text-[13px] md:text-[18px] tracking-wider'>{title}</p>
     </div>
   );
 };

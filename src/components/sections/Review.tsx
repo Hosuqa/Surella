@@ -25,7 +25,7 @@ interface Review {
 
 
 const ReviewCard2 = (props: Props) => (
-  <div className="bg-white border-[3px] border-surella-600 select-none w-full h-fit min-h-[300px] max-w-[800px] justify-beween flex flex-col px-6 md:px-10 py-2 md:py-6">
+  <div className="bg-white border-[2px] md:border-[3px] border-surella-600 select-none w-full h-fit min-h-[300px] max-w-[800px] justify-beween flex flex-col px-6 md:px-10 py-2 md:py-6">
     <div className="flex justify-between items-center mb-4 md:mb-2">
       <img src={google} alt="" className="w-10 h-10 md:w-14 md:h-14 my-4 "/>
       <div className="flex text-surella-600 gap-2">
@@ -39,7 +39,7 @@ const ReviewCard2 = (props: Props) => (
     <div className="ml-1">
       <p className="text-surella-700 font-bold text-xl">{props.name}:</p>
       <div className=" h-ful flex flex-col">
-        <p className="text-[15px] xl:text-[17px] text-surella-800 tracking-widest leading-relaxed mt-2">
+        <p className="text-[14px] xl:text-[17px] text-surella-800 tracking-widest leading-relaxed mt-2">
             "{props.text}"
         </p>
       </div>
@@ -71,7 +71,7 @@ const Sandbox = () => {
           <Title title="Opinie o Surelli" subtitle="Posłuchaj" />
         </div>
       </ReviewWrapper>
-      <div className="my-20 ">
+      <div className="my-12 md:my-20 ">
         <div className="reviews-slider review_box">
           <Swiper
             effect="coverflow"
