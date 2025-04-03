@@ -69,7 +69,7 @@ const Title = ({ title, subtitle, className, titleColor = "text-surella-600", su
     }, []);
 
     return (
-        <div className={`flex w-full h-fit mb-16 ${className}`}>
+        <div className={`flex w-full h-fit mb-8 md:mb-16 ${className}`}>
             <div className="flex flex-col">
                 <div className="flex items-center h-full">
                     <p
