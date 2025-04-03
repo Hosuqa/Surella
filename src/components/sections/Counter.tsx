@@ -33,49 +33,49 @@ const Counter = () => {
     <CounterWrapper vertical className='bg-surella-600'>
       <div className="w-full h-full flex justify-around">
           <div className="sqare flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
-              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl ">
+            <div className="w-[50px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
+              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-3xl sm:text-6xl lg:text-7xl ">
                 <FaPeopleGroup />
               </div>
             </div>
-            <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
+            <div className="md:w-32  flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={2639} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
-              <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
+              <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
                 Zadowolonych klientow
               </p>
             </div>
           </div>
 
           <div className="sqare flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
-              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl ">
+            <div className="w-[50px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
+              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-3xl sm:text-6xl lg:text-7xl ">
                 <FaBuilding />
               </div>
             </div>
-            <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
+            <div className="md:w-32  flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={16} duration={12} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
-              <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
+              <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
                 Lat Doświadczenia
               </p>
             </div>
           </div>
 
           <div className="sqare flex flex-col items-center" >
-            <div className="w-[70px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
-              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-4xl sm:text-6xl lg:text-7xl ">
+            <div className="w-[50px] sm:w-28 lg:w-40 bg-white aspect-square flex items-center justify-center rotate-45 hover:scale-110 duration-300">
+              <div className="-rotate-45 text-surella-600 w-full h-full flex items-center justify-center text-3xl sm:text-6xl lg:text-7xl ">
                 <LuBlinds />
               </div>
             </div>
-            <div className="md:w-32 w-28 flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
+            <div className="md:w-32 w flex flex-col justify-center items-center h-full mt-8 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={11341} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator="," useEasing={true} />
                 {/* easingFn={"easeOutCubic"} */}
               </h1>
-              <p className="text-white text-center text-wrap mt-2 uppercase text-[11px] md:text-[14px] lg:text-lg font-semibold">
+              <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
                 Zrelizowanych zamówień
               </p>
             </div>

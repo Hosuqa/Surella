@@ -13,19 +13,19 @@ const styles = {
   heroButton:
     "xl:text-[24px] lg:text-[20px] md:text-[18px] xs:text-[16px] text-[14px]",
   titleSubTitle:
-    "md:text-[22px] xs:text-[20px] text-[18px]",
+    "md:text-[22px] xs:text-[20px] text-[14px]",
   titleHead:
-    "md:text-[36px] xs:text-[30px] text-[28px]",
+    "md:text-[36px] xs:text-[30px] text-[22px]",
   aboutText:
     "2xl:text-[22px] md:text-[18px] text-[16px]",
   galleryText:
     "xl:text-[22px] lg:text-[20px] xs:text-[18px] text-[14px]",
   colabtext:
-    "2xl:text-[18px] md:text-[16px] text-[14px] ",
+    "2xl:text-[18px] md:text-[16px] text-[13px] ",
   colabtitle:
     "2xl:text-[20px] md:text-[20px] text-[14px]",
   contactText:
-    "2xl:text-[36px] md:text-[32px]  text-[28px]",
+    "2xl:text-[36px] md:text-[32px]  text-[20px]",
   contactTextMain:
     "2xl:text-[20px] md:text-[18px] text-[16px]",
 };

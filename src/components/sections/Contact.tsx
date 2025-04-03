@@ -151,11 +151,11 @@ const Contact = () => {
                         </div>
                         <div className="h-1/2 bg-red-30 flex flex-col gap-10 my-10">
                             <div className="h-fit text-center flex justify-center  items-center ">
-                                <BsFillTelephoneFill className="text-surella-600 h-8 w-8 mr-10"/>
+                                <BsFillTelephoneFill className="text-surella-600 h-6 w-6 md:h-8 md:w-8 mr-2 md:mr-10"/>
                                 <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
                             </div>
                             <div className="h-fit  text-center flex justify-center items-center">
-                                <MdMail className="text-surella-600 h-10 w-10 mr-10"/>
+                                <MdMail className="text-surella-600 h-8 w-8 md:h-10 md:w-10 mr-2 md:mr-10"/>
                                 <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>biuro@surella.pl</p>
                             </div>
                         </div>

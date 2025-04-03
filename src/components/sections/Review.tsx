@@ -27,13 +27,13 @@ interface Review {
 const ReviewCard2 = (props: Props) => (
   <div className="bg-white border-[3px] border-surella-600 select-none w-full h-fit min-h-[300px] max-w-[800px] justify-beween flex flex-col px-6 md:px-10 py-2 md:py-6">
     <div className="flex justify-between items-center mb-4 md:mb-2">
-      <img src={google} alt="" className="w-14 h-14 my-4 "/>
+      <img src={google} alt="" className="w-10 h-10 md:w-14 md:h-14 my-4 "/>
       <div className="flex text-surella-600 gap-2">
-        <FaStar className="h-6 w-6"/>
-        <FaStar className="h-6 w-6"/>
-        <FaStar className="h-6 w-6"/>
-        <FaStar className="h-6 w-6"/>
-        <FaStar className="h-6 w-6"/>
+        <FaStar className="h-4 w-4 md:h-6 md:w-6"/>
+        <FaStar className="h-4 w-4 md:h-6 md:w-6"/>
+        <FaStar className="h-4 w-4 md:h-6 md:w-6"/>
+        <FaStar className="h-4 w-4 md:h-6 md:w-6"/>
+        <FaStar className="h-4 w-4 md:h-6 md:w-6"/>
       </div>
     </div>
     <div className="ml-1">

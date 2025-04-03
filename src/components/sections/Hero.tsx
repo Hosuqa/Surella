@@ -53,13 +53,13 @@ const Hero = () => {
     tl.fromTo(
       ".herobutton",
       { opacity: 0, y: 50 },
-      { opacity: 1, delay: 2, y: 0, duration: 1.3 }
+      { opacity: 1, y: 0, duration: 1.3 }
     );
 
     tl.fromTo(
       ".arrowhero",
       { y: 60, opacity: 0 },
-      { opacity: 1, delay: 2.4, y: 0, duration: 1.7 }
+      { opacity: 1, y: 0, duration: 1.7 }
     );
 
     // Funkcja cleanup: zatrzymanie timeline i rekurencyjnej animacji
