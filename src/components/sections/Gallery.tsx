@@ -68,7 +68,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
         <div
             role="dialog"
             aria-hidden={!currentSet}
-            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 w-[100vw] h-[100vh] bg-black/90 backdrop-blur-md`}
+            className={`gallery-modal-bg ${currentSet ? "fixed" : "hidden"} select-none flex z-[40] top-0 right-0 h-full bg-black/90 backdrop-blur-md`}
         >
             <div className="relative w-full h-full flex">
                 <motion.div
@@ -79,7 +79,7 @@ const GalleryModal = ({ currentSet, onClick }: GalleryModalProps) => {
                         className="w-full h-full cursor-pointer text-white "
                     />
                 </motion.div>
-                <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6  py-4  flex items-center justify-center">
+                <div className="w-full h-[88vh] xl:py-10 px-4 sm:px-20 md:px-28 lg:py-8 md:py-6 py-4 flex items-center justify-center">
                     <motion.div
                     whileTap={{ x: -4 }}
                     onClick={() => navigate("prev")}
