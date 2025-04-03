@@ -43,7 +43,7 @@ const Counter = () => {
                 <CountUp start={0} end={2639} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
-                Zadowolonych klientow
+                Zadowolonych<br/>klientow
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Counter = () => {
                 <CountUp start={0} end={16} duration={12} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
-                Lat Doświadczenia
+                Lat<br/>Doświadczenia
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Counter = () => {
                 {/* easingFn={"easeOutCubic"} */}
               </h1>
               <p className="text-white text-center text-wrap mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
-                Zrelizowanych zamówień
+                Zrelizowanych<br/>zamówień
               </p>
             </div>
           </div>

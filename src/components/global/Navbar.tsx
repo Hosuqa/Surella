@@ -37,7 +37,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 750) {
+            if (window.scrollY > 350) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -70,9 +70,9 @@ const Navbar = () => {
                             <img 
                                 src={scrolled ? surella : surellawhite} 
                                 alt="logo" 
-                                className="w-10 h-10 object-contain transition-all duration-500" 
+                                className="w-8 h-8 md:w-10 md:h-10 object-contain transition-all duration-500" 
                             />
-                            <p className={` ${scrolled ? "text-surella-600" : "text-white"} text-[25px]  font-interBold tracking-wide`}>Surella</p>
+                            <p className={` ${scrolled ? "text-surella-600" : "text-white"} text-[20px] md:text-[25px] font-interBold tracking-wide`}>Surella</p>
                         </Link>
                     </div>
                     <div className="justify-end hidden xl:flex gap-10 w-full">
@@ -93,13 +93,13 @@ const Navbar = () => {
                     whileTap={{ scale: 0.9 }}
                     >
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
+                            className={`h-1 md:h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-opacity duration-200 `}
+                            className={`h-1 md:h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-opacity duration-200 `}
                         ></motion.div>
                         <motion.div
-                            className={`h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
+                            className={`h-1 md:h-[5px] w-9 my-[3px] ${scrolled ? "bg-surella-600" : "bg-white"} transition-transform duration-200 `}
                         ></motion.div>
                     </motion.div>
                 </div>
@@ -112,13 +112,13 @@ const Navbar = () => {
                 <motion.div
                 whileTap={{ scale: 0.9 }}
                 className="absolute top-5 right-5 z-50">
-                    <FaXmark onClick={toggleMenu}  className=" text-white font-bold text-3xl"/>
+                    <FaXmark onClick={toggleMenu}  className=" text-white font-bold text-3xl cursor-pointer"/> {/* Dodano cursor-pointer dla jasności */}
                 </motion.div>
                 <motion.div className="flex flex-col gap-8 text-white font-bold text-end mt-6">
-                    <motion.a href="#About" whileTap={{ scale: 0.9 }}>O nas</motion.a>
-                    <motion.a href="#Gallery" whileTap={{ scale: 0.9 }}>Realizacje</motion.a>
-                    <motion.a href="#Reviews" whileTap={{ scale: 0.9 }}>Opinie</motion.a>
-                    <motion.a href="#Contact" whileTap={{ scale: 0.9 }}>Kontakt</motion.a>
+                    <motion.a href="#About" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>O nas</motion.a>
+                    <motion.a href="#Gallery" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>Realizacje</motion.a>
+                    <motion.a href="#Reviews" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>Opinie</motion.a>
+                    <motion.a href="#Contact" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>Kontakt</motion.a>
                 </motion.div>
             </motion.div>
         </>

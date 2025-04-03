@@ -31,7 +31,7 @@ const ColabBox = ({ title, description, isOpen, onClick }: Props) => {
           className='flex w-full h-[60px] xl:h-[84px] bg-surella-600 group py-2 px-4 lg:py-4 lg:px-8 justify-between items-center cursor-pointer'
           onClick={onClick}
         >
-          <p className={`${styles.colabtitle} font-semibold text-white text-[18px] tracking-wider`}>{title}</p>
+          <p className={`${styles.colabtitle} font-semibold text-white tracking-wider`}>{title}</p>
           <IoIosArrowDown className={`w-6 h-6 group-hover:scale-125 text-white transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
         </div>
         <div className={`${styles.colabtext} px-3 py-2 md:p-8 text-surella-800 leading-relaxed tracking-wide text-justify duration-200 `}>

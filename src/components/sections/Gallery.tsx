@@ -240,7 +240,7 @@ const Gallery = () => {
                         </div>
                         <div className="sqareImageRight w-full flex flex-col">
                             <div className=" md:h-[200px] w-full sqareImageRight md:my-10 md:ml-10 flex flex-col justify-center items-start tracking-wider">
-                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 my-4">
+                                <p className="uppercase text-[22px] md:text-[30px] text-surella-700 font-interBold font-bold md:mb-4 mb-4">
                                     Rolety
                                 </p>
                                 <p className="hidden md:flex text-surella-800 text-start">{texts[2].rollerblinds}</p>

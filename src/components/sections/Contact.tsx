@@ -36,7 +36,7 @@ const Contact = () => {
         console.log("VITE_KOKOSY:", import.meta.env.VITE_KOKOSY);
         gsap.fromTo(
             ".textbox",
-            { opacity: 0, x: -20 },
+            { opacity: 0, x: -10 },
             {
                 opacity: 1,
                 x: 0,
@@ -51,7 +51,7 @@ const Contact = () => {
         );
         gsap.fromTo(
             ".conbox",
-            { opacity: 0, x: 20 },
+            { opacity: 0, x: 10 },
             {
                 opacity: 1,
                 x: 0,
@@ -146,25 +146,25 @@ const Contact = () => {
                 <Title title="Skontaktuj się z nami" subtitle="Współpraca"></Title>
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="textbox bg-slate-100 w-full flex flex-col  ">
-                        <div className="h-1/2 px-10 pt-10">
+                        <div className="md:h-1/2 px-8 md:px-10 pt-8 md:pt-10">
                             <p className={`${styles.contactTextMain} tracking-wide text-surella-700 leading-relaxed text-justify`}>{text}</p>
                         </div>
-                        <div className="h-1/2 bg-red-30 flex flex-col gap-10 my-10">
+                        <div className="md:h-1/2 bg-red-30 flex flex-col gap-10 my-10">
                             <div className="h-fit text-center flex justify-center  items-center ">
                                 <BsFillTelephoneFill className="text-surella-600 h-6 w-6 md:h-8 md:w-8 mr-2 md:mr-10"/>
                                 <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>+48 722 299 530</p>
                             </div>
-                            <div className="h-fit  text-center flex justify-center items-center">
+                            <div className="h-fit text-center flex justify-center items-center">
                                 <MdMail className="text-surella-600 h-8 w-8 md:h-10 md:w-10 mr-2 md:mr-10"/>
                                 <p className={`${styles.contactText} flex justify-center text-nowrap text-surella-600 font-[700] tracking-wider`}>biuro@surella.pl</p>
                             </div>
                         </div>
                     </div>
                     <div className="conbox w-full h-full bg-surella-600">
-                        <form onSubmit={handleSubmit} className="w-full h-full flex flex-col uppercase tracking-wide text-white p-10">
+                        <form onSubmit={handleSubmit} className="w-full h-full flex flex-col uppercase tracking-wide text-white p-8 md:p-10">
                             <div className="w-full h-full flex gap-4">
                                 <div className="w-full h-full">
-                                    <p className="pb-1">Imię</p>
+                                    <p className={`${styles.contactForm} pb-1`}>Imię</p>
                                     <input 
                                         name="firstName"
                                         value={form.firstName}
@@ -176,7 +176,7 @@ const Contact = () => {
                                 </div>
                                 
                                 <div className="w-full h-full">
-                                    <p className="pb-1">Nazwisko</p>
+                                    <p className={`${styles.contactForm} pb-1`}>Nazwisko</p>
                                     <input 
                                         name="lastName"
                                         value={form.lastName}
@@ -188,7 +188,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="w-full h-full flex flex-col">
-                                <p className="pt-2 pb-1">Email</p>
+                                <p className={`${styles.contactForm} pt-2 pb-1`}>Email</p>
                                 <input 
                                     name="email"
                                     value={form.email}
@@ -199,7 +199,7 @@ const Contact = () => {
                                 />
                                 {errors.email && <p className="text-xs mt-2 font-bold text-red-300">{errors.email}</p>}
 
-                                <p className="pt-2 pb-1">Numer telefonu</p>
+                                <p className={`${styles.contactForm} pt-2 pb-1`}>Numer telefonu</p>
                                 <input 
                                     name="telephone"
                                     value={form.telephone}
@@ -209,12 +209,12 @@ const Contact = () => {
                                 />
                                 {errors.telephone && <p className="text-xs mt-2 font-bold text-red-300">{errors.telephone}</p>}
 
-                                <p className="pt-2 pb-1">Wiadomość</p>
+                                <p className={`${styles.contactForm} pt-2 pb-1`}>Wiadomość</p>
                                 <textarea 
                                     name="message"
                                     value={form.message}
                                     onChange={handleChange}
-                                    className="w-full 2xl:h-[200px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none rounded-none" 
+                                    className="w-full 2xl:h-[200px] text-[12px] 2xl:text-[18px] md:text-[16px] h-[100px] text-surella-800 text-wrap p-2 focus:outline-none rounded-none" 
                                     placeholder="Tutaj napisz swoją wiadomość do nas"
                                     required
                                 />

@@ -11,7 +11,7 @@ const Footer = () => {
                 <p className='text-white mb-10'>Copyright &copy; {new Date().getFullYear()} Surella</p>
                 <Link
                     to="/"
-                    className="top-1/2 right-12 absolute flex cursor-pointer"
+                    className="top-1/2 right-12 absolute cursor-pointer"
                     onClick={() => window.scrollTo(0, 0)}
                 >
                     <IoIosArrowDown className={`rotate-180 w-8 h-8 md:w-10 md:h-10 text-white transform duration-500`} />
