@@ -108,13 +108,13 @@ const Navbar = () => {
             initial={{ x:"150%"}}
             animate={{ x: menuOpen ? 0 : "150%" }}
             transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-            className="xl:hidden fixed top-0 right-0 w-fit h-full z-50 bg-surella-800 flex flex-col gap-8 px-10 py-16 sm:p-20 uppercase">
+            className="xl:hidden fixed top-0 right-0 w-fit h-full z-50 bg-surella-800 flex flex-col gap-8 px-6 py-14 sm:py-20 md:px-28 uppercase">
                 <motion.div
                 whileTap={{ scale: 0.9 }}
-                className="absolute top-5 right-5 z-50">
-                    <FaXmark onClick={toggleMenu}  className=" text-white font-bold text-3xl cursor-pointer"/> {/* Dodano cursor-pointer dla jasności */}
+                className="absolute top-5 right-5 md:right-16 z-50">
+                    <FaXmark onClick={toggleMenu} className=" text-white font-bold text-2xl md:text-3xl cursor-pointer"/> {/* Dodano cursor-pointer dla jasności */}
                 </motion.div>
-                <motion.div className="flex flex-col gap-8 text-white font-bold text-end mt-6">
+                <motion.div className="flex flex-col gap-5 text-white text-[14px] md:text-[18px] font-medium text-end mt-6">
                     <motion.a href="#About" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>O nas</motion.a>
                     <motion.a href="#Gallery" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>Realizacje</motion.a>
                     <motion.a href="#Reviews" whileTap={{ scale: 0.9 }} onClick={toggleMenu}>Opinie</motion.a>

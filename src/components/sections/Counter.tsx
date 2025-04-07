@@ -38,11 +38,11 @@ const Counter = () => {
                 <FaPeopleGroup />
               </div>
             </div>
-            <div className="md:w-32 flex flex-col justify-center items-center h-full mt-4 md:mt-12 lg:mt-14">
+            <div className="md:w-32 flex flex-col justify-center items-center h-full mt-6 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={2639} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
-              <p className="text-white text-center text-wrap md:mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
+              <p className="text-white text-center text-wrap md:leading-2 tracking-wide md:mt-2 uppercase text-[10px] md:text-[14px] lg:text-lg font-semibold">
                 Zadowolonych<br/>klientow
               </p>
             </div>
@@ -54,7 +54,7 @@ const Counter = () => {
                 <FaBuilding />
               </div>
             </div>
-            <div className="md:w-32  flex flex-col justify-center items-center h-full mt-4 md:mt-12 lg:mt-14">
+            <div className="md:w-32  flex flex-col justify-center items-center h-full mt-6 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={16} duration={12} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator=","/>
               </h1>
@@ -70,7 +70,7 @@ const Counter = () => {
                 <LuBlinds />
               </div>
             </div>
-            <div className="md:w-32 w flex flex-col justify-center items-center h-full mt-4 md:mt-12 lg:mt-14">
+            <div className="md:w-32 w flex flex-col justify-center items-center h-full mt-6 md:mt-12 lg:mt-14">
               <h1 className="text-nowrap text-xl md:text-3xl lg:text-4xl font-bold flex justify-center text-white">
                 <CountUp start={0} end={11341} duration={8} enableScrollSpy={true} scrollSpyOnce={true} scrollSpyDelay={0.4} separator="," useEasing={true} />
                 {/* easingFn={"easeOutCubic"} */}
