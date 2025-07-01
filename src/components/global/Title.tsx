@@ -85,7 +85,7 @@ const Title = ({ title, subtitle, className, titleColor = "text-surella-600", su
                 </div>
                 <p
                     ref={titleRef}
-                    className={`${styles.titleHead} ${titleColor} uppercase text-nowrap font-interBold font-bold`}
+                    className={`${styles.titleHead} ${titleColor} uppercase text-nowrap font-interBold`}
                 >
                     {title}
                 </p>

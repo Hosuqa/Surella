@@ -82,7 +82,7 @@ const Navbar = () => {
                         <motion.div className="w-full h-full bg-surella-600 hover:bg-surella-700 duration-300 text-surella-600 px-8 py-[6px]"
                             whileTap={{ y:4 }}>
                             <a href="#Contact"
-                            className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interBold font-bold cursor-pointer`}>
+                            className={`${styles.NavbarText} w-full hidden xl:flex justify-center text-white tracking-widest font-interBold cursor-pointer`}>
                                 Kontakt
                             </a>
                         </motion.div>

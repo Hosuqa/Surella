@@ -1,12 +1,12 @@
 import Title from "@components/global/Title";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { XlWrapper } from "@components/global/Wrappers";
 import texts from '../../texts.json';
 import { styles } from "../../styles";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 
@@ -15,20 +15,20 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
     const text = texts[1]?.contactText;
 
-    const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-        telephone: ""
-    });
+    // const [form, setForm] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     message: "",
+    //     telephone: ""
+    // });
 
-    const [loading, setLoading] = useState(false);
-    const [status, setStatus] = useState("");
-    const [errors, setErrors] = useState({
-        email: "",
-        telephone: ""
-    });
+    // const [loading, setLoading] = useState(false);
+    // const [status, setStatus] = useState("");
+    // const [errors, setErrors] = useState({
+    //     email: "",
+    //     telephone: ""
+    // });
 
     useEffect(() => {
         console.log("VITE_EMAIL_SERVICE_ID:", import.meta.env.VITE_EMAIL_SERVICE_ID);
@@ -66,79 +66,79 @@ const Contact = () => {
         );
     }, []);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    //     setForm({ ...form, [e.target.name]: e.target.value });
+    // };
 
-    const validateEmail = () => {
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (!emailRegex.test(form.email)) {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                email: "Proszę wprowadzić poprawny adres e-mail."
-            }));
-            return false;
-        }
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            email: ""
-        }));
-        return true;
-    };
+    // const validateEmail = () => {
+    //     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    //     if (!emailRegex.test(form.email)) {
+    //         setErrors((prevErrors) => ({
+    //             ...prevErrors,
+    //             email: "Proszę wprowadzić poprawny adres e-mail."
+    //         }));
+    //         return false;
+    //     }
+    //     setErrors((prevErrors) => ({
+    //         ...prevErrors,
+    //         email: ""
+    //     }));
+    //     return true;
+    // };
 
-    const validateTelephone = () => {
-        const telephoneRegex = /^[0-9]{9}$/;
-        if (!telephoneRegex.test(form.telephone)) {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                telephone: "Proszę wprowadzić poprawny numer telefonu."
-            }));
-            return false;
-        }
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            telephone: ""
-        }));
-        return true;
-    };
+    // const validateTelephone = () => {
+    //     const telephoneRegex = /^[0-9]{9}$/;
+    //     if (!telephoneRegex.test(form.telephone)) {
+    //         setErrors((prevErrors) => ({
+    //             ...prevErrors,
+    //             telephone: "Proszę wprowadzić poprawny numer telefonu."
+    //         }));
+    //         return false;
+    //     }
+    //     setErrors((prevErrors) => ({
+    //         ...prevErrors,
+    //         telephone: ""
+    //     }));
+    //     return true;
+    // };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
-        setStatus("");
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setLoading(true);
+    //     setStatus("");
 
-        const isEmailValid = validateEmail();
-        const isTelephoneValid = validateTelephone();
+    //     const isEmailValid = validateEmail();
+    //     const isTelephoneValid = validateTelephone();
 
-        if (!isEmailValid || !isTelephoneValid) {
-            setLoading(false);
-            return;
-        }
+    //     if (!isEmailValid || !isTelephoneValid) {
+    //         setLoading(false);
+    //         return;
+    //     }
 
-        const emailServiceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
-        const emailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
-        const emailPublicKey = import.meta.env.VITE_KOKOSY;
+    //     const emailServiceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+    //     const emailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+    //     const emailPublicKey = import.meta.env.VITE_KOKOSY;
 
-        emailjs.send(
-            emailServiceId,
-            emailTemplateId,
-            {
-                firstName: form.firstName,
-                lastName: form.lastName,
-                email: form.email,
-                message: form.message,
-                telephone: form.telephone
-            },
-            emailPublicKey
-        ).then(() => {
-            setStatus("Wiadomość wysłana pomyślnie!");
-            setForm({ firstName: "", lastName: "", email: "", message: "", telephone: "" });
-        }).catch(() => {
-            setStatus("Wystąpił błąd. Spróbuj ponownie.");
-        }).finally(() => {
-            setLoading(false);
-        });
-    };
+    //     emailjs.send(
+    //         emailServiceId,
+    //         emailTemplateId,
+    //         {
+    //             firstName: form.firstName,
+    //             lastName: form.lastName,
+    //             email: form.email,
+    //             message: form.message,
+    //             telephone: form.telephone
+    //         },
+    //         emailPublicKey
+    //     ).then(() => {
+    //         setStatus("Wiadomość wysłana pomyślnie!");
+    //         setForm({ firstName: "", lastName: "", email: "", message: "", telephone: "" });
+    //     }).catch(() => {
+    //         setStatus("Wystąpił błąd. Spróbuj ponownie.");
+    //     }).finally(() => {
+    //         setLoading(false);
+    //     });
+    // };
 
     return (
         <XlWrapper vertical id="Contact">
@@ -160,7 +160,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="conbox w-full h-full bg-surella-600">
+                    {/* <div className="conbox w-full h-full bg-surella-600">
                         <form onSubmit={handleSubmit} className="w-full h-full flex flex-col uppercase tracking-wide text-white p-8 md:p-10">
                             <div className="w-full h-full flex gap-4">
                                 <div className="w-full h-full">
@@ -231,7 +231,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </XlWrapper>

@@ -75,7 +75,7 @@ const Hero = () => {
        <div className="flex lg:flex-row flex-col h-svh bg-surella-600">
          <div className="bg-white overflow-hidden flex w-full h-full relative">
           <div className='z-20 flex flex-col mx-6 sm:mx-16 md:mx-24 lg:mx-24 xl:mx-48 2xl:mx-72 my-32 sm:my-36 md:my-40 lg:my-48 2xl:my-56 absolute bottom-0 h-fit w-fit '>
-           <div className={`${styles.heroHeadText} text leading-none text-white font-interExtraBold font-semibold uppercase `}></div>
+           <div className={`${styles.heroHeadText} text leading-none text-white font-interExtraBold uppercase `}></div>
            <p className={`${styles.heroSubText} herotxt my-1 md:my-3 h-[21px] md:h-[30px] text-white font-interMedium text-nowrap ml-1 `}></p>
            <motion.div className="herobutton flex items-center w-fit h-fit bg-white mt-2 "
              whileTap={{ y:4 }}>
