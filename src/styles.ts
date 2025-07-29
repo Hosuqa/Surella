@@ -25,11 +25,11 @@ const styles = {
   colabtitle:
     "md:text-[20px] text-[16px]",
   contactText:
-    "2xl:text-[36px] md:text-[32px]  text-[20px]",
+    "lg:text-[24px] xl:text-[30px] text-[20px]",
   contactTextMain:
     "2xl:text-[20px] md:text-[18px] text-[16px]",
   contactForm:
-    "md:text-[18px] text-[14px]",
+    "md:text-[16px] text-[14px]",
 };
 
 export { styles };
